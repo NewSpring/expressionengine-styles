@@ -1,0 +1,188 @@
+@if $use-fa-icons {
+
+	$button-size: $icon-size * .5;
+
+	.fa-icon {
+		position: relative;
+		display: inline-block;
+		font-size: $base-font-size*1.6;
+		line-height: $base-font-size*1.6;
+		width: $base-spacing-unit;
+		height: $base-spacing-unit;
+		cursor: pointer;
+		@include radius(2px);
+
+		&:before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+		}
+
+		@include media-query(palm) {
+			width: $base-spacing-unit*.8;
+			height: $base-spacing-unit*.8;
+			font-size: $base-font-size*1.2;
+			line-height: $base-font-size*1.2;
+		}
+	}
+
+	.fa-icon--filled {
+		background: $brand-color;
+	}
+
+	// $CLOSE ICON
+	.fa-icon--close {
+		&:before {
+			margin-top: -17px;
+			margin-left: -14px;
+
+			@include media-query(palm) {
+				margin-top: -13px;
+				margin-left: -10px;
+			}
+		}
+
+		.modal--active & {
+			position: absolute;
+		    top: $base-spacing-unit/2;
+		    right: $base-spacing-unit/2;
+		    z-index: 10001;
+		    color: $light-color;
+		}
+	}
+
+	// $PLAY ICON
+	.fa-icon--play {
+	    position: relative;
+	    display: inline-block;
+	    width: 90px;
+	    height: 90px;
+	    text-decoration: none;
+	    cursor: pointer;
+	    border: 4px solid $brand-color;
+	    margin-bottom: $base-spacing-unit/3;
+	    @include radius(1000px);
+	    @include vendor(transition, all $global-duration $global-function 0s);
+
+	    &:before {
+	        position: absolute;
+	        top: 50%;
+	        left: 50%;
+	        margin-top: -11px;
+	        margin-left: -7px;
+	        content: "\f0da";
+	        font-family: FontAwesome;
+	        color: $brand-color;
+	        font-size: $button-size * 2.5;
+	        line-height: $button-size;
+	        @include vendor(transition, all $global-duration $global-function 0s);
+	    }
+
+	    &:hover {
+	        border-color: $primary-color;
+
+	        &:before {
+	           color: $primary-color;
+	        }
+	    }
+
+	    .ratio--landscape &, .ratio--square &, .ratio--portrait & {
+	        position: absolute;
+	        top: 50%;
+	        left: 50%;
+	        margin-top: -45px;
+	        margin-left: -45px;
+	        margin-bottom: 0px;
+	        background: rgba(0,0,0,.5);
+	        border-color: $light-color;
+
+	        &:before {
+	            color: $light-color;
+	        }
+
+	        @include media-query(handheld) {
+	        	width: 70px;
+	        	height: 70px;
+	        	margin-top: -35px;
+	        	margin-left: -35px;
+
+	        	&:before {
+	        		font-size: $button-size * 2;
+	        		margin-top: -11px;
+	        		margin-left: -4px;
+	        	}
+	        }
+	    }
+
+	    @include media-query(handheld) {
+	    	width: 70px;
+	    	height: 70px;
+
+	    	&:before {
+	    		font-size: $button-size*1.6;
+	    		margin-left: -5px;
+	    	}
+	    }
+	}
+
+	// $READ ICON
+	.fa-icon--read {
+	    position: relative;
+	    display: inline-block;
+	    width: 90px;
+	    height: 90px;
+	    text-decoration: none;
+	    cursor: pointer;
+	    border: 6px solid $brand-color;
+	    margin-bottom: $base-spacing-unit/3;
+	    @include radius(1000px);
+	    @include vendor(transition, all $global-duration $global-function 0s);
+
+	    &:before {
+	        position: absolute;
+	        top: 50%;
+	        left: 50%;
+	        margin-top: -12px;
+	        margin-left: -14px;
+	        content: "\f0f6";
+	        font-family: FontAwesome;
+	        color: $brand-color;
+	        font-size: $button-size * 1.5;
+	        line-height: $button-size;
+	        @include vendor(transition, all $global-duration $global-function 0s);
+	    }
+
+	    &:hover {
+	        border-color: $light-color;
+
+	        &:before {
+	            color: $light-color;
+	        }
+	    }
+	}
+
+	.fa-icon--light {
+		border-color: $light-color;
+		background: rgba(0,0,0,.3);
+
+		&:before {
+			color: $light-color;
+		}
+	}
+
+	.fa-icon--dark {
+		border-color: $dark-color;
+
+		&:before {
+			color: $dark-color;
+		}
+
+		&:hover {
+			border-color: $brand-color;
+
+			&:before {
+				color: $brand-color;
+			}
+		}
+	}
+}

@@ -1,0 +1,90 @@
+/* ==========================================================================
+    NewSpring Mixins -- Compass Experimental settings
+   ========================================================================== */
+
+// Usually compass hacks apply to both ie6 & 7 -- set this to false to disable support for both.
+$legacy-support-for-ie: true !default;
+
+// Setting this to false will result in smaller output, but no support for ie6 hacks
+$legacy-support-for-ie6: $legacy-support-for-ie !default;
+
+// Setting this to false will result in smaller output, but no support for ie7 hacks
+$legacy-support-for-ie7: $legacy-support-for-ie !default;
+
+// Setting this to false will result in smaller output, but no support for legacy ie8 hacks
+$legacy-support-for-ie8: $legacy-support-for-ie !default;
+
+// @private
+// The user can simply set $legacy-support-for-ie and 6, 7, and 8 will be set accordingly,
+// But in case the user set each of those explicitly, we need to sync the value of
+// this combined variable.
+$legacy-support-for-ie: $legacy-support-for-ie6 or $legacy-support-for-ie7 or $legacy-support-for-ie8;
+
+// Whether to output legacy support for mozilla.
+// Usually this means hacks to support Firefox 3.6 or earlier.
+$legacy-support-for-mozilla: true;
+
+// Support for mozilla in experimental css3 properties (-moz).
+$experimental-support-for-mozilla      : true !default;
+// Support for webkit in experimental css3 properties (-webkit).
+$experimental-support-for-webkit       : true !default;
+// Support for webkit's original (non-standard) gradient syntax.
+$support-for-original-webkit-gradients : true !default;
+// Support for opera in experimental css3 properties (-o).
+$experimental-support-for-opera        : true !default;
+// Support for microsoft in experimental css3 properties (-ms).
+$experimental-support-for-microsoft    : true !default;
+// Support for khtml in experimental css3 properties (-khtml).
+$experimental-support-for-khtml        : false !default;
+// Support for svg in experimental css3 properties.
+// Setting this to true might add significant size to your
+// generated stylesheets.
+$experimental-support-for-svg          : false !default;
+// Support for CSS PIE in experimental css3 properties (-pie).
+$experimental-support-for-pie          : false !default;
+
+
+
+@mixin experimental($property, $value, $moz: $experimental-support-for-mozilla, $webkit: $experimental-support-for-webkit, $o: $experimental-support-for-opera, $ms: $experimental-support-for-microsoft, $khtml: $experimental-support-for-khtml, $official: true) {
+  @if $webkit and $experimental-support-for-webkit {
+    -webkit-#{$property}: $value; }
+  @if $khtml and $experimental-support-for-khtml {
+    -khtml-#{$property}: $value; }
+  @if $moz and $experimental-support-for-mozilla {
+    -moz-#{$property}: $value; }
+  @if $ms and $experimental-support-for-microsoft {
+    -ms-#{$property}: $value; }
+  @if $o and $experimental-support-for-opera {
+    -o-#{$property}: $value; }
+  @if $official {
+    #{$property}: $value; } }
+
+@mixin apply-origin($origin, $only3d) {
+  
+    @include experimental(transform-origin, $origin, -moz, -webkit, -o, -ms, not -khtml, official);
+  
+}
+
+@mixin transform-origin($origin-x: $default-origin-x, $origin-y: $default-origin-y, $origin-z: false, $only3d: if($origin-z, true, false)) {
+  $origin: unquote("");
+  @if $origin-x or $origin-y or $origin-z {
+    @if $origin-x {
+      $origin: $origin-x;
+    }
+    @else {
+      $origin: 50%;
+    }
+    @if $origin-y {
+      $origin: $origin $origin-y;
+    }
+    @else {
+      @if $origin-z {
+        $origin: $origin 50%;
+      }
+    }
+    @if $origin-z {
+      $origin: $origin $origin-z;
+    }
+    @include apply-origin($origin, $only3d);
+  }
+}

@@ -1,0 +1,177 @@
+@if $use-links == true {
+/* ============================================================
+
+    $LINKS
+
+============================================================ */
+
+    a {
+        position: relative;
+        color: $brand-color;
+        text-decoration: underline;
+        @include vendor(transition, all $global-duration $global-function);
+        word-wrap: break-word;
+
+        b & {
+            font-weight: 500;
+        }
+
+        &:hover {
+            color: $secondary-color;
+
+            &:after {
+                border-color: darken($secondary-color,5);
+            }
+        }
+
+        &.dark {
+            color: $dark-color;
+
+            &:hover {
+                color: lighten($dark-color,20);
+            }
+        }
+
+        &.light {
+            color: $light-color;
+
+            &:after {
+                border-color: $light-color;
+            }
+
+            &:hover {
+                color: lighten($light-color,20);
+
+                &:after {
+                    border-color: $light-color;
+                }
+            }
+        }
+
+        &.link--block {
+          /* Used for stacking links and buttons */
+          display: table;
+        }
+
+        &.link--invisible {
+            color: inherit;
+            text-decoration: none;
+            margin-bottom: $base-spacing-unit/2;
+            //Because we're treating .link--arow as a block-level item, it should be used on it's own, outside of a block level element
+
+            &:after {
+                position: absolute;
+                top: 50%;
+                margin-top: -6px;
+                left: auto;
+                right: 0px;
+            }
+
+            * {
+                @include vendor(transition, all $global-duration $global-function);
+            }
+
+            &:hover {
+                * {
+                    color: inherit;
+                }
+            }
+
+            .overlay {
+
+              &.overlay--light {
+
+                .overlay__item {
+                  color: $light-color;
+                }
+              }
+            }
+        }
+    }
+
+    .link--arrow {
+        font-family: $base-heading-font;
+        font-weight: 500;
+        font-size: $base-font-size;
+        line-height: $base-line-height;
+        display: inline-block;
+        padding-right: $base-spacing-unit*.3;
+        text-decoration: none;
+        margin-bottom: $base-spacing-unit/2;
+        color: $brand-color;
+        //Because we're treating .link--arow as a block-level item, it should be used on it's own, outside of a block level element
+
+        &:after {
+            position: absolute;
+            top: 50%;
+            margin-top: -6px;
+            left: auto;
+            right: 0px;
+            @include vendor(transition, all $global-duration $global-function);
+            @include arrow(right, 10px, $brand-color, 3px);
+        }
+
+        &:hover {
+            &:after {
+                right: -8px;
+                border-color: $tertiary-color;
+            }
+        }
+
+        &.reverse {
+            padding-left: $base-spacing-unit*.3;
+            padding-right: 0px;
+
+            &:after {
+                right: auto;
+                left: 0px;
+                @include arrow(left, 10px, $brand-color, 3px);
+            }
+
+            &:hover {
+                &:after {
+                    left: -8px;
+                    border-color: $tertiary-color;
+                }
+            }
+        }
+
+        &.dark {
+            &:after {
+                border-color: $dark-color;
+            }
+
+            &:hover {
+                &:after {
+                    border-color: $dark-color;
+                }
+            }
+
+            &.reverse:hover:after {
+                border-color: $dark-color;
+            }
+        }
+
+        &.light {
+            &:after {
+                border-color: $light-color;
+            }
+
+            &:hover {
+                &:after {
+                    border-color: $light-color;
+                }
+            }
+
+            &.reverse:hover:after {
+                border-color: $light-color;
+            }
+        }
+    }
+
+    @include headings(1,6) {
+        a {
+          text-decoration:none;
+        }
+    }
+}

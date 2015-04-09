@@ -1,0 +1,518 @@
+@if $use-buttons == true{
+/* ============================================================
+
+		$BTN
+
+		The .btn class is a small object class that classfies an
+		element as a button on all NewSpring Sites
+
+		@extendable:
+				.btn--small
+				.btn--large
+				.btn--light
+				.btn--filled
+
+		Used in markup:
+
+		<div class="btn"></div>
+		<a href="#" class="btn"></div>
+
+		Things the btn class does:
+
+				Sets color of text to brand color
+
+				Adds brand colored border based on border size
+				(Set $border-size at 0 for no borders)
+
+				Sets base padding in a 2:1 ratio of sides to top and bottom
+
+				Sets line-height at a base of 1
+
+				Makes cursor pointer
+
+				Sets container as relative to contain pseduo elements
+
+				Sets button as inline block to prevent full width issues
+
+				Removes underlines from buttons
+
+		FOR MORE BUTTON OPTIONS, LOOK AT `inuit.css/objects/_beautons.scss`
+
+============================================================ */
+$button-size: $icon-size * .5;
+
+.btn {
+	font-family: $base-heading-font;
+	color: $brand-color;
+	border: $border-size solid $brand-color;
+	padding: ($button-size/2)+1 ($button-size * 2) ($button-size/2)-1;
+	font-weight: 700;
+	font-size: $button-size * .85;
+	line-height: $button-size * 1.33333333;
+	letter-spacing: 1px;
+	cursor: pointer;
+	position: relative;
+	vertical-align: middle;
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	overflow: hidden;
+	@include radius(1000px);
+	@include vendor(transition, all, $global-duration $global-function);
+
+	&:hover {
+			background: $brand-color;
+			color: $light-color;
+	}
+
+	&.btn--small {
+			border: $border-size * .75 solid $brand-color;
+			padding: ($button-size/2 * .5) $button-size/2;
+	}
+
+	&.btn--large {
+			font-size: $base-font-size * 2;
+			padding: $button-size $button-size * 2;
+			border: $border-size * 2 solid $brand-color;
+	}
+
+	@include media-query(handheld) {
+		font-size: $handheld-font-size;
+		// line-height: $handheld-line-height*.9;
+	}
+}
+
+.btn--share {
+	text-transform: none;
+	letter-spacing: normal;
+	margin-bottom: 0px;
+	min-width: 240px;
+	text-align: center !important;
+	@include radius($base-spacing-unit/8);
+	padding: ($button-size/3)+1 ($button-size) ($button-size/3)-1;
+
+	.list--inline & {
+		margin: 0 $base-spacing-unit/4 $base-spacing-unit/4 0;
+	}
+}
+
+.btn--disabled {
+	border-color: $gray-secondary;
+	color: $gray-secondary;
+	cursor: text;
+
+	&:hover {
+		background: transparent;
+		border-color: $gray-secondary;
+		color: $gray-secondary;
+		cursor: arrow;
+	}
+
+	&.btn--filled {
+		border-color: $gray-secondary;
+		background: $gray-secondary;
+		color: $dark-color;
+
+		&:hover {
+			border-color: $gray-secondary;
+			background: $gray-secondary;
+		}
+	}
+}
+
+.btn--corners {
+	@include radius(0);
+}
+
+/* ============================================================
+
+		$PLAY
+
+		The .btn--class class is a small object class that classfies a
+		btn as a play button on all NewSpring Sites
+
+		@required .btn
+
+		@extendable:
+				.btn--small
+				.btn--large
+				.btn--light
+				.btn--filled
+
+		Used in markup:
+
+		<div class="btn btn--play"><i class="rounded-triangle"></i></div>
+		<a href="#" class="btn btn--play"><i class="rounded-triangle"></i></a>
+
+		Things the btn--play class does:
+
+				Makes padding square
+
+				Inflates button to be a circle
+
+				Creates a triangle in the middle of the button
+
+				kills all text with font-size: 0
+
+============================================================ */
+
+.btn--play {
+		padding: $button-size * 1.5;
+		@include circle($button-size);
+		font-size: 0 !important;
+
+		.rounded-triangle {
+				display: block;
+
+				@include absolute(top 50% left 50%);
+				@include rounded-triangle($button-size * .7, right, $brand-color, 30%);
+		}
+
+		&.btn--small{
+				padding: $button-size ;
+				@include circle($button-size/2);
+				.rounded-triangle {
+						width: $button-size * .4;
+						height: $button-size * .4;
+						&:before, &:after {
+								width: $button-size * .4;
+								height: $button-size * .4;
+						}
+				}
+		}
+
+		&.btn--large{
+				padding: $button-size * 3;
+				@include circle($button-size * 2);
+				.rounded-triangle {
+						width: $button-size * 1.4;
+						height: $button-size * 1.4;
+						&:before, &:after {
+								width: $button-size * 1.4;
+								height: $button-size * 1.4;
+						}
+				}
+		}
+
+		&.btn--light, &.btn--filled {
+				.rounded-triangle {
+						background-color: $light-color;
+						&:before, &:after {
+								background-color: $light-color;
+						}
+				}
+		}
+}
+
+
+/* ============================================================
+
+		$PAUSE
+
+		The .btn--pause class is a small object class that classfies a
+		btn as a pause button on all NewSpring Sites
+
+		@required .btn
+
+		@extends .btn--play
+
+		@extendable:
+				.btn--small
+				.btn--large
+				.btn--light
+				.btn--filled
+
+		Used in markup:
+
+		<div class="btn btn--pause"></div>
+		<a href="#" class="btn btn--pause"></div>
+
+		Things the btn--pause class does:
+
+				Turns the triangle from .btn--play into two vertical bars
+
+============================================================ */
+.btn--pause {
+		@extend .btn--play;
+
+		&:before {
+				content: "";
+				display: block;
+				width: $button-size;
+				height: $button-size;
+
+				// create pause with borders
+				border-top: 0 solid transparent;
+				border-bottom: 0 solid transparent;
+				border-right: $button-size * .333 solid $brand-color;
+				border-left: $button-size * .333 solid $brand-color;
+
+				// center pause button
+				margin-top: -$button-size/2;
+				margin-left: -$button-size/2;
+
+		}
+
+		&.btn--small:before {
+				width: $button-size * .75;
+				height: $button-size * .75;
+
+				// create pause with borders
+				border-right: $button-size * .249 solid $brand-color;
+				border-left: $button-size * .249 solid $brand-color;
+
+				// center pause button
+				margin-top: -$button-size/2 * .75;
+				margin-left: -$button-size/2 * .75;
+
+		}
+
+		&.btn--large:before {
+				width: $button-size * 2;
+				height: $button-size * 2;
+
+				// create pause with borders
+				border-right: $button-size * .666 solid $brand-color;
+				border-left: $button-size * .666 solid $brand-color;
+
+				// center pause button
+				margin-top: -$button-size;
+				margin-left: -$button-size;
+
+		}
+		&.btn--light, &.btn--filled {
+				&:before {
+						border-color: $light-color;
+				}
+		}
+		.rounded-triangle {
+				display: none;
+		}
+}
+
+.btn--light {
+		color: $light-color ;
+		border-color: $light-color ;
+		&:hover {
+			background-color: $light-color;
+			color: $base-font-color;
+		}
+}
+
+.btn--primary {
+	color: $primary-color;
+	border-color: $primary-color;
+}
+
+
+// Social Link Buttons (NOT Share Buttons)
+.btn--social {
+	position: relative;
+	text-transform: none;
+	
+	padding: $button-size;
+	margin-right: $button-size;
+	border: none;
+
+	&:before {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 50px;
+		content: "\f1db";
+		font-family: FontAwesome;
+		font-size: $base-font-size;
+		background: $primary-color;
+		color: $light-color;
+		padding: ($button-size/3)+1 0 ($button-size/3)-1;
+	}
+
+	&:hover {
+		background: $primary-color;
+		color: $light-color;
+		opacity: .7;
+	}
+}
+
+.btn--facebook {
+	color: $facebook;
+	border-color: $facebook;
+
+	&:before {
+		content: "\f09a";
+		border-color: $facebook;
+		background: $facebook;
+	}
+
+	&:hover {
+		background: $facebook;
+
+	}
+}
+
+.btn--twitter {
+	color: $twitter;
+	border-color: $twitter;
+
+	&:before {
+		content: "\f099";
+		border-color: $twitter;
+		background: $twitter;
+	}
+
+	&:hover {
+		background: $twitter;
+	}
+}
+
+.btn--google {
+	color: $google;
+	border-color: $google;
+
+	&:before {
+		content: "\f0d5";
+		border-color: $google;
+		background: $google;
+	}
+
+	&:hover {
+		background: $google;
+	}
+}
+
+.btn--instagram {
+	color: $instagram;
+	border-color: $instagram;
+
+	&:before {
+		content: "\f16d";
+		border-color: $instagram;
+		background: $instagram;
+	}
+
+	&:hover {
+		background: $instagram;
+	}
+}
+
+.btn--youtube {
+	color: $youtube;
+	border-color: $youtube;
+
+	&:before {
+		content: "\f16a";
+		border-color: $youtube;
+		background: $youtube;
+	}
+
+	&:hover {
+		background: $youtube;
+	}
+}
+
+
+
+
+
+
+.btn--filled {
+	background-color: $brand-color;
+	color: $light-color;
+	border-color: $primary-color;
+	@include vendor(transition, all $global-duration $global-function);
+
+	&:hover {
+		background-color: darken($primary-color, 10);
+		border-color: darken($primary-color, 10);
+		@include vendor(transition, all $global-duration $global-function);
+	}
+}
+
+
+/* ============================================================
+
+		$ICON
+
+		The .btn--icon class is a small object class that classfies a
+		btn as a button with a right icon inlcuded
+		on all NewSpring Sites
+
+		@required .btn
+
+		@extendable:
+				.btn--small
+				.btn--large
+				.btn--light
+				.btn--filled
+
+		Used in markup:
+
+		<div class="btn btn--icon"><i class="icon"></i></div>
+		<a href="#" class="btn btn--icon"><i class="icon"></i></a>
+
+		Things the btn--icon class does:
+
+				Creates an empty spaced cell on the right side of
+				a .btn for icons.
+
+============================================================ */
+.btn--icon {
+		padding-right: ($button-size * 3)  + $border-size;
+		overflow: hidden;
+
+		&:hover {
+			.icon {
+					// border-left: $border-size solid $light-color;
+					&:before, &:after {
+							border-color: $light-color;
+					}
+			}
+		}
+		.icon {
+				@include absolute(top 0 right ($button-size * .5) bottom 0);
+
+				// remove height of icons to force 100% height
+				height: auto;
+				width: $icon-size + $border-size;
+				/* border-left: \$border-size solid \$brand-color; */
+
+		}
+
+		&.btn--small {
+				padding-right: ($button-size * 2);
+
+				.icon {
+						width: ($button-size * 1.5);
+						border-left: $border-size * .75 solid $brand-color;
+				}
+		}
+
+		&.btn--large {
+				padding-right: ($button-size * 6);
+				.icon {
+						width: ($button-size * 4);
+						border-left: $border-size * 2 solid $brand-color;
+				}
+		}
+
+		&.btn--filled, &.btn--light {
+				.icon {
+						/* border-left: \$border-size solid \$light-color; */
+						&:before, &:after {
+								border-color: $light-color;
+						}
+				}
+		}
+
+		&.btn--filled {
+			.icon {
+				/* background-color: \$secondary-color; */
+				@if $brand-round > 0 {
+						//webkit doesn't respect border-radius for clipping elements
+						@include radius(0 ($brand-round - ($border-size * .75)) ($brand-round - ($border-size * .75)) 0);
+				}
+			}
+		}
+	}
+}

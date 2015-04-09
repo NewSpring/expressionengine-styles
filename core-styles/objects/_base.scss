@@ -1,0 +1,607 @@
+/*
+    NewSpring Web Core Styles -- $BASE
+*/
+
+
+/* ============================================================
+
+    $DOCUMENT
+
+    sets the base font color and background of sites
+
+
+============================================================ */
+
+html {
+    color: $base-font-color;
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    background: $dark-color;
+
+    &:after {
+        display: none;
+    }
+}
+
+
+
+// Used to make sure no accidental wide margin/img breaks bounds
+body {
+  overflow-x: hidden;
+  // There's a small bug in webkit that requires a CSS3 property to be set on an element.
+  // Read more about it at http://bit.ly/NEdoDq
+
+
+
+
+}
+
+
+
+
+/* ============================================================
+
+    $UTILITIES
+
+
+============================================================ */
+
+.clickable {
+    cursor: pointer;
+    text-decoration: none;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        @include vendor(transition, all .1s $global-function);
+    }
+
+    &:hover {
+        &:after {
+            background: rgba(0,0,0,.2);
+        }
+    }
+    * {
+        text-decoration: none;
+    }
+}
+
+.hover--white {
+
+    &:hover {
+
+        * {
+            color: $light-color;
+        }
+    }
+}
+
+.handheld-soft-half--top {
+    @include media-query(handheld) {
+        padding-top: ($base-spacing-unit/2) !important;
+    }
+}
+
+.handheld-hard--left {
+    @include media-query(handheld) {
+        padding-left: 0 !important;
+    }
+}
+
+.handheld-hard {
+    @include media-query(handheld) {
+        padding: 0 !important;
+    }
+}
+
+.handheld-hard--right {
+    @include media-query(handheld) {
+        padding-right: 0 !important;
+    }
+}
+
+.handheld-hard--sides {
+    @include media-query(handheld) {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+.handheld-flush {
+    @include media-query(handheld) {
+        margin: 0 !important;
+    }
+}
+
+.hover--dark {
+
+    a:hover {
+        color: $dark-color;
+    }
+}
+
+.border--none {
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+
+/* ============================================================
+
+    $TEXT MODIFIER UTILITIES
+
+
+============================================================ */
+
+.colfax {
+    font-family: $base-heading-font;
+}
+
+.meta-serif {
+    font-family: $base-body-copy-font;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.dark {
+    color: $dark-color;
+    border-color: $dark-color;
+
+    &:before, &:after {
+        border-color: $dark-color ;
+    }
+
+
+    span {
+        color: $dark-color;
+    }
+}
+
+.grey, .gray {
+    color: lighten($medium-color,20) ;
+    border-color: lighten($medium-color,20) ;
+}
+
+.brand, .primary {
+    color: $brand-color ;
+    border-color: $brand-color ;
+
+    &:before, &:after {
+        border-color: $brand-color ;
+    }
+
+    &:hover {
+        color: $brand-color ;
+    }
+
+    span {
+        color: $brand-color;
+
+        &:hover {
+            color: $brand-color;
+        }
+    }
+}
+
+.color--primary {
+    color: $brand-color;
+}
+
+.light {
+    color: $light-color !important;
+    border-color: $light-color ;
+
+    &:before, &:after {
+        border-color: $light-color ;
+    }
+
+    &.link--arrow {
+        &:before, &:after {
+            border-color: $light-color;
+        }
+    }
+
+    &:hover {
+        color: $light-color ;
+    }
+
+    span {
+        color: $light-color;
+
+        &:hover {
+            color: $light-color;
+        }
+    }
+}
+
+// Social Colors
+
+.color--facebook { 
+    color: $facebook; 
+
+    &.btn--share {
+        border-color: $facebook;
+        background-color: $facebook;
+        color: $light-color;
+        
+        &:hover {
+            background-color: darken($facebook, 10);
+            border-color: darken($facebook, 10);
+        }
+    }
+}
+
+.color--twitter { 
+    color: $twitter; 
+
+    &.btn--share {
+        border-color: $twitter;
+        background-color: $twitter;
+        color: $light-color;
+        
+        &:hover {
+            background-color: darken($twitter, 10);
+            border-color: darken($twitter, 10);
+        }
+    }
+}
+
+.color--google { 
+    color: $google; 
+
+    &.btn--share {
+        border-color: $google;
+        background-color: $google;
+        color: $light-color;
+        
+        &:hover {
+            background-color: darken($google, 10);
+            border-color: darken($google, 10);
+        }
+    }
+}
+
+.color--pinterest { 
+    color: $pinterest; 
+
+    &.btn--share {
+        border-color: $pinterest;
+        background-color: $pinterest;
+        color: $light-color;
+        
+        &:hover {
+            background-color: darken($pinterest, 10);
+            border-color: darken($pinterest, 10);
+        }
+    }
+}
+
+.color--instagram { 
+    color: $instagram; 
+
+    &.btn--share {
+        border-color: $instagram;
+        background-color: $instagram;
+        color: $light-color;
+        
+        &:hover {
+            background-color: darken($instagram, 10);
+            border-color: darken($instagram, 10);
+        }
+    }
+}
+
+.color--youtube { 
+    color: $youtube; 
+
+    &.btn--share {
+        border-color: $youtube;
+        background-color: $youtube;
+        color: $light-color;
+        
+        &:hover {
+            background-color: darken($youtube, 10);
+            border-color: darken($youtube, 10);
+        }
+    }
+}
+
+.color--linkedin { 
+    color: $linkedin; 
+
+    &.btn--share {
+        border-color: $linkedin;
+        background-color: $linkedin;
+        color: $light-color;
+        
+        &:hover {
+            background-color: darken($linkedin, 10);
+            border-color: darken($linkedin, 10);
+        }
+    }
+}
+
+
+
+
+
+.text-transform--capitalize {
+    text-transform: capitalize;
+}
+
+// Alignment and Inline-Block
+
+.display--inline {
+    display: inline-block;
+}
+
+.align--middle {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.align--bottom {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+// Thin H3
+
+h3 {
+
+    &.thin {
+        font-weight: 400;
+        font-size: 38.6px;
+        line-height: 41.6px;
+    }
+}
+
+
+/* ============================================================
+
+    $SHELL
+
+
+============================================================ */
+
+.shell {
+    position: relative;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: $base-spacing-unit*2 $base-spacing-unit*2 $base-spacing-unit;
+    box-shadow: 0 0 25px rgba(0,0,0,.1);
+
+    .shell {
+        box-shadow: none;
+    }
+
+    &.shell--enclosed {
+        padding: 0 $base-spacing-unit*.5;
+    }
+
+    @include media-query(portable) {
+        padding: $base-spacing-unit*1.5 $base-spacing-unit $base-spacing-unit;
+    }
+
+    @include media-query(handheld) {
+        padding: $base-spacing-unit $base-spacing-unit*.5 $base-spacing-unit;
+    }
+}
+
+
+
+/* ============================================================
+
+    $HORIZONTAL RULES
+
+    defines the base spacing of sections
+
+
+============================================================ */
+
+hr {
+    display: inline-block;
+    background: $light-color;
+    border: 2px solid darken($light-color, 7);
+    border-left: 0px;
+    border-right: 0px;
+    padding: 0;
+    margin: $base-spacing-unit 0 $base-spacing-unit*2;
+    width: 100%;
+
+    .section--dark & {
+        border-color: lighten($dark-color, 5);
+    }
+
+    .section--tan & {
+        border-color: rgba(0,0,0,.05);
+    }
+
+    &.hidden {
+        border-width: 0px;
+    }
+
+    &.half {
+        margin: $base-spacing-unit/2 0 $base-spacing-unit;
+
+        &.hidden {
+            border-width: 0px;
+        }
+    }
+
+    &.quarter {
+        margin: $base-spacing-unit/4 0 $base-spacing-unit/2;
+
+        &.hidden {
+            border-width: 0px;
+        }
+    }
+
+    &.skinny {
+        margin: $base-spacing-unit/4 0 $base-spacing-unit/2;
+        width: 30%;
+    }
+
+    &.hr--equal {
+      margin: $base-spacing-unit*1.25 0 $base-spacing-unit*2;
+    }
+
+    @include media-query(handheld) {
+        margin: $base-spacing-unit/2 0 $base-spacing-unit;
+    }
+}
+
+
+
+
+
+/* ============================================================
+
+    $OUTLINED
+
+    creates border and border-radius based on defaults to
+    any element
+
+
+============================================================ */
+
+.outlined {
+    border: $border-size solid $brand-color;
+
+    // if $brand-round is 0 there is no reason to output radius mixin
+    @if $brand-round > 0 {
+        @include radius($brand-round);
+    }
+}
+
+.outlined--tag {
+    display: inline-block;
+    font-size: $base-font-size*.7 !important;
+    border-color: $dark-color;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: ($base-spacing-unit/10)+1 $base-spacing-unit/4 ($base-spacing-unit/10)-1;
+    @include radius(2px);
+
+    .hero & {
+        border-color: $light-color;
+    }
+
+    &.light {
+        border-color: $light-color !important;
+    }
+}
+
+
+
+@include namespace(inline) {
+    display: inline-block;
+    * {
+        display: inline-block;
+    }
+}
+
+@include namespace(block) {
+    display: block;
+    * {
+        display: block;
+    }
+}
+
+@include namespace(float--left) {
+    float: left !important;
+}
+
+@include namespace(float--right) {
+    float: right !important;
+}
+
+@include namespace(float--none) {
+    float: none !important;
+}
+
+.greyscale, .grayscale {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+/* ============================================================
+
+    $INSET BORDER
+
+    creates an inset border on any element
+
+
+============================================================ */
+
+.border--inset {
+    box-sizing: border-box;
+    border: $light-color ($base-spacing-unit/6) solid;
+    @include media-query(handheld) {
+        border-width: $base-spacing-unit/12;
+    }
+}
+
+.section--grey, .section--gray {
+
+    .border--inset {
+        border-color: #f7f7f7;
+    }
+}
+
+.section--dark {
+
+    .border--inset {
+        border-color: $dark-color;
+    }
+}
+
+.section--black {
+
+    .border--inset {
+        border-color: #000;
+    }
+}
+
+.section--texture {
+
+    .border--inset {
+        border-color: $texture-color;
+    }
+}
+
+.section--primary {
+
+    .border--inset {
+        border-color: $primary-color;
+    }
+}
+
+/* ============================================================
+
+    $Overflow
+
+    Overrides overflow hidden
+
+
+============================================================ */
+
+.overflow--visible {
+  overflow: visible;
+}

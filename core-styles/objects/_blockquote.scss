@@ -1,0 +1,143 @@
+@if $use-blockquotes == true {
+  blockquote {
+    display: block;
+    margin: 60px auto;
+    padding: 30px 0;
+    border-top: 2px solid darken($light-color, 10);
+    border-bottom: 2px solid darken($light-color, 10);
+
+    footer, footer a {
+        color: $primary-color;
+        font-family: $base-heading-font;
+        font-weight: 700;
+        font-size: $base-font-size;
+        margin: 15px auto 0;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    p {
+        color: $dark-color;
+        font-family: $base-heading-font;
+        font-weight: 100;
+        font-size: $base-font-size * 1.75;
+        letter-spacing: -1px;
+        line-height: $base-line-height * 1.75;
+        text-align: center;
+        text-indent: 0;
+
+        @include media-query(handheld) {
+          font-size: $base-font-size * 1.25;
+          line-height: $base-line-height * 1.25;
+        }
+
+        &:before, &:after {
+            display: block;
+            font-family: $base-body-copy-font;
+            font-weight: 700;
+            font-size: $base-font-size * 4;
+            line-height: 0px;
+            margin: 45px auto 0;
+            padding: 0;
+            text-align: center;
+            vertical-align: -20px;
+            color: $primary-color;
+        }
+        &:before {
+            content: "\201C" !important;
+        }
+        &:after {
+          margin-top: 55px;
+          content: "\201D" !important;
+        }
+    }
+
+    p {
+      &:before, &:after {
+        font-family: $base-body-copy-font;
+      }
+    }
+  }
+
+    // For Vision Statements - Currently On Network Events
+
+    .blockquote--vision {
+      border: none;
+
+      p {
+
+        &:before, &:after {
+          visibility: hidden;
+        }
+      }
+    }
+
+    // For Next Steps pages short stories
+
+    .blockquote--story {
+
+        footer, footer a {
+            margin-left: 4px;
+            text-align: left;
+        }
+
+        p {
+            font-size: $base-font-size * 1.5;
+            line-height: $base-line-height * 1.5;
+            text-align: left;
+
+            &:before, &:after {
+                display: inline-block;
+                margin: 0;
+            }
+            &:before {
+                float: left;
+                margin: 45px 10px 0 0;
+                text-align: left;
+            }
+            &:after {
+              font-size: 45px;
+              color: lighten($light-font-color, 7%);
+              vertical-align: 7px;
+            }
+        }
+
+        p {
+          &:before, &:after {
+            font-family: $base-body-copy-font;
+          }
+        }
+    }
+
+    // For the Homepage mission statement
+
+    .blockquote--whitequote {
+        border: 0 none;
+        margin: 0 auto 60px;
+        padding: 0;
+
+        p {
+            color: $light-color;
+            font-size: $base-font-size * 1.5;
+            font-weight: 500;
+            line-height: $base-line-height * 1.5;
+            text-align: center;
+
+            &:before, &:after {
+                color: $light-color;
+            }
+        }
+        @include media-query(handheld) {
+          margin-bottom: 0;
+          padding-bottom: 60px;
+        }
+
+        }
+
+    .blockquote--right {
+        float: right;
+        margin: 6px -35px 50px 30px;
+        padding: 19px 36px 16px 41px;
+    }
+}

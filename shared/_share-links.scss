@@ -1,0 +1,34 @@
+/* Social Share Links */
+
+.share {
+	width: 100%;
+	margin: 0 0 20px 0;
+
+	//horizontally centers the social buttons
+	&.center {
+		text-align: center;
+
+		li{
+			float:none;
+		}
+	}
+
+	li{
+		display: inline-block;
+		float: left;
+		margin-right: 10px;
+
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	#twitter-share{
+		position: relative;
+	}
+
+	&.box{
+		#google-share{
+			margin-top:2px;
+		}
+	}
+}

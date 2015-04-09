@@ -1,0 +1,100 @@
+@if $use-search == true {
+	@include media-query(lap-wide-and-up) {
+		.search-modal {
+			background: rgba(white, .5);
+		}
+	}
+
+	.search-modal {
+		section {
+			background: transparent;
+		}
+	}
+
+	.search-container {
+		position: relative;
+		background: white;
+
+		input {
+			display: inline-block;
+			width: 100%;
+			font-size: $base-font-size*1.5;
+			margin: 0px;
+			padding: 17px 105px 17px 25px;
+			background: transparent;
+			@include radius(0px);
+
+		}
+		@include media-query(lap-wide-and-down) {
+			padding: 0;
+
+			input {
+				padding: 12px 65px 12px 12px;
+				font-size: 22px;
+			}
+
+		}
+
+		.icon.icon--large {
+			@include absolute(top 0 right 0);
+			line-height: 80px;
+			width: 80px;
+			height: 80px;
+			font-size: $base-font-size;
+			z-index: map-get($zindex, modal) + 1;
+
+
+			@include media-query(lap-wide-and-down) {
+					width: 54px;
+					height: 54px;
+					line-height: 54px;
+					font-size: 24px;
+			}
+		}
+
+		.fa-times {
+			background-color: $alert-color;
+			color: $light-color;
+		}
+
+		.fa-search {
+			margin-right: 80px;
+		}
+	}
+
+
+	.twitter-typeahead {
+		width: 100%;
+	}
+
+	.tt-dropdown-menu {
+		padding-top: 22px;
+		padding-right: 22px;
+		padding-left: 22px;
+		background: $dark-color;
+	}
+	.tt-suggestions {
+		margin-bottom: 0;
+	}
+	.tt-suggestion, [class*="tt-dataset-"] {
+
+		display: inline-block;
+	}
+	.tt-suggestion {
+		margin-bottom: 22px;
+	}
+	ul li.tt-suggestion:last-child {
+		margin-bottom: 22px;
+	}
+
+	.google-logo{
+		width: 75px;
+		height: 30px;
+		display: inline-block;
+		vertical-align: middle;
+		background-image: url(//s3.amazonaws.com/ns.images/all/google/google-logo.png);
+
+
+	}
+
+}

@@ -1,0 +1,709 @@
+@if $use-icons {
+
+/* ============================================================
+
+    $line-size
+
+    We create a local variable to prevent large border's
+    from breaking icon sets.
+
+
+============================================================ */
+
+$line-size : 3px!default;
+
+@if $border-size > 0px and $border-size < 4px{
+  $line-size : $border-size;
+}
+
+
+.arrow--up {
+  @include arrow(up, $icon-size, $brand-color);
+}
+
+.arrow--down {
+  @include arrow(down, $icon-size, $brand-color);
+}
+
+.arrow--left {
+  @include arrow(left, $icon-size, $brand-color);
+}
+
+.arrow--right {
+  @include arrow(right, $icon-size, $brand-color);
+}
+
+
+
+/* ============================================================
+
+    $ICON
+
+    The .icon class is a small object class that classfies an
+    element as an icon on all NewSpring Sites
+
+    @extendable:
+        .icon--small
+        .icon--large
+        .icon--light
+        .icon--filled
+
+    Used in markup:
+
+    <div class="icon"></div>
+
+    Things the icon class does:
+
+        Sets the size to be a square
+
+        Sets container as relative to contain pseduo elements
+
+        Prevents all text from showing with font-size: 0
+
+
+============================================================ */
+
+.icon {
+    position: relative;
+    width: ($icon-size + ($border-size*2)) ;
+    height: ($icon-size + ($border-size*2));
+    &:not([class*="fa-"]){
+        font-size: 0;
+    }
+
+    &[class*="fa-"] {
+      text-align: center;
+      margin-bottom: 0;
+      line-height: ($icon-size + ($border-size*2))
+    }
+
+    &.icon--small {
+        width: ($icon-size + ($border-size*2)) * .55;
+        height: ($icon-size + ($border-size*2)) * .55;
+
+        &[class*="fa-"] {
+            line-height: ($icon-size + ($border-size*2)) * .55;
+        }
+
+        &.outlined {
+            border-width: $line-size * .75;
+        }
+    }
+
+    &.icon--large {
+        width: ($icon-size + ($border-size*2)) * 2;
+        height: ($icon-size + ($border-size*2)) * 2;
+        &.outlined {
+            border-width: $line-size * 2;
+        }
+    }
+    // .outlined & {
+    //     // adjust width if border is present
+    //     width: ($icon-size * 2) + $border-size;
+    // }
+}
+
+
+/* ============================================================
+
+    $ARROWS
+
+    This decleration handles all icon--arrow- classes.  It
+    allows for bulk styling of all extenders
+
+    @required:
+        .icon
+
+    @extendable:
+        .icon--small
+        .icon--large
+        .icon--light
+        .icon--filled
+
+
+============================================================ */
+
+[class*="icon--arrow-"] {
+    &:before {
+        @include absolute( top 50% left 50% );
+    }
+
+    &.icon--small {
+        &:before {
+            width: $icon-size * .3;
+            height: $icon-size * .3;
+            border-top-width: $line-size * .75;
+            border-left-width: $line-size * .75;
+        }
+    }
+
+    &.icon--large {
+        &:before {
+            width: $icon-size * .8;
+            height: $icon-size * .8;
+            border-top-width: $line-size * 2;
+            border-left-width: $line-size * 2;
+        }
+    }
+
+}
+
+
+
+
+/* ============================================================
+
+    $ARROW-RIGHT
+
+    The .icon--arrow-right class is a small object class
+    that classfies an icon as a right border arrow
+    on all NewSpring Sites
+
+    @required:
+        .icon
+
+    Used in markup:
+
+    <div class="icon icon--arrow-right"></div>
+
+    Things the icon--arrow-right class does:
+
+        Includes a right arrow
+
+        Forces it to be centered in icon
+
+
+============================================================ */
+
+.icon--arrow-right {
+    &:before {
+        @include arrow(right, $icon-size * .4, $brand-color, $line-size);
+        margin-top: -($icon-size * .5) * .4;
+        margin-left: -($icon-size * .5) * .55;
+    }
+
+    &.icon--small {
+        &:before {
+            margin-top: -($icon-size * .5) * .3;
+            margin-left: -($icon-size * .5) * .4125;
+
+        }
+    }
+
+    &.icon--large {
+        &:before {
+            margin-top: -($icon-size * .5) * .8;
+            margin-left: -($icon-size * .5) * 1.1;
+        }
+    }
+
+}
+
+
+
+
+/* ============================================================
+
+    $ARROW-LEFT
+
+    The .icon--arrow-left class is a small object class
+    that classfies an icon as a left border arrow
+    on all NewSpring Sites
+
+    @required:
+        .icon
+
+    Used in markup:
+
+    <div class="icon icon--arrow-left"></div>
+
+    Things the icon--arrow-left class does:
+
+        Includes a left arrow
+
+        Forces it to be centered in icon
+
+
+============================================================ */
+
+.icon--arrow-left {
+    &:before {
+        @include arrow(left, $icon-size * .4, $brand-color, $line-size);
+        margin-top: -($icon-size * .5) * .4;
+        margin-left: -($icon-size * .5) * .25;
+    }
+
+    &.icon--small {
+        &:before {
+            margin-top: -($icon-size * .5) * .3;
+            margin-left: -($icon-size * .5) * .1875;
+
+        }
+    }
+
+    &.icon--large {
+        &:before {
+            margin-top: -($icon-size * .5) * .8;
+            margin-left: -($icon-size * .5) * .5;
+        }
+    }
+
+}
+
+
+
+
+/* ============================================================
+
+    $ARROW-DOWN
+
+    The .icon--arrow-down class is a small object class
+    that classfies an icon as a down border arrow
+    on all NewSpring Sites
+
+    @required:
+        .icon
+
+    Used in markup:
+
+    <div class="icon icon--arrow-down"></div>
+
+    Things the icon--arrow-down class does:
+
+        Includes a down arrow
+
+        Forces it to be centered in icon
+
+
+============================================================ */
+
+.icon--arrow-down {
+
+    &:before {
+        @include arrow(down, $icon-size * .4, $brand-color, $line-size);
+        @include absolute( top 50% left 50% );
+        margin-top: -($icon-size * .5) * .65;
+        margin-left: -($icon-size * .5) * .4;
+    }
+
+    &.icon--small {
+        &:before {
+            margin-top: -($icon-size * .5) * .4875;
+            margin-left: -($icon-size * .5) * .3;
+
+        }
+    }
+
+    &.icon--large {
+        &:before {
+            margin-top: -($icon-size * .5) * 1.3;
+            margin-left: -($icon-size * .5) * .8;
+        }
+    }
+}
+
+
+
+
+/* ============================================================
+
+    $ARROW-UP
+
+    The .icon--arrow-up class is a small object class
+    that classfies an icon as a up border arrow
+    on all NewSpring Sites
+
+    @required:
+        .icon
+
+    Used in markup:
+
+    <div class="icon icon--arrow-up"></div>
+
+    Things the icon--arrow-up class does:
+
+        Includes an up arrow
+
+        Forces it to be centered in icon
+
+
+============================================================ */
+
+.icon--arrow-up {
+    &:before {
+        @include arrow(up, $icon-size * .4, $brand-color, $line-size);
+        @include absolute( top 50% left 50% );
+        margin-top: -($icon-size * .5) * .25;
+        margin-left: -($icon-size * .5) * .4;
+    }
+
+    &.icon--small {
+        &:before {
+            margin-top: -($icon-size * .5) * .1875;
+            margin-left: -($icon-size * .5) * .3;
+
+        }
+    }
+
+    &.icon--large {
+        &:before {
+            margin-top: -($icon-size * .5) * .5;
+            margin-left: -($icon-size * .5) * .8;
+        }
+    }
+}
+
+
+
+
+/* ============================================================
+
+    $MOBILE-NAV
+
+    The .icon--mobile-nav class is a small object class
+    that classfies an icon as a three line box nav
+    on all NewSpring Sites
+
+    @required:
+        .icon
+
+    Used in markup:
+
+    <div class="icon icon--mobile-nav"></div>
+
+    Things the icon--mobile-nav class does:
+
+        Includes a three lined box nav
+
+        Forces it to be centered in icon
+
+
+============================================================ */
+
+.icon--mobile-nav {
+
+    &:before, &:after {
+        content: "";
+        @include absolute(top 50% left 50%);
+        width: ($icon-size * .5);
+        margin-left: -($icon-size * .25);
+    }
+    &:before {
+        height: ($icon-size * .5) - ($line-size * .5);
+        margin-top: -( ($icon-size * .25) - ($line-size * .3) );
+        border-top: $line-size solid $brand-color;
+        border-bottom: $line-size solid $brand-color;
+    }
+    &:after {
+        border-top: $line-size solid $brand-color;
+        margin-top: -( $line-size * .5 );
+    }
+
+    &.icon--small {
+        &:before, &:after {
+            width: ($icon-size * .5) * .75;
+            margin-left: -(($icon-size * .25) * .75);
+        }
+        &:before {
+            height: ($icon-size * .375) - ($line-size * .25);
+            margin-top: -( (($icon-size * .5) * .375) - ($line-size * .15) );
+            border-top-width: $line-size * .75;
+            border-bottom-width: $line-size * .75;
+        }
+        &:after {
+            border-top-width: $line-size * .75;
+            margin-top: -( $line-size * .375 );
+        }
+    }
+
+    &.icon--large {
+        &:before, &:after {
+            width: $icon-size ;
+            margin-left: -($icon-size * .5);
+        }
+        &:before {
+            height: $icon-size - ($line-size);
+            margin-top: -( ($icon-size*.5) - ($line-size * .6) );
+            border-top-width: $line-size * 2;
+            border-bottom-width: $line-size * 2;
+        }
+        &:after {
+            border-top-width: $line-size * 2;
+            margin-top: -( $line-size );
+        }
+    }
+}
+
+
+
+
+/* ============================================================
+
+    $CLOSE
+
+    The .icon--close class is a small object class
+    that classfies an icon as a right border arrow
+    on all NewSpring Sites
+
+    @required:
+        .icon
+
+    Used in markup:
+
+    <div class="icon icon--close"></div>
+
+    Things the icon--close class does:
+
+        Includes a border based `x`
+
+        Forces it to be centered in icon
+
+
+============================================================ */
+
+.icon--close {
+
+   &:before, &:after {
+       content: "";
+       @include absolute(top 50% left 50%);
+       width: 0;
+       border-right: $line-size solid $brand-color;
+       background-color: $brand-color;
+       height: $icon-size * .5;
+       margin-top: -($icon-size * .25);
+       margin-left: -($line-size * .5);
+   }
+
+   &:before {
+       @include rotate(45deg);
+   }
+
+   &:after {
+       @include rotate(-45deg);
+   }
+
+   &.icon--small {
+       &:before, &:after {
+           border-right-width: $line-size * .75;
+           height: $icon-size * .375;
+           margin-top: -($icon-size * .1875);
+           margin-left: -($line-size * .375) ;
+       }
+   }
+
+   &.icon--large {
+       &:before, &:after {
+           border-right-width: $line-size * 2;
+           height: $icon-size ;
+           margin-top: -($icon-size * .5);
+           margin-left: -($line-size );
+       }
+   }
+}
+
+.icon--close-modal {
+  // Hide button if not in modal by accident
+  display: none!important;
+
+}
+.modal {
+
+  .icon--close-modal {
+    display: block!important;
+    background-color: $alert-color;
+    color: white;
+    @include fixed(top 0 right 0);
+    z-index: map-get($zindex, ooyala) + 1;
+  }
+
+}
+
+/* ============================================================
+
+    $SEARCH
+
+    The .icon--search class is a small object class
+    that classfies an icon as a magnifying glass
+    on all NewSpring Sites
+
+    @required:
+        .icon
+
+    Used in markup:
+
+    <div class="icon icon--search"></div>
+
+    Things the icon--search class does:
+
+        Creates an off center circle for the glass
+
+        Creates an off center line for the stem
+
+        Forces it to be centered in icon
+
+
+============================================================ */
+
+.icon--search {
+
+  @include icon--search($icon-size , $line-size);
+
+  &:before,
+  &:after {
+    content: "";
+    @include absolute(top 50% left 50%);
+  }
+
+  &:after {
+    @include rotate(-45deg);
+    width: 0px;
+  }
+
+  &.icon--large {
+    &:before {
+      @include circle( ($icon-size * .75) );
+      border-width: ($line-size * 2);
+      margin-top: -($icon-size * .6);
+      margin-left: -($icon-size * .6);
+    }
+
+    &:after {
+      height: ($icon-size * .75);
+      border-right-width: ($line-size * 2);
+      margin-left: (($icon-size * .375) * .5);
+
+      // one pixel bump for super thin lines
+      @if $line-size == 1 {
+          margin-left: (($icon-size * .375) * .5) + 2;
+      }
+
+      margin-top: -($icon-size * .375 * .375);
+
+      // curve the base of the stem
+      @include radius(0 0 ($line-size * 4) ($line-size * 4));
+    }
+  }
+
+  &.icon--small {
+    &:before {
+      @include circle( ($icon-size * .375) * .75);
+      border-width: ($line-size * .75);
+      margin-top: -($icon-size * .3) * .75;
+      margin-left: -($icon-size * .3) * .75;
+    }
+
+    &:after {
+      height: ($icon-size * .375) * .75;
+      border-right-width: $line-size * .75;
+      margin-left: (($icon-size * .1875) * .5) * .75;
+
+      // one pixel bump for super thin lines
+      @if $line-size == 1 {
+        margin-left: (($icon-size * .1875) * .5 * .75) + 2;
+      }
+
+      margin-top: -($icon-size * .1875 * .375) * .75;
+
+      // curve the base of the stem
+      @include radius(0 0 ($line-size * 2 * .75) ($line-size * 2 * .75));
+    }
+  }
+}
+
+
+.icon--loading {
+
+  &:before {
+    content: '';
+    /* @include rotateForever(.85s); */
+    width: $icon-size * .5;
+    height: $icon-size * .5;
+    margin-left: -($icon-size * .25);
+    margin-top: -($icon-size * .25);
+    @include absolute(top 50% left 50%);
+    border: $border-size solid;
+    @include radius(50%);
+    border-color: $primary-color $secondary-color $primary-color $primary-color;
+  }
+
+}
+
+.btn--icon {
+  &.btn--light,
+  &.btn--filled {
+    .icon--loading:before,
+    .icon.icon--loading:before {
+      border-color: $secondary-color $light-color $secondary-color $secondary-color;
+    }
+  }
+
+  &.btn--icon:hover {
+    .icon--loading:before {
+      border-color: $primary-color $light-color $primary-color $primary-color;
+    }
+  }
+}
+
+
+
+
+/* ============================================================
+
+    $FILLED and $LIGHT
+
+    The .icon--filled  and .icon--light classes are small
+    object modifier classes that turn icons into
+    filled icons or $light-color oultined icons respectively
+
+    @required:
+        .icon
+
+    Used in markup:
+
+    <div class="icon icon--filled"></div>
+    <div class="icon icon--light"></div>
+
+    Things the icon--filled class does:
+
+        Sets background to $primary-color
+
+        Turns all border colors into $light-color
+
+    Things the icon--light class does:
+
+        Turns all border colors into $light-color
+
+============================================================ */
+
+  .icon--light {
+      border-color: $light-color;
+      &:before, &:after {
+          border-color: $light-color;
+      }
+  }
+
+  .icon--filled {
+      @extend .icon--light;
+      background-color: $primary-color;
+  }
+
+  .fa-icon--primary {
+
+    &.fa-icon--filled {
+
+      &:before {
+        color: $light-color;
+      }
+
+      &:hover {
+        background-color: darken($primary-color, 10);
+        border-color: darken($primary-color, 10);
+
+        &:before {
+          color: $light-color;
+        }
+      }
+    }
+  }
+
+} // endif of $use-icons

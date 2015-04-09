@@ -1,0 +1,99 @@
+// THIS IS A FILE FOR INUIT OVERRIDES
+// OR ADDITIONS TO BE MOVED WHEN CORE GETS COMBINED
+
+.handheld-hard {
+
+	@include media-query(handheld) {
+		padding: 0 !important;
+	}
+}
+
+.portable-hard {
+
+	@include media-query(portable) {
+		padding: 0 !important;
+	}
+}
+
+.handheld-soft {
+
+	@include media-query(handheld) {
+		padding: $base-spacing-unit !important;
+	}
+}
+
+.handheld-soft--top {
+	@include media-query(handheld) {
+		padding-top:   $base-spacing-unit !important;
+	}
+}
+
+.handheld-soft--right {
+	@include media-query(handheld) {
+		padding-right: $base-spacing-unit !important;
+	}
+}
+
+.handheld-soft--bottom {
+	@include media-query(handheld) {
+		padding-bottom:$base-spacing-unit !important;
+	}
+}
+
+.handheld-soft--left {
+	@include media-query(handheld) {
+		padding-left:  $base-spacing-unit !important;
+	}
+}
+
+.handheld-soft--ends {
+	@include media-query(handheld) {
+		padding-top:   $base-spacing-unit !important; padding-bottom:$base-spacing-unit !important;
+	}
+}
+
+.handheld-soft--sides {
+	@include media-query(handheld) {
+		padding-right: $base-spacing-unit !important; padding-left:  $base-spacing-unit !important;
+	}
+}
+
+.palm-soft-quarter           { padding:       $base-spacing-unit * .25!important; }
+.palm-soft-quarter--top      { padding-top:   $base-spacing-unit * .25!important; }
+.palm-soft-quarter--right    { padding-right: $base-spacing-unit * .25!important; }
+.palm-soft-quarter--bottom   { padding-bottom:$base-spacing-unit * .25!important; }
+.palm-soft-quarter--left     { padding-left:  $base-spacing-unit * .25!important; }
+.palm-soft-quarter--ends     { padding-top:   $base-spacing-unit * .25!important; padding-bottom:$base-spacing-unit * .25!important; }
+.palm-soft-quarter--sides    { padding-right: $base-spacing-unit * .25!important; padding-left:  $base-spacing-unit * .25!important; }
+
+.soft-quarter           { padding:       $base-spacing-unit * .25!important; }
+.soft-quarter--top      { padding-top:   $base-spacing-unit * .25!important; }
+.soft-quarter--right    { padding-right: $base-spacing-unit * .25!important; }
+.soft-quarter--bottom   { padding-bottom:$base-spacing-unit * .25!important; }
+.soft-quarter--left     { padding-left:  $base-spacing-unit * .25!important; }
+.soft-quarter--ends     { padding-top:   $base-spacing-unit * .25!important; padding-bottom:$base-spacing-unit * .25!important; }
+.soft-quarter--sides    { padding-right: $base-spacing-unit * .25!important; padding-left:  $base-spacing-unit * .25!important; }
+
+
+.push-quarter           { margin:       $base-spacing-unit * .25!important; }
+.push-quarter--top      { margin-top:   $base-spacing-unit * .25!important; }
+.push-quarter--right    { margin-right: $base-spacing-unit * .25!important; }
+.push-quarter--bottom   { margin-bottom:$base-spacing-unit * .25!important; }
+.push-quarter--left     { margin-left:  $base-spacing-unit * .25!important; }
+.push-quarter--ends     { margin-top:   $base-spacing-unit * .25!important; margin-bottom:$base-spacing-unit * .25!important; }
+.push-quarter--sides    { margin-right: $base-spacing-unit * .25!important; margin-left:  $base-spacing-unit * .25!important; }
+
+
+/**
+* Reversed grids
+*/
+.grid--rev{
+	@extend .grid;
+	direction:rtl;
+	text-align:right;
+}
+
+.grid--rev > .grid__item{
+	direction:ltr;
+	text-align:left;
+}

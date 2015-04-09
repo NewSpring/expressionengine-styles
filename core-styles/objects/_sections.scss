@@ -1,0 +1,296 @@
+
+@if $use-sections == true {
+
+/* ============================================================
+
+$SECTION
+
+defines the base spacing of sections
+
+
+============================================================ */
+
+	section {
+		margin: 0 auto;
+		width: 100%;
+		background-color: $light-color;
+		overflow: hidden;
+
+		.shell {
+			background-color: inherit;
+		}
+
+		&.section--grey {
+			.shell {
+				background-color: #f7f7f7;
+			}
+		}
+
+		&.section--transparent {
+			.shell {
+				background-color: transparent;
+			}
+		}
+
+		&.section--primary {
+			.shell {
+				background-color: $primary-color;
+			}
+
+			h1, h2 {
+					color: $light-color;
+			}
+
+			h3, h4, h5, h6 {
+					color: $light-color;
+			}
+
+			p, li {
+				color: $light-color;
+			}
+
+			p b {
+				color: $light-color;
+			}
+
+			a {
+				color: $light-color;
+			}
+
+			.btn {
+				border-color: $light-color;
+
+				&:hover {
+					background-color: $light-color;
+					color: $primary-color;
+				}
+			}
+		}
+
+		&.section--kidspring {
+			.shell {
+				// background-color: $kidspring-color;
+			}
+
+			h1, h2 {
+					color: $light-color;
+			}
+
+			h3, h4, h5, h6 {
+					color: $light-color;
+			}
+
+			p, li {
+				color: $light-color;
+			}
+
+			p b {
+				color: $light-color;
+			}
+
+			a {
+				color: $light-color;
+			}
+
+			.btn {
+				border-color: $light-color;
+
+				&:hover {
+					background-color: $light-color;
+					color: $kidspring-color;
+				}
+			}
+		}
+		&.section--texture {
+			.shell {
+				background-color: $texture-color;
+			}
+
+			/* h1, h2 {
+					color: \$light-color;
+			}
+
+			h3, h4, h5, h6 {
+					color: \$primary-color;
+			}
+
+			p, li {
+				color: \$dark-color;
+			}
+
+			p b {
+				color: \$dark-color;
+			}
+
+			a {
+				color: \$primary-color;
+			}
+
+			.btn {
+				border-color: \$light-color;
+
+				&:hover {
+					background-color: \$light-color;
+					color: \$primary-color;
+				}
+			} */
+		}
+
+		&.section--pattern {
+
+			.shell {
+				position: relative;
+
+				&:before, &:after {
+					content: "";
+					@include absolute(bottom 0);
+					background-size: cover;
+					width: 300px;
+					height: 300px;
+					z-index: 1;
+
+					@include media-query(handheld) {
+						width: 100px;
+						height: 100px;
+					}
+				}
+
+
+				&:before {
+					left: 0;
+					background-image: url('//s3.amazonaws.com/ns.images/newspring/_fpo/pattern.left.02.png');
+				}
+
+				&:after {
+					right: 0;
+					background-image: url('//s3.amazonaws.com/ns.images/newspring/_fpo/pattern.right.02.png');
+				}
+			}
+		}
+
+		&.section--patterndown {
+
+			.shell {
+				position: relative;
+
+				&:before, &:after {
+					content: "";
+					@include absolute(top 0);
+					background-size: cover;
+					width: 300px;
+					height: 300px;
+					z-index: 1;
+					transform:rotate(180deg);
+					-ms-transform:rotate(180deg);
+					-webkit-transform:rotate(180deg);
+
+					@include media-query(handheld) {
+						width: 100px;
+						height: 100px;
+					}
+				}
+
+
+				&:before {
+					left: 0;
+					background-image: url('//s3.amazonaws.com/ns.images/newspring/_fpo/pattern.right.02.png');
+				}
+
+				&:after {
+					right: 0;
+					background-image: url('//s3.amazonaws.com/ns.images/newspring/_fpo/pattern.left.02.png');
+				}
+			}
+		}
+		&.section--dark, &.section--black {
+
+			h1, h2 {
+			    color: $brand-color;
+			}
+
+			h3, h4, h5, h6 {
+			    color: $light-color;
+			}
+
+			p, li {
+				color: darken($light-color, 20);
+			}
+
+			p b {
+				color: $light-color;
+			}
+
+			.card {
+				h1,h2,h3,h4,h5,h6,p,li {
+					color: $dark-color;
+				}
+
+				b {
+					color: #000;
+				}
+			}
+		}
+
+		&.section--dark {
+			.shell {
+				background-color: $dark-color;
+			}
+		}
+
+		&.section--black {
+			.shell {
+				background-color: #000;
+			}
+		}
+
+		&.section--collection {
+			* {
+				color: $light-color;
+			}
+
+			.btn {
+				border-color: $light-color;
+
+				&:hover {
+					background: $light-color;
+				}
+			}
+		}
+
+		&.section--secondary {
+			.shell {
+				background: $secondary-color;
+			}
+
+			* {
+				color: $light-color;
+			}
+
+			.btn {
+				border-color: $light-color;
+
+				&:hover {
+					background: $light-color;
+				}
+			}
+		}
+
+		&.section--tertiary {
+			.shell {
+				background: $tertiary-color;
+			}
+
+			* {
+				color: $light-color;
+			}
+
+			.btn {
+				border-color: $light-color;
+
+				&:hover {
+					background: $light-color;
+				}
+			}
+		}
+	}
+}

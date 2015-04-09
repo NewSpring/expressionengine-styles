@@ -1,0 +1,74 @@
+@if $use-images == true {
+
+	img {
+		display: block;
+		margin: 0 0 $base-spacing-unit/2;
+		padding: 0px;
+
+		&.flush {
+			display: block;
+		}
+	}
+
+	.image {
+		position: relative;
+		overflow: hidden;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.image--round {
+		@include radius(50%);
+	}
+
+	.small--round {
+		border: 7px solid $light-color;
+		display: inline-block;
+		margin: 0 auto;
+		width: 35%;
+	}
+
+	.background--fill {
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	.background--align-right {
+		background-position: center right;
+	}
+
+	.background--align-left {
+		background-position: center right;
+	}
+
+	.background--scale {
+  	position: fixed;
+		width: 100%;
+		height: 100%;
+		transform: scale(1.25, 1.25);
+    -webkit-transform: scale(1.25, 1.25);
+    -ms-transform: scale(1.25, 1.25);
+	}
+
+	.image--fixed {
+		background-attachment: fixed;
+		background-size: 100%;
+		background-position: top;
+	}
+
+	@include media-query(anchored) {
+		.lazy--pre {
+			opacity: 0;
+			@include vendor(transition, opacity .2s ease-in-out);
+		}
+
+		.lazy--post {
+			@include vendor(transition, opacity .2s ease-in-out);
+			opacity: 1;
+
+		}
+	}
+
+
+}

@@ -1,0 +1,254 @@
+@if $use-lists == true {
+
+/* ============================================================
+
+    $LISTS
+
+    This holds the core styles for list markup on
+    NewSpring Sites
+
+    Used in markup:
+
+    <ul>
+      <li></li>
+      <li></li>
+    </ul>
+
+    Things the base styling does:
+
+        Sets a max width of 50%
+
+        Fixes margin and padding issues present with
+        colfax and meta sans
+
+        Sets base font to be body-copy-font
+
+        Sets base size of fonts
+
+        Sets color to be list-font-color
+
+    @note
+
+      List markup should ONLY be used to create
+      typgographic lists
+
+============================================================ */
+
+ul, ol {
+  padding: 0;
+  margin: 0px;
+  margin-bottom: $base-spacing-unit/2;
+  font-size: $base-font-size;
+  font-family: $base-body-copy-font;
+
+  li {
+    margin-bottom: $base-spacing-unit/3;
+
+    &.tag {
+      margin-bottom: 0px;
+      font-size: $base-font-size*.9;
+      line-height: $base-font-size*.9;
+    }
+
+    a {
+      margin-bottom: 0px;
+    }
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  @include media-query(handheld) {
+    font-size: $handheld-font-size;
+    line-height: $handheld-line-height;
+  }
+}
+
+ul {
+  list-style: none;
+
+  &.list--bulleted {
+    list-style: outside;
+    margin-left: 24px;
+  }
+}
+
+ol {
+  margin-left: $base-spacing-unit*.7;
+
+  li {
+    font-family: $base-body-copy-font;
+  }
+}
+
+.list--inline {
+  padding-left: $base-spacing-unit/4;
+  
+  li {
+    display: inline;
+    margin-bottom: 0px;
+  }
+}
+
+
+
+
+/* ============================================================
+
+    $LIST RULED
+
+    The .list--ruled class is a small object class that
+    is used to turn a list into a ruled list with divisions
+    between each list item.
+
+    Used in markup:
+
+    <ul class="list--ruled">
+      <li>This is a list item</li>
+      <li>Another list item</li>
+    </ul>
+
+
+    Things the .list--ruled class does:
+
+      Increases padding of child list items
+
+      Creates Before/After elements for divisions between
+      list items.
+
+
+
+============================================================ */
+
+.list--ruled {
+  li {
+    position: relative;
+    padding: 17px 0 15px;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    margin-bottom: 0px;
+
+    &:last-child {
+      border-bottom: none;
+      
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+ol {
+
+  &.list--ruled {
+
+    li {
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: -42px;
+        width: 42px;
+        border-bottom: 1px solid rgba(0,0,0,.1);
+      }
+    }
+  }
+}
+
+/* ============================================================
+
+    $LIST TWEETS
+
+    The .list--tweets class is a small object class that
+    is used to turn a list into a ruled list with divisions
+    between each list item.
+
+    Used in markup:
+
+    <ul class="list--tweets">
+      <li>This is a tweet</li>
+      <li>Another tweet</li>
+    </ul>
+
+
+    Things the .list--tweets class does:
+
+      Increases padding of child list items
+
+      Creates Before/After elements for divisions between
+      list items.
+
+      Puts a boxed style around each tweet.
+
+
+
+============================================================ */
+
+.list--tweets {
+  li {
+    background-color: #fafafa;
+    font-family: $base-heading-font;
+    position: relative;
+    padding: 12px;
+    border-radius: 7px;
+    border: 1px solid rgba(0,0,0,.1);
+    width: 80%;
+
+    &:after {
+      background: #55acee;
+      color: #fff;
+      content: "tweet";
+      height: 100%;
+      margin: 0 0 0 30px;
+      right: 0;
+      position: absolute;
+      width: 20%;
+    }
+
+    a {
+      font-family: $base-heading-font;
+    }
+
+
+  }
+}
+
+
+
+/* ============================================================
+
+    $LIST TITLE
+
+    The .list--title class is a small object class that
+    is used to turn the first <li> in a list into the
+    title of the list.
+
+    Used in markup:
+
+    <ul>
+      <li class="list--title">This is a title</li>
+      <li></li>
+    </ul>
+
+
+    Things the .list--title class does:
+
+      Resets list sytling to default body copy
+
+      Sets sytling to match heading styles
+
+
+
+============================================================ */
+
+.list--title {
+  @extend h5;
+  display: inline-block;
+
+  list-style: none;
+
+}
+
+
+}//endif of $use-lists

@@ -1,0 +1,119 @@
+/* ============================================================
+    NewSpring Web Core Styles -- Read First
+
+
+    $WARNING
+
+    The NewSpring Core Styles, being an OO framework, work in
+    keeping with the open/closed principle. The variables
+    you set previously are now being used throughout the core
+    to style everything we need for a base. Any custom styles SHOULD
+    NOT be added or modified in the core directly,
+    but added via your theme stylesheet as per the open/closed principle:
+
+    csswizardry.com/2012/06/the-open-closed-principle-applied-to-css
+
+    Try not to edit any CSS beyond this point;
+
+
+    $CONTENTS
+
+    CONTENTS...........You're reading it!
+    WARNING............Here be drewgons
+    IMPORTS............Being importing the sections below
+
+    DEFAULTS...........Defualt vars overwriting inuit.css and adding new vars
+
+    CORE MIXINS........Mixin Library
+
+    OBJECTS............Start defining objects
+
+    BASE...............Base styles for html
+    SECTIONS...........Section objects
+
+    HEADINGS...........Heading objects
+    BODY-COPY..........Body copy objects
+    LINKS..............Links objects
+    LISTS..............Lists objects
+    BLOCKQUOTES........Blockquote objects
+    INPUTS.............Form field objects
+
+    IMAGES.............Images objects
+    OVERLAYS...........Overlay objects
+
+    ICONS..............Icon objects
+    BUTTONS............Button objects
+    RATIOS.............Ratio objects
+    NEWSPRING-ICON.....Create the mark
+
+    COMPLEX-OBJECTS....Start defining complex objects
+
+    TILES..............Tile objects
+    ACCORDIONS.........Accordions object
+    POSITIONING........Positioning object
+
+    $IMPORTS
+
+    Imports are done in a specific order, if you change the
+    order of the following list do so with good reason and
+    check to make sure no compile errors or cascade issues
+    flag
+
+============================================================ */
+
+// Default variables
+@import "defaults";
+@import "../inuit/inuit";
+
+
+// Mixin Library
+@import "core-mixins";
+
+// Inuit core chanes
+@import "objects/inuit-changes";
+
+// All Objects
+@import "objects/debug";
+@import "objects/base";
+
+// Typgography
+@import "objects/headings";
+@import "objects/body-copy";
+@import "objects/links";
+@import "objects/lists";
+@import "objects/blockquote";
+@import "objects/inputs";
+@import "objects/images";
+@import "objects/shapes";
+@import "objects/forms";
+@import "objects/tags";
+
+// Icons
+@import "objects/icons";
+@import "objects/fa-icons";
+@import "objects/buttons";
+@import "objects/newspring-icon";
+@import "objects/social";
+
+// Layout
+@import "objects/sections";
+@import "objects/cards";
+
+// Complex objects
+@import "complex-objects/ratios";
+@import "complex-objects/heroes";
+@import "complex-objects/tiles";
+@import "complex-objects/accordions";
+@import "complex-objects/layout";
+@import "complex-objects/grids";
+@import "complex-objects/overlays";
+@import "complex-objects/slider";
+@import "complex-objects/modals";
+@import "complex-objects/maps";
+@import "complex-objects/iframes";
+
+// Sections
+@import "sections/footer";
+@import "sections/masthead";
+@import "sections/search";
+@import "sections/testing";

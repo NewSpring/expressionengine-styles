@@ -1,0 +1,106 @@
+@if $use-grids == true {
+	$enclosed-font-size: 20px;
+	$enclosed-line-height: 28px;
+	$enclosed-spacing-unit: $base-spacing-unit/2;
+
+	.grid, .grid__item {
+		position: relative;
+		@include vendor(transition, all $global-duration $global-function);
+	}
+
+	.grid__item {
+		margin-bottom: $base-spacing-unit;
+	}
+
+	.section--condensed {
+		
+		.grid {
+			.grid__item:first-child {
+				// Adds top margin to the first element within the first grid item within a condensed section that isn't a grid element
+				*:first-child:not([class*="grid"]) {
+					margin-top: $base-spacing-unit/2;
+				}
+
+				.card {
+					&:first-child {
+						margin-top: 0px;
+					}
+					*:first-child {
+						margin-top: 0px;
+					}
+				}
+
+				.ratio__item {
+					margin-top: 0px !important;
+				}
+			}
+		}
+
+		.shell {
+			padding: $base-spacing-unit $base-spacing-unit $base-spacing-unit/2;
+
+			@include media-query(portable) {
+				padding: $base-spacing-unit/2 $base-spacing-unit/2 0;
+			}
+
+			@include media-query(handheld) {
+				padding: $base-spacing-unit/4 $base-spacing-unit/4 0;
+			}
+		}
+
+		.grid {
+			margin-left: -$enclosed-spacing-unit;
+			padding-bottom: 0;
+
+			.grid__item {
+				padding-left: $enclosed-spacing-unit;
+				margin-bottom: $enclosed-spacing-unit;
+
+				p {
+					font-size: $enclosed-font-size;
+					line-height: $enclosed-line-height;
+				}
+			}
+
+			@include media-query(handheld) {
+				margin-left: -$enclosed-spacing-unit/2;
+
+				.grid__item {
+					padding-left: $enclosed-spacing-unit/2;
+					margin-bottom: $enclosed-spacing-unit/2;
+				}
+			}
+		}
+	}
+
+	// Removes bottom margin from last element within a grid item
+	.grid__item {
+		*:last-child:not(:first-child) {
+			margin-bottom: 0px;
+		}
+	}
+
+	.grid--half-gutter {
+		margin-left: -$base-spacing-unit/2;
+
+		.grid__item {
+			padding-left: $base-spacing-unit/2;
+		}
+
+		@include media-query(portable) {
+			margin-left: -$base-spacing-unit;
+
+			.grid__item {
+				padding-left: $base-spacing-unit;
+			}
+		}
+
+		@include media-query(handheld) {
+			margin-left: -$base-spacing-unit;
+
+			.grid__item {
+				padding-left: $base-spacing-unit;
+			}
+		}
+	}
+}

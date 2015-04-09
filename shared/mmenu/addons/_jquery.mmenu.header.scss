@@ -1,0 +1,139 @@
+/*
+	jQuery.mmenu header addon CSS
+*/
+
+@import "../inc/mmenu_variables";
+
+$height: 50px;
+$padding: 10px;
+$paddingTop: $height / 2;
+
+.mm-header
+{
+	position: relative;
+	@include vendor-prefix( "box-sizing", border-box );
+	height: $height;
+	background: inherit;
+	border-bottom: 1px solid transparent;
+	text-align: center;
+	width: 100%;
+
+	.mm-title
+	{
+		@include ellipsis;
+		font-weight: bold;
+		display: inline-block;
+		width: 100%;
+		height: $height+2;
+		line-height: $height + 6;
+		position: relative;
+		z-index: 1;
+		text-align: left;
+		text-indent: $height;
+		background: #222;
+		color: #fff;
+	}
+
+	.mm-prev,
+	.mm-next
+	{
+		@include vendor-prefix( 'box-sizing', border-box );
+		font-weight: bold;
+		color: #fff;
+		text-decoration: none;
+		display: block;
+		width: $btnSize;
+		height: $height + 2;
+		width: 100%;
+		line-height: $height + 4;
+		position: absolute;
+		background: #222;
+		top: 0px;
+		left: 0px;
+		z-index: 5;
+		text-align: left;
+		text-indent: $height;
+
+		&:before
+		{
+			@include arrow;
+			margin-bottom: -( $padding + 10 );
+		}
+	}
+	.mm-prev
+	{
+		left: 0;
+
+		&:before
+		{
+			@include arrow-prev;
+			left: 22px;
+		}
+	}
+	.mm-next
+	{
+		right: 0;
+
+		&:before
+		{
+			@include arrow-next;
+			right: 18px;
+		}
+	}
+}
+
+.mm-menu.mm-hassearch .mm-header
+{
+
+	.mm-prev:before,
+	.mm-next:before
+	{
+		margin-bottom: -4px;
+	}
+}
+
+$hTop: $height;
+$sTop: $height + $btnSize;
+.mm-menu.mm-hasheader
+{
+	li.mm-subtitle
+	{
+		height: $height;
+		background: #8CC63F;
+
+		.mm-subclose {
+			z-index: 1;
+			&:before {
+				display: none;
+			}
+		}
+	}
+	.mm-panel
+	{
+		padding-top: $height;
+	}
+	&.mm-hassearch > .mm-panel
+	{
+		padding-top: $height;
+	}
+	&.mm-ismenu
+	{
+		> .mm-panel
+		{
+			padding-top: $height;
+		}
+		&.mm-hassearch > .mm-panel
+		{
+			padding-top: $height*2;
+			background: #0a0a0a;
+
+			&#mm-m0-p0 {
+				padding-top: $height*2;
+			}
+		}
+	}
+}
+
+
+
+@include colors_header;

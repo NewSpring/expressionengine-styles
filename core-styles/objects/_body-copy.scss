@@ -1,0 +1,149 @@
+@if $use-body-copy == true {
+
+/* ============================================================
+
+    $PARAGRAPHS
+
+============================================================ */
+
+  p {
+    font-family: $base-body-copy-font;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    margin-bottom: $base-spacing-unit*.5;
+
+    @include media-query(handheld) {
+      font-size: $handheld-font-size;
+      line-height: $handheld-line-height;
+    }
+  }
+
+  b, strong {
+    font-weight: 600;
+  }
+
+  .text--larger {
+    font-size: $base-font-size*1.2;
+    line-height: $base-line-height*1.2;
+
+    p, a, li {
+      font-size: $base-font-size*1.2;
+      line-height: $base-line-height*1.2;
+    }
+
+    @include media-query(handheld) {
+      font-size: $handheld-font-size;
+      line-height: $handheld-line-height;
+
+      p, a, li {
+        font-size: $handheld-font-size;
+        line-height: $handheld-line-height;
+      }
+    }
+  }
+
+  .text--constrained {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 860px;
+  }
+
+  .text--choked {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 75%;
+  }
+
+  .text--padded {
+    padding: $base-spacing-unit*.5;
+  }
+
+  .text--padded-large {
+    padding: $base-spacing-unit;
+  }
+
+  .text--padded-ends {
+    padding-top: $base-spacing-unit*.5;
+    padding-bottom: $base-spacing-unit*.5;
+  }
+
+  .text--padded-sides {
+    padding-left: $base-spacing-unit*.5;
+    padding-right: $base-spacing-unit*.5;
+  }
+
+  .source {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    margin-top: $base-spacing-unit*.25;
+  }
+
+
+
+/* ============================================================
+
+    $SMALL
+
+============================================================ */
+
+  small {
+    font-family: $base-heading-font;
+    font-size: $base-font-size * .87;
+    line-height: $base-line-height * .87;
+    display: inline-block;
+    margin-bottom: $base-line-height * .5;
+    color: $light-font-color;
+
+    a {
+      font-size: $base-font-size * .87;
+      line-height: $base-line-height * .87;
+    }
+
+    @include media-query(handheld) {
+      font-size: $base-font-size*.8;
+      line-height: $base-line-height*.8;
+
+      a {
+        font-size: $base-font-size*.8;
+        line-height: $base-line-height*.8;
+      }
+    }
+  }
+
+
+
+
+
+/* ============================================================
+
+    $ASIDE
+
+============================================================ */
+
+  aside {
+    font-family: $base-heading-font;
+    font-weight: normal;
+    font-size: $base-font-size;
+    font-style: italic;
+    line-height: $base-line-height;
+    display: inline-block;
+    width: 80%;
+    margin: -2px 0 ($base-line-height + 2);
+    text-indent: 0;
+    color: $light-font-color;
+  }
+}
+
+
+.editorial-wrapper {
+  ul {
+    list-style: outside;
+    margin-left: $base-spacing-unit/3;
+  }
+
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
+}

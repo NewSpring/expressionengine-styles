@@ -1,0 +1,141 @@
+@if $use-heroes == true {
+
+	.non-hero {
+		padding-top: 120px;
+		padding-bottom: 100px;
+		@include media-query(handheld) {
+			padding-top: 80px;
+			padding-bottom: 60px;
+		}
+	}
+
+	.hero {
+		//background-color: $dark-color !important;
+		position: relative;
+		margin-bottom: 0px;
+		padding: 0px;
+
+		.section--dark & {
+
+			h1 {
+				color: $light-color;
+			}
+		}
+
+		/* &:after {
+			@include triangle(100px, 35px, down, black);
+			@include absolute(bottom -35px left 50%);
+			background: inherit;
+			margin-left: -57px;
+			z-index: 1;
+		} */
+
+		&.floating--left {
+			.text--constrained {
+				text-align: left;
+				margin: 0px;
+				max-width: 960px;
+			}
+		}
+
+
+		h1 {
+			display: inline-block;
+			font-weight: 300;
+			font-size: $base-font-size*4;
+			line-height: $base-font-size*4.25;
+			letter-spacing: -5px;
+			margin-bottom: $base-spacing-unit/2;
+			text-transform: none;
+			text-shadow: 0 0 85px rgba(0,0,0,.7), 0 0 45px rgba(0,0,0,.7);
+
+		}
+
+		p, a:not(.btn), li {
+			font-family: $base-heading-font;
+			font-size: $base-font-size;
+			line-height: $base-line-height;
+		}
+
+		b {
+			font-family: $base-heading-font;
+			text-transform: uppercase;
+		}
+
+		a {
+			//text-decoration: underline;
+		}
+
+		.overlay__item {
+			padding: 90px;
+
+			*:last-child {
+				margin-bottom: 0px;
+			}
+		}
+
+		@include media-query(handheld) {
+			h1 {
+				font-size: $base-font-size*2;
+				line-height: $base-font-size*2;
+				letter-spacing: -4px;
+				margin-bottom: $base-spacing-unit/4;
+			}
+			p, a, li {
+				font-size: $base-font-size * .75;
+				line-height: $base-line-height * .75;
+			}
+			.overlay__item {
+				padding: 20px;
+				padding-top: 25px;
+			}
+		}
+
+	}
+
+	.cutout--triangle {
+
+		& + section{
+			.shell {
+				padding-top: $base-spacing-unit*1.5;
+				position: relative;
+				z-index: 2;
+				@include media-query(lap-and-up) {
+					padding-top: $base-spacing-unit*2;
+				}
+			}
+		}
+		
+		.overlay {
+			
+			.overlay__item {
+				padding-bottom: 70px;
+			}
+		}
+
+		.shell {
+			position: relative;
+			overflow: hidden;
+
+			&:before, &:after {
+				content: '';
+				display: block;
+				height: 80px;
+				@include absolute(bottom -38px);
+				width: 80%;
+				z-index: 1;
+				background-color: inherit;
+			}
+
+			&:before {
+				@include vendor(transform, skew(65deg, 0deg));
+				left: -30%;
+			}
+
+			&:after {
+				@include vendor(transform, skew(-65deg, 0deg));
+				right: -30%;
+			}
+		}
+	}
+}

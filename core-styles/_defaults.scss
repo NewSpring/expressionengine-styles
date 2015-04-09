@@ -1,0 +1,178 @@
+/* ------------------------------------------------------------------------------
+     $COLORS
+ ------------------------------------------------------------------------------ */
+$primary-color:    #6BAC43!default;
+$secondary-color:  #1c683e!default;
+$tertiary-color:   #2a4930!default;
+
+$dark-color:       #303030!default;
+$medium-color:     #858585!default;
+$light-color:      white!default;
+
+$gray-primary:     #dddddd;
+$gray-secondary:   #858585;
+$gray-tertiary:    #303030;
+
+$texture-color:    #bd9b68!default;
+
+$base-ui-color:    #ddd!default;
+$base-font-color:  #3d3d3d!default;
+$light-font-color: #adadad!default;
+$list-font-color:  #5d5d5d!default;
+
+$facebook:	    #42599e!default;
+$twitter:	   	    #55acee!default;
+$google:           #DD4B39!default;
+$instagram:	    #3f729b!default;
+$linkedin:         #0976b4!default;
+$youtube:          #b31217!default;
+$pinterest:        #be0a21!default;
+
+$alert-color:      #C64F55!default;
+
+$kidspring-color:   #369DD5!default;
+
+
+
+/* ------------------------------------------------------------------------------
+     $FONTS
+ ------------------------------------------------------------------------------ */
+$base-heading-font:   "colfax-web", sans-serif!default;
+$base-body-copy-font: 'ff-meta-serif-web-pro', serif!default;
+
+$font-size:           22px!default;
+$line-height:         30px!default;
+$icon-size:           48px!default;
+
+$handheld-font-size:      20px!default;
+$handheld-line-height:    26px!default;
+
+$h1:      ($font-size * 2.8)!default;
+$h2:      ($font-size * 2.6)!default;
+$h3:      ($font-size * 1.4)!default;
+$h4:      ($font-size * 1.3)!default;
+$h5:      ($font-size * 1.2)!default;
+$h6:      ($font-size * .9)!default;
+
+$handheld-h1:            ($font-size * 2.5)!default;
+$handheld-h2:            ($font-size * 1.6)!default;
+$handheld-h3:            ($font-size * 1.2)!default;
+$handheld-h4:            ($font-size * 1.25)!default;
+$handheld-h5:            ($font-size * 1.1)!default;
+$handheld-h6:            ($font-size * .9)!default;
+
+
+
+/* ------------------------------------------------------------------------------
+     $LAYOUT
+ ------------------------------------------------------------------------------ */
+$max-width: 		1680px!default;
+$copy-max-width: 	900px!default;
+
+
+
+/* ------------------------------------------------------------------------------
+     $Z-INDEX MAP
+ ------------------------------------------------------------------------------ */
+$zindex: (
+	modal	: 100,
+	masthead 	: 90,
+	ooyala    : 10000,
+	share     : 110
+);
+
+
+
+/* ------------------------------------------------------------------------------
+     $BORDERS
+ ------------------------------------------------------------------------------ */
+$border-radius: 	2px!default;
+$border-size: 		3px!default;
+
+
+
+/* ------------------------------------------------------------------------------
+     $ANIMATIONS
+ ------------------------------------------------------------------------------ */
+$global-duration:      .1s!default;
+$global-function:      ease-in-out!default;
+$global-delay:         .2s!default;
+$global-count:         1!default;
+$global-fill:          both!default;
+$global-visibility:    hidden!default;
+$prefixes:             (webkit moz ms o spec)!default;
+$prefix-for-webkit:    true!default;
+$prefix-for-mozilla:   true!default;
+$prefix-for-microsoft: true!default;
+$prefix-for-opera:     true!default;
+$prefix-for-spec:      true!default; // required for keyframe mixin
+
+
+
+/* ------------------------------------------------------------------------------
+     $COMPLEX OBJECTS
+ ------------------------------------------------------------------------------ */
+$use-accordions:     true!default;
+$use-grids:          true!default;
+$use-heroes:         true!default;
+$use-layout:         true!default;
+$use-modals:         true!default;
+$use-overlays:       true!default;
+$use-ratios:         true!default;
+$use-share-links:    true!default;
+$use-slider:    	   true!default;
+$use-tiles:          true!default;
+$use-iframes:        true!default;
+
+
+
+/* ------------------------------------------------------------------------------
+     $OBJECTS
+ ------------------------------------------------------------------------------ */
+$use-blockquotes:    true!default;
+$use-body-copy:      true!default;
+$use-buttons:        true!default;
+$use-cards:       	 true!default;
+$use-debug:       	 false!default;
+$use-forms:       	 true!default;
+$use-headings:       true!default;
+$use-icons:          true!default;
+$use-fa-icons:       true!default;
+$use-images:         true!default;
+$use-inputs:         true!default;
+$use-links:          true!default;
+$use-lists:          true!default;
+$use-newspring-icon: true!default;
+$use-sections:       true!default;
+$use-social:       	 true!default;
+$use-tags:           true!default;
+$use-maps:           true!default;
+
+
+
+/* ------------------------------------------------------------------------------
+     $SECTIONS
+ ------------------------------------------------------------------------------ */
+$use-footer:		 true!default;
+$use-masthead:       true!default;
+$use-search:       	 true!default;
+
+
+
+
+/* ------------------------------------------------------------------------------
+     $INUIT MAPS
+ ------------------------------------------------------------------------------ */
+$primary-color:    $brand-color;
+$base-font-family: $base-heading-font;
+$base-font-size:   $font-size;
+$base-line-height: $line-height;
+$h1-size:          $h1;
+$h2-size:          $h2;
+$h3-size:          $h3;
+$h4-size:          $h4;
+$h5-size:          $h5;
+$h6-size:          $h6;
+$brand-round:      $border-radius;
+$responsive-extra:  true;
+$responsive-extended: true;

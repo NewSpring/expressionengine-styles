@@ -1,0 +1,368 @@
+// @charset "utf-8";
+/* ==========================================================================
+    NewSpring Mixins -- Read First
+   ========================================================================== */
+
+//   ** for master.scss files **
+//   @import "../../_shared/mixins/ns_base";
+//
+//   ** for section files **
+//   @import "../../_shared/mixins/ns_base";
+
+//   ** for extra responsive design **
+//   @import "../../_shared/mixins/media-query-extended";
+
+
+/* ==========================================================================
+    NewSpring Mixins -- Import Inuit mixins
+   ========================================================================== */
+
+    @import "../../inuit/defaults";
+    @import "../../inuit/generic/mixins";
+
+
+
+/* ==========================================================================
+    NewSpring Mixins -- Extra Mixins
+   ========================================================================== */
+   @import "experimental_support";
+   @import "animate";
+   @import "media_query_extender";
+
+
+   // @import "longShadow"; //create long shadows on the fly
+   // @include long-shadow(type[text or box], color, length, fadeout[true or false], skew[true or false], direction[right or left])
+
+   // @import "focal_point"; //responsive image focal points
+   // @include focal-point(grid[even number *default is 12], landscape[true or false], portrait[true or false], breakpoint, inner-element, zoom-factor, zoom-levels)
+
+   @import "sass_buttons";
+   @import "icons";
+
+
+/* ==========================================================================
+    NewSpring Mixins -- Positioning
+   ========================================================================== */
+
+//@include floating(vertical, horizonal);
+@mixin floating($vertical, $horizontal, $child: '') {
+    text-align: $horizontal;
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: $vertical;
+        margin-left: -0.25em;
+    }
+    @if ($child == ''){
+        a, div, img, ul{
+            display: inline-block;
+            vertical-align: $vertical;
+        }
+    }
+    @else {
+        .#{$child}{
+            display: inline-block;
+            vertical-align: $vertical;
+
+        }
+    }
+}
+
+//@include columns(count, gap);
+@mixin columns($count, $gap) {
+    -moz-column-count: $count;
+    -moz-column-gap: $gap;
+    -webkit-column-count: $count;
+    -webkit-column-gap: $gap;
+    column-count: $count;
+    column-gap: $gap;
+}
+
+//@include rotate(degree);
+@mixin rotate($degree) {
+    transform: rotate($degree);
+    -ms-transform: rotate($degree);
+    /* IE 9 */
+    -webkit-transform: rotate($degree);
+    /* Safari and Chrome */
+}
+
+
+
+//@include fixed-ratio(width(ratio format), height(ratio format), childname)
+@mixin fixed-ratio($width, $height, $child){
+    $percentage : ($height/$width * 100%);
+    position: relative;
+    &:before{
+        content: "";
+        display: block;
+        padding-top: $percentage;  /* initial ratio of 1:1*/
+    }
+    .#{$child}{
+        position:  absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+
+
+/* ==========================================================================
+    NewSpring Mixins -- Shape Generators
+   ========================================================================== */
+
+//@include radius(#deg);
+@mixin radius($radius) {
+    -ms-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+//@include circle(size);
+@mixin circle($size){
+    content: '';
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+}
+
+//@include checkmark(size, color)
+@mixin checkmark($size, $color){
+    /*Add another block-level blank space*/
+    content:"";
+    display:block;
+
+    /*Make it a small rectangle so the border will create an L-shape*/
+    width: $size/2 ;
+    height: $size ;
+
+    /*Add a border on the bottom and left, creating that 'L' */
+    border: solid $color;
+    border-width: 0 $size/4 $size/4 0;
+
+    /*Rotate the L 45 degrees to turn it into a checkmark*/
+    @include rotate(45deg)
+}
+
+
+//@include ns-arrow(orientation, position, size, color, border-colorOptional, offsetOptional, border-sizeOptional, direction(default out)); //** should be used in an after or before element**
+@mixin ns-arrow($orientation, $position, $size, $color, $border-color: $color, $offset: 0px, $border-size: 0px, $direction: out) {
+        @if $direction == out {
+            @if $orientation == left or $orientation == right {
+                @if $orientation == left {
+                    left: 0;
+                    margin-left: ($size + $offset) * -1;
+                    @include rotate(225deg);
+                }
+                @if $orientation == right {
+                    right: 0;
+                    margin-right: ($size + $offset) * -1;
+                    @include rotate(45deg);
+                }
+            }
+            @if $orientation == top or $orientation == bottom {
+                @if $orientation == top {
+                    top: 0;
+                    margin-top: ($size + $offset) * -1;
+                    @include rotate(315deg);
+                }
+                @if $orientation == bottom {
+                    bottom: 0;
+                    margin-bottom: ($size + $offset) * -1;
+                    @include rotate(135deg);
+                }
+            }
+        }
+        @if $direction == in {
+            @if $orientation == left or $orientation == right {
+                @if $orientation == left {
+                    left: 0;
+                    margin-left: ($size + $border-size + $offset) * -1;
+                    @include rotate(45deg);
+                }
+                @if $orientation == right {
+                    right: 0;
+                    margin-right: ($size + $border-size + $offset) * -1;
+                    @include rotate(225deg);
+                }
+            }
+            @if $orientation == top or $orientation == bottom {
+                @if $orientation == top {
+                    top: 0;
+                    margin-top: ($size + $border-size + $offset) * -1;
+                    @include rotate(135deg);
+                }
+                @if $orientation == bottom {
+                    bottom: 0;
+                    margin-bottom: ($size + $border-size + $offset) * -1;
+                    @include rotate(315deg);
+                }
+            }
+        }
+        @if $position == top {
+            top: 0;
+        }
+        @if $position == middle {
+            @if $orientation == left or $orientation == right {
+                top: 50%;
+                margin-top: -$size;
+            }
+            @if $orientation == top or $orientation == bottom {
+                left: 50%;
+                margin-left: -$size;
+            }
+        }
+        @if $position == bottom {
+            bottom: 0;
+        }
+        @if $position == left {
+            left: 0;
+        }
+        @if $position == right {
+            right: 0;
+        }
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        background: $color;
+        position: absolute;
+        pointer-events: none;
+        border-width: $size;
+        box-shadow: $border-size  $border-size * -1  0px $border-color;
+}
+
+/* ==========================================================================
+    NewSpring Mixins -- Icons
+   ========================================================================== */
+
+//@include checkbox-circle($size, $background-color, $check-color, $orientation: left, $position: top, $offset-top: 0px, $offset-bottom: 0px);
+@mixin checkbox-circle($size, $background-color, $check-color, $orientation: left, $position: top, $offset-top: 0px, $offset-left: 0px){
+    &:before{
+        /*Make circle*/
+        @include circle($size);
+
+        /*Set background-color*/
+        background: $background-color;
+
+        position: absolute;
+
+        @if $position == top {
+            top: 0;
+
+        }
+        @if $position == middle {
+            @if $orientation == left or $orientation == right {
+                top: 50%;
+                margin-top: -$size;
+            }
+            @if $orientation == top or $orientation == bottom {
+                left: 50%;
+                margin-left: -$size;
+            }
+        }
+        @if $position == bottom {
+            bottom: 0;
+        }
+        @if $position == left {
+            left: 0;
+        }
+        @if $position == right {
+            right: 0;
+        }
+        // top: 0;
+        // left: 0;
+        margin-top: $offset-top;
+        margin-left: $offset-left;
+
+        // margin-top: 50px;
+        // margin-left: 45px;
+
+    }
+
+    &:after{
+        @include checkmark($size/2, $check-color);
+        /*Position it on top of the circle*/
+        position:absolute;
+        @if $position == top {
+                    top: 0;
+                    margin-left: $size * 3/8 + $offset-left;
+                    margin-top: $size * 3/16 + $offset-top;
+                }
+                @if $position == middle {
+                    @if $orientation == left or $orientation == right {
+                        top: 50%;
+                        margin-top: -$size;
+                    }
+                    @if $orientation == top or $orientation == bottom {
+                        left: 50%;
+                        margin-left: -$size;
+                    }
+                }
+        @if $position == bottom {
+            bottom: 0;
+        }
+        @if $position == left {
+            left: 0;
+        }
+        @if $position == right {
+            right: 0;
+        }
+        // margin-top: 55px;
+        // margin-left: 56px;
+
+
+        }
+}
+
+
+/* ==========================================================================
+    NewSpring Mixins -- Colors/Misc
+   ========================================================================== */
+//@include gradient(direction(up or down), start-color, finish-color, start position(default), finish position(default))
+@mixin gradient($direction, $start-color, $finish-color, $start-position: 0%, $finish-position: 100%){
+    @if $direction == down {
+        background: -moz-linear-gradient(top, $start-color $start-position, $finish-color $finish-position); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop($start-position,$start-color), color-stop($finish-position,$finish-color)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, $start-color $start-position,$finish-color $finish-position); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, $start-color $start-position,$finish-color $finish-position); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, $start-color $start-position,$finish-color $finish-position); /* IE10+ */
+        background: linear-gradient(to bottom, $start-color $start-position,$finish-color $finish-position); /* W3C */
+        // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    }
+
+    @if $direction == up{
+        background: -moz-linear-gradient(bottom, $start-color $start-position, $finish-color $finish-position); /* FF3.6+ */
+        background: -webkit-gradient(linear, left bottom, left top, color-stop($start-position,$start-color), color-stop($finish-position,$finish-color)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(bottom, $start-color $start-position,$finish-color $finish-position); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(bottom, $start-color $start-position,$finish-color $finish-position); /* Opera 11.10+ */
+        background: -ms-linear-gradient(bottom, $start-color $start-position,$finish-color $finish-position); /* IE10+ */
+        background: linear-gradient(to top, $start-color $start-position,$finish-color $finish-position); /* W3C */
+        // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    }
+
+}
+
+
+//@include paceholder{}
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content};
+  &:-moz-placeholder           {@content};
+  &::-moz-placeholder          {@content};
+  &:-ms-input-placeholder      {@content};
+}
+
+// @each $state in palm, palm-wide, lap, lap-wide, desk, desk-wide {
+//     @include media-query(#{$state}) {
+//         @include breakpoint('#{$state}');
+//     }
+// }
+@mixin breakpoint($name) {
+  body:after {
+    content: $name;
+  }
+}

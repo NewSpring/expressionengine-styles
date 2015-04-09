@@ -1,0 +1,27 @@
+/**
+ *
+ *
+ *  DEPRECIATED
+ *
+ *
+ */
+
+
+//@include media-query-extender(size, min(or max))
+@mixin media-query-extender($media-query, $minormax: max) {
+    @if $minormax == max {
+        @media only screen and (max-width: $media-query) {
+            @content;
+        }
+    }
+    @if $minormax == min {
+        @media only screen and (min-width: $media-query) {
+            @content;
+        }
+    }
+}
+
+
+
+
+

@@ -1,0 +1,26 @@
+@mixin icon--search ($icon-size, $line-size: 3px) {
+
+  &:before {
+      @include circle( ($icon-size * .375) );
+      border: ($line-size) solid $brand-color;
+      margin-top: -($icon-size * .25);
+      margin-left: -($icon-size * .25);
+
+  }
+
+  &:after {
+      height: ($icon-size * .25);
+      border-right: $line-size solid $brand-color;
+      margin-left: ($icon-size * .1);
+
+      // one pixel bump for super thin lines
+      @if $line-size == 1 {
+          margin-left: (($icon-size * .1) * .5) + 2;
+      }
+
+      margin-top: -($icon-size * .01);
+
+      // curve the base of the stem
+      @include radius(0 0 ($line-size * 2) ($line-size * 2));
+  }
+}

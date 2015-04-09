@@ -1,0 +1,10 @@
+@if $use-newspring-icon == true {
+
+//declare the icon for global default use
+%newspring--icon, .newspring--icon {
+    @include newspring--icon($base-spacing-unit * 4, $brand-color);
+
+}
+
+
+} //endif of $use-newspring-icon 

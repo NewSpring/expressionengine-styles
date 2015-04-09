@@ -1,0 +1,375 @@
+/**
+ * Style trumps; helper and brand classes
+ */
+
+@import "../../../../vendor/stylesheets/inuit/generic/helper";
+@import "../../../../vendor/stylesheets/inuit/objects/grids";
+@import "../../../../vendor/stylesheets/inuit/generic/widths";
+@import "../../../../vendor/stylesheets/inuit/generic/push";
+@import "../../../../vendor/stylesheets/inuit/generic/pull";
+
+/**
+ *
+ * Resetting of Inuit Grid Framework
+ *
+ * Addition of new media query classes
+ *
+ * Possible media query variables:
+ *
+ *
+ */
+
+/*------------------------------------*\
+    $RESPONSIVE
+\*------------------------------------*/
+/**
+ * Responsiveness?
+ */
+$responsive:        true!default;
+
+/**
+ * Responsiveness for widescreen/high resolution desktop monitors and beyond?
+ * Note: `$responsive` variable above must be set to true before enabling this.
+ */
+$responsive-extra:  true!default;
+$responsive-extended: true!default;
+
+/**
+ * Responsive push and pull produce a LOT of code, only turn them on if you
+ * definitely need them.
+ */
+$push:              false!default;
+/**
+ * Note: `$push` variable above must be set to true before enabling these.
+ */
+$palm-push:         false!default;
+$palm-wide-push:    false!default;
+$palm-wide-and-up-push:  false!default;
+$handheld-push:     false!default;
+$lap-push:          false!default;
+$lap-and-up-push:   false!default;
+$lap-wide-push:     false!default;
+$lap-wide-and-up-push:   false!default;
+$portable-push:     false!default;
+$anchored-push:     false!default;
+$desk-push:         false!default;
+$desk-wide-push:    false!default;
+
+$pull:              false!default;
+/**
+ * Note: `$pull` variable above must be set to true before enabling these.
+ */
+$palm-pull:         false!default;
+$palm-wide-pull:    false!default;
+$palm-wide-and-up-pull:  false!default;
+$handheld-pull:     false!default;
+$lap-pull:          false!default;
+$lap-and-up-pull:   false!default;
+$lap-wide-pull:     false!default;
+$lap-wide-and-up-pull:   false!default;
+$portable-pull:     false!default;
+$anchored-pull:     false!default;
+$desk-pull:         false!default;
+$desk-wide-pull:    false!default;
+
+/**
+ * Tell inuit.css when breakpoints start.
+ */
+$palm-wide-start:   481px;
+$lap-start:         769px;
+$lap-wide-start:    1025px;
+$desk-start:        1281px;
+$desk-wide-start:   1681px;
+
+
+
+/**
+ * Media query mixin.
+ *
+ * It’s not great practice to define solid breakpoints up-front, preferring to
+ * modify your design when it needs it, rather than assuming you’ll want a
+ * change at ‘mobile’. However, as inuit.css is required to take a hands off
+ * approach to design decisions, this is the closest we can get to baked-in
+ * responsiveness. It’s flexible enough to allow you to set your own breakpoints
+ * but solid enough to be frameworkified.
+ *
+ * We define some broad breakpoints in our vars file that are picked up here
+ * for use in a simple media query mixin. Our options are:
+ *
+ * palm
+ * lap
+ * lap-and-up
+ * portable
+ * desk
+ * desk-wide
+ *
+ * Not using a media query will, naturally, serve styles to all devices.
+ *
+ * `@include media-query(palm){ [styles here] }`
+ *
+ * We work out your end points for you:
+ */
+$palm-end:              $palm-wide-start - 1px;
+$palm-wide-end:         $lap-start - 1px;
+$lap-end:               $lap-wide-start - 1px;
+$lap-wide-end:          $desk-start - 1px;
+$desk-end:              $desk-wide-start - 1px;
+
+@mixin media-query($media-query){
+
+    @if $media-query == palm{
+
+        @media only screen and (max-width:$palm-end) { @content; }
+
+    }
+
+    @if $media-query == palm-wide{
+
+        @media only screen and (min-width:$palm-end) and (max-width:$palm-wide-end) { @content; }
+
+    }
+
+    @if $media-query == palm-wide-and-up{
+
+        @media only screen and (min-width:$palm-wide-end) { @content; }
+
+    }
+
+    @if $media-query == handheld{
+
+        @media only screen and  (max-width:$palm-wide-end) { @content; }
+
+    }
+
+    @if $media-query == lap{
+
+        @media only screen and (min-width:$lap-start) and (max-width:$lap-end) { @content; }
+
+    }
+
+    @if $media-query == lap-and-up{
+
+        @media only screen and (min-width:$lap-start) { @content; }
+
+    }
+
+    @if $media-query == lap-wide{
+
+        @media only screen and (min-width:$lap-wide-start) and (max-width:$lap-wide-end) { @content; }
+
+    }
+
+    @if $media-query == lap-wide-and-up{
+
+        @media only screen and (min-width:$lap-wide-start) { @content; }
+
+    }
+
+    @if $media-query == portable{
+
+        @media only screen and (min-width:$lap-start) and (max-width:$lap-wide-end) { @content; }
+
+    }
+
+    @if $media-query == anchored{
+
+        @media only screen and (min-width:$desk-start) { @content; }
+
+    }
+
+    @if $media-query == desk{
+
+        @media only screen and (min-width:$desk-start) and (max-width:$desk-end) { @content; }
+
+    }
+
+    @if $media-query == desk-wide{
+
+        @media only screen and (min-width: $desk-wide-start) { @content; }
+
+    }
+
+}
+
+
+
+
+/**
+ * If you have set `$responsive` to ‘true’ in `_vars.scss` then you now have
+ * access to these classes. You can define at which breakpoint you’d like an
+ * element to be a certain size, e.g.:
+ *
+ * `<div class="g  one-quarter  lap-one-half  palm-one-whole"> ... </div>`
+ *
+ * This would create a `div` that, at ‘desktop’ sizes, takes up a quarter of the
+ * horizontal space, a half of that space at ‘tablet’ sizes, and goes full width
+ * at ‘mobile’ sizes.
+ *
+ * Demo: jsfiddle.net/inuitcss/WS4Ge
+ *
+ */
+
+@if $responsive == true{
+
+    @if $responsive-extended == true{
+
+        @include media-query(palm-wide){
+            @include grid-setup("palm-wide-");
+        }
+
+        @include media-query(palm-wide-and-up){
+            @include grid-setup("palm-wide-and-up-");
+        }
+
+        @include media-query(handheld){
+            @include grid-setup("handheld-");
+        }
+
+        @include media-query(lap-wide){
+            @include grid-setup("lap-wide-");
+        }
+
+        @include media-query(lap-wide-and-up){
+            @include grid-setup("lap-wide-and-up");
+        }
+
+
+        @include media-query(anchored){
+            @include grid-setup("anchored-");
+        }
+    }
+
+} /* endif */
+
+
+@if $push == true{
+
+
+    @if $palm-wide-push == true{
+
+        @include media-query(palm-wide){
+            @include push-setup("palm-wide-");
+        }
+
+    }
+
+    @if $palm-wide-and-up-push == true{
+
+        @include media-query(palm-wide-and-up){
+            @include push-setup("palm-wide-and-up-");
+        }
+
+    }
+
+    @if $handheld-push == true{
+
+        @include media-query(handheld){
+            @include push-setup("handheld-");
+        }
+
+    }
+
+
+    @if $lap-wide-push == true{
+
+        @include media-query(lap-wide){
+            @include push-setup("lap-wide-");
+        }
+
+    }
+
+    @if $lap-wide-and-up-push == true{
+
+        @include media-query(lap-wide-and-up){
+            @include push-setup("lap-wide-and-up-");
+        }
+
+    }
+
+
+    @if $anchored-push == true{
+
+        @include media-query(anchored){
+            @include push-setup("anchored-");
+        }
+
+    }
+
+
+}//endif
+
+
+@if $pull == true{
+
+
+
+    @if $palm-wide-pull == true{
+
+        @include media-query(palm-wide){
+            @include pull-setup("palm-wide-");
+        }
+
+    }
+
+    @if $palm-wide-and-up-pull == true{
+
+        @include media-query(palm-wide-and-up){
+            @include pull-setup("palm-wide-and-up-");
+        }
+
+    }
+
+    @if $handheld-pull == true{
+
+        @include media-query(handheld){
+            @include pull-setup("handheld-");
+        }
+
+    }
+
+
+    @if $lap-wide-pull == true{
+
+        @include media-query(lap-wide){
+            @include pull-setup("lap-wide-");
+        }
+
+    }
+
+    @if $lap-wide-and-up-pull == true{
+
+        @include media-query(lap-wide-and-up){
+            @include pull-setup("lap-wide-and-up-");
+        }
+
+    }
+
+    @if $anchored-pull == true{
+
+        @include media-query(anchored){
+            @include pull-setup("anchored-");
+        }
+
+    }
+
+
+
+}//endif
+
+/**
+ * Hide content off-screen without resorting to `display:none;`, also provide
+ * breakpoint specific hidden elements.
+ */
+
+@if $responsive-extended{
+    @each $state in palm, palm-wide, palm-wide-and-up, handheld, lap, lap-and-up, lap-wide, lap-wide-and-up, portable, anchored, desk, desk-wide{
+        @include media-query(#{$state}){
+            .accessibility--#{$state},
+            .visuallyhidden--#{$state}{
+                @include accessibility;
+            }
+        }
+    }
+}
+
+

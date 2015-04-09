@@ -1,0 +1,36 @@
+@if $use-tags == true {
+	
+	.tag {
+		text-transform: lowercase;
+		color: darken($light-color, 50);
+		cursor: pointer;
+		@include vendor(transition, all $global-duration $global-function);
+
+		&:before {
+			content: '\23';
+		}
+
+		&:hover {
+			color: darken($light-color, 70);
+		}
+
+		.hero & {
+			color: $light-color;
+			font-weight: 500;
+		}
+
+		ul & {
+			margin-right: 5px;
+		}
+
+		.section--search & {
+			font-weight: 600;
+			color: $brand-color;
+			text-decoration:none;
+
+			&:hover {
+				color: $tertiary-color;
+			}
+		}
+	}
+}

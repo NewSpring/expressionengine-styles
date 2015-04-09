@@ -1,0 +1,386 @@
+/* ==========================================================================
+    NewSpring Mixins -- Icons 
+   ========================================================================== */
+
+//@include date-icon(optional[size, color]);
+@mixin date-icon($size: 65px, $color: $brand-color) {
+    $font-size: $size / 3.5;
+    $border-size: $size / 25;
+    color: $color;
+
+    @include circle($size);
+    border: $border-size solid;
+    text-align: center;
+    font-size: $font-size;
+    line-height: $font-size + 2;
+    padding: ($size - ($font-size + 4) * 2) / 2;
+}
+
+//@include heart(optional(width, color))
+@mixin heart($width: 36px, $color: #ee8877) {
+    $half: $width / 2;
+    $height: $half * 1.6;
+    display: inline-block;
+    position: relative;
+    width: $width * 0.94;
+    height: $width * 0.9;
+    &:before,
+    &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        width: $half;
+        height: $height;
+        background: $color;
+        @include radius($half $half 0 0);
+    }
+    &:before {
+        left: $width / 9;
+        @include rotate(-45deg);
+       
+    }
+    &:after {
+        left: $width / 3;
+        @include rotate(45deg);
+        
+    }
+}
+
+//@include pencil(width, optional(color))
+@mixin pencil($width, $color: lighten($brand-dark, 50%)) {
+    $border-size: $width / 3;
+    height: $width * 4;
+    width: $width;
+    background: $color;
+    @include rotate(45deg);
+    //eraser
+    &:after {
+        content: '';
+        height: $width - $border-size;
+        width: $width;
+        background: $color;
+        @include radius($border-size $border-size 0 0);
+        position: absolute;
+        top: ($width - $border-size / 2) * -1;
+        left: 0px;
+    }
+    //lead
+    &:before {
+        content: '';
+        width: 0px;
+        height: 0px;
+        border-width: $width - $border-size / 2 $width - $border-size - $border-size / 2 0 $width - $border-size - $border-size / 2;
+        border-style: solid;
+        border-color: $color transparent transparent transparent;
+        position: absolute;
+        bottom: $width * -1;
+        left: 0px;
+    }
+}
+
+//@include map(width, optional[color, shadow(boolean)])
+@mixin map($width, $color: $brand-secondary, $shadow: true) {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-color: $color transparent transparent transparent;
+    border-width: $width $width / 2 0px $width / 2;
+    margin-top: $width - $width / 8;
+    position: relative;
+    z-index: 10;
+    &:after {
+        content: '';
+        position: absolute;
+        @include circle($width + $width / 8);
+        background: transparent;
+        border: $width / 3 solid $color;
+        left: -1 * ($width / 2 + $width / 16);
+        top: $width * -1.8125;
+        z-index: 2;
+    }
+    @if $shadow == true {
+        &:before {
+            position: absolute;
+            @include circle($width / 2);
+            height: $width / 4;
+            background: rgba(darken($color, 50%), 0.3);
+            left: $width / -4;
+            top: $width / -8;
+            z-index: 0;
+        }
+    }
+}
+
+//@include clock(width, optional[color]
+@mixin clock($width, $color: $brand-secondary, $secondary: #fff) {
+    position: relative;
+    @include circle($width);
+    // border: $width / 8 solid $color;
+    background: $color;
+    &:after {
+        width: $width / 4;
+        height: $width / 3;
+        background-color: transparent;
+        content: '';
+        position: absolute;
+        border-left: $width / 8 solid $secondary;
+        border-bottom: $width / 8 solid $secondary;
+        top: 50%;
+        margin-top: $width / -3 + $width / 16;
+        margin-left: $width / -16;
+        left: 50%;
+    }
+}
+
+//@include reload(width, optional[color])
+@mixin reload($width, $color: $brand-color) {
+    @include circle($width);
+    background-color: transparent;
+    border: $width / 8;
+    border-color: $color transparent $color $color;
+    border-style: solid;
+    @include rotate(-45deg);
+    position: relative;
+    &:after {
+        width: 0;
+        height: 0;
+        border: $width / 5;
+        border-style: solid;
+        border-color: $color transparent transparent transparent;
+        content: '';
+        @include rotate(-45deg);
+        left: 50%;
+        margin-left: $width / 5;
+        position: absolute;
+    }
+}
+
+//@include reload-alt(width, optional[color])
+@mixin reload-alt($width, $color: $brand-color) {
+    @include circle($width);
+    background-color: transparent;
+    border: $width / 8;
+    border-color: $color transparent;
+    border-style: solid;
+    @include rotate(-45deg);
+    position: relative;
+    &:after {
+        width: 0;
+        height: 0;
+        border: $width / 5;
+        border-style: solid;
+        border-color: $color transparent transparent transparent;
+        content: '';
+        @include rotate(-45deg);
+        left: 50%;
+        margin-left: $width / 5;
+        position: absolute;
+    }
+    &:before {
+        width: 0;
+        height: 0;
+        border: $width / 5;
+        border-style: solid;
+        border-color: $color transparent transparent transparent;
+        content: '';
+        @include rotate(135deg);
+        left: 0;
+        margin-left: $width / -5;
+        position: absolute;
+        bottom: $width / -20;
+    }
+}
+
+//@include upload(width, optional[color])
+@mixin upload($width, $color: $brand-color) {
+    width: $width;
+    height: $width / 3;
+    border: $width / 6 solid $color;
+    border-top: none;
+    position: relative;
+    margin-top: $width / 2;
+    &:after {
+        width: 0;
+        height: 0;
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-color: transparent transparent $color transparent;
+        border-width: $width / 4;
+        left: $width / 12;
+        top: -$width / 12 * 10;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        width: $width / 6;
+        height: $width / 2;
+        background-color: $color;
+        top: -$width / 2;
+        left: 50%;
+        margin-left: -$width / 12;
+    }
+}
+
+//@include download(width, optional[color])
+@mixin download($width, $color: $brand-color) {
+    width: $width;
+    height: $width / 3;
+    border: $width / 6 solid $color;
+    border-top: none;
+    position: relative;
+    margin-top: $width / 2;
+    &:after {
+        width: 0;
+        height: 0;
+        content: '';
+        position: absolute;
+        border-style: solid;
+        border-color: $color transparent transparent transparent;
+        border-width: $width / 4;
+        left: $width / 12;
+        top: -$width / 6;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        width: $width / 6;
+        height: $width / 2;
+        background-color: $color;
+        top: -$width / 2;
+        left: 50%;
+        margin-left: -$width / 12;
+    }
+}
+
+//@include trash(width, optional[color])
+@mixin trash($width, $color: $brand-color) {
+    width: $width;
+    height: $width * 1.25;
+    background-color: $color;
+    position: relative;
+    margin-top: $width/2.5;
+    &:after {
+        content: '';
+        position: absolute;
+        width: $width * 1.25;
+        height: $width / 5;
+        background-color: $color;
+        left: -$width / 8;
+        top: -$width / 4;
+    }
+    &:before {
+        height: $width / 5;
+        width: $width / 2.5;
+        position: absolute;
+        content: '';
+        top: -($width / 4 + $width / 8);
+        background-color: $color;
+        left: 50%;
+        margin-left: -$width / 6;
+    }
+}
+
+//@include play-button(width, optional[color], play-color[color])
+@mixin play-button($width, $color: rgba($brand-dark, .85), $play-color: darken($brand-light, 20)){
+    display: block;
+    position: relative;
+
+    &:hover {
+        cursor: pointer;
+        .play_btn {
+            background-color: rgba(0,0,0,.8);
+            box-shadow: 0 0 10px rgba(0,0,0,.45);
+            &:after{
+                border-color: transparent  transparent transparent $color;
+            }
+            .triangle,
+            .triangle:before,
+            .triangle:after {
+                background: $color;
+            }
+        }
+    }
+    .play_btn {
+        @include circle($width);
+        background-color: $color;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: $width/-2;
+        margin-left: $width/-2;
+        @include vendor(transition, all 0.1s ease-in-out);
+
+        .triangle,
+        .triangle:before,
+        .triangle:after {
+            width:  $width*.22;
+            height: $width*.22;
+            position: relative;
+            background: $play-color;
+            border-top-right-radius: 30%;
+        }
+        .triangle:before,
+        .triangle:after {
+            content: '';
+            position: absolute;
+            margin: 0;
+        }
+
+        .triangle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -(($width*.22)/2);
+            margin-left: -(($width*.13)/2);
+            @include vendor(transform, rotate(30deg) skewX(-30deg) scale(1,.866));
+        }
+        .triangle:before {
+            @include vendor(transform, rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%));
+        }
+        .triangle:after {
+            @include vendor(transform, rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%));
+        }
+    }
+    img {
+        display: inline-block;
+        margin-bottom: 0px;
+        @include radius(4px);
+    }
+}
+
+//@include pause-button(width, optional[color], optiona[pause-color])
+@mixin pause-button($width, $color: rgba($brand-dark, .75), $play-color: darken($brand-light, 20)){
+    @include circle($width);
+    background-color: $color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: $width/-2;
+    margin-left: $width/-2;
+     @include vendor(transition, all 0.25s ease-in-out);
+    &:after{
+        @include vendor(transition, all 0.25s ease-in-out);
+        width: $width/6;
+        height: $width/3;
+        content: '';
+        border-left: $width/10 solid rgba($play-color, .35);
+        border-right: $width/10 solid rgba($play-color, .35);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: $width/-6;
+        margin-left: $width/-5.5;
+    }
+    &:hover{
+        background-color: rgba($play-color, .75);
+        &:after{
+           border-left: $width/10 solid $color;
+            border-right: $width/10 solid $color;
+        }
+    }
+}
+
+// @mixin camera ($width, $color: $brand-color) {
+
+// }

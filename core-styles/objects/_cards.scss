@@ -1,0 +1,13 @@
+@if $use-cards == true {
+
+	.card {
+		padding: $base-spacing-unit*.6 $base-spacing-unit*.5;
+		border-top: none;
+		background-color: $light-color;
+		margin-bottom: $base-spacing-unit/2;
+
+		@include media-query(handheld){
+	      margin-bottom: $base-spacing-unit/2;
+	    }
+	}
+}

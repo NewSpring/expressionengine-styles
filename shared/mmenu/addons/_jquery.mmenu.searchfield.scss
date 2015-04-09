@@ -1,0 +1,98 @@
+/*
+	jQuery.mmenu searchfield addon CSS
+*/
+
+$height: 48px;
+
+@import "../inc/mmenu_variables";
+
+.mm-search,
+.mm-search input
+{
+	@include vendor-prefix( "box-sizing", border-box );
+}
+.mm-search
+{
+	width: 100%;
+	height: $height;
+	position: relative;
+	top: 0;
+	z-index: 2;
+
+	.home
+	{
+		display: inline-block;
+		height: 100%;
+		width: 23%;
+		line-height: $height;
+		text-align: center;
+		background: #111;
+		color: #fff;
+		text-decoration: none;
+	}
+
+	.search-wrapper {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		display: inline-block;
+		width: 78%;
+		height: 100%;
+		vertical-align: top;
+
+		input
+		{
+			border: none;
+			font: inherit;
+			font-size: $fontSize*1.2;
+			font-weight: 600;
+			line-height: $btnSize - $padding;
+			outline: none;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			text-indent: $padding+5;
+			// padding: 0 $padding;
+			box-shadow: inset 0 0 8px #ddd;
+		}
+
+		span.pictos {
+			position: absolute;
+			top: 12px;
+			right: 18px;
+			font-family: pictos;
+			font-size: 20px;
+		}
+	}
+}
+.mm-menu
+{
+	li.mm-nosubresults > a.mm-subopen
+	{
+		display: none;
+
+		+ a,
+		+ span
+		{
+			padding-right: 10px;
+		}
+	}
+	li.mm-noresults
+	{
+		text-align: center;
+		font-size: round( $fontSize * 1.5 );
+		display: none;
+		padding-top: $btnSize * 2;
+
+		&:after
+		{
+			border: none;
+		}
+	}
+	&.mm-noresults li.mm-noresults
+	{
+		display: block;
+	}
+}
+
+@include colors_search;

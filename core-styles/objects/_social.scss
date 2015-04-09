@@ -1,0 +1,152 @@
+@if $use-social == true {
+
+/* ============================================================
+
+$SOCIAL
+
+Social Icons Styling
+
+Used in Markup:
+
+{embed="_embeds/_social-icons"
+    alignment="vertical" (horizontal is default)
+}
+
+
+============================================================ */
+
+	.social-icons {
+		list-style: none;
+		margin: 0px;
+		margin-bottom: $base-spacing-unit;
+
+		li {
+			display: inline-block;
+			padding: 0 8px;
+			@include vendor(transition, all .2s $global-function);
+
+			a {
+				text-decoration: none;
+				text-align: center;
+				color: $light-color;
+				width: $base-spacing-unit*.9;
+				height: $base-spacing-unit*.9;
+				font-size: $base-font-size*1.1;
+				line-height: $base-spacing-unit*.85;
+				background: $medium-color;
+				border: 3px solid $medium-color;
+				@include radius(1000px);
+
+				&:hover {
+					background: darken($medium-color, 10);
+					border-color: darken($medium-color, 10);
+				}
+
+				&.facebook {
+					background: $facebook;
+					border-color: $facebook;
+					color: $light-color;
+
+					&:hover {
+						background: darken($facebook,10);
+						border-color: darken($facebook,10);
+						color: $light-color;
+					}
+				}
+
+				&.twitter {
+					background: $twitter;
+					border-color: $twitter;
+					color: $light-color;
+
+					&:hover {
+						background: darken($twitter,10);
+						border-color: darken($twitter,10);
+						color: $light-color;
+					}
+				}
+
+				&.google {
+					background: $google;
+					border-color: $google;
+					color: $light-color;
+
+					&:hover {
+						background: darken($google,10);
+						border-color: darken($google,10);
+						color: $light-color;
+					}
+				}
+
+				&.instagram {
+					background: $instagram;
+					border-color: $instagram;
+					color: $light-color;
+
+					&:hover {
+						background: darken($instagram,10);
+						border-color: darken($instagram,10);
+						color: $light-color;
+					}
+				}
+
+				&.linkedin {
+					background: $linkedin;
+					border-color: $linkedin;
+					color: $light-color;
+
+					&:hover {
+						background: darken($linkedin,10);
+						border-color: darken($linkedin,10);
+						color: $light-color;
+					}
+				}
+
+				&.pinterest {
+					background: $pinterest;
+					border-color: $pinterest;
+					color: $light-color;
+
+					&:hover {
+						background: darken($pinterest,10);
+						border-color: darken($pinterest,10);
+						color: $light-color;
+					}
+				}
+			}
+		}
+
+		/* &.vertical {
+			li {
+				display: inline-block;
+				width: 100%;
+				margin-bottom: 15px;
+			}
+
+			@include media-query(anchored) {
+				max-width: 54px;
+			}
+		} */
+
+		.blog-entry & {
+			/* position: absolute;
+			top: 0px;
+			left: 0px; */
+			width: auto;
+
+			/* @include media-query(portable) {
+				position: relative;
+				li {
+					width: auto;
+				}
+			} */
+
+			/* @include media-query(handheld) {
+				position: relative;
+				li {
+					width: auto;
+				}
+			} */
+		}
+	}
+}

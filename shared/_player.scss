@@ -1,0 +1,140 @@
+/*FOR POPUP VIDEO*/
+
+#tranny {
+	background: url("//images.newspring.cc/site/stories/tranny.png");
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 998;
+}
+
+.unseen {
+	background: black;
+	border-bottom-left-radius: 7px 7px;
+	border-bottom-right-radius: 7px 7px;
+	border-top-left-radius: 7px 7px;
+	border-top-right-radius: 7px 7px;
+	position: fixed;
+	top: 25%;
+	z-index: 999;
+	padding: 20px;
+	margin-left: -330px;
+	left: 50%;
+	height: 348px;
+	width: 620px;
+}
+             
+
+/*FOR POPUP TEXT*/
+.unseenarticle {
+	background: #fff;
+	border-bottom-left-radius: 7px 7px;
+	border-bottom-right-radius: 7px 7px;
+	border-top-left-radius: 7px 7px;
+	border-top-right-radius: 7px 7px;
+	position: fixed;
+	top: 12%;
+	z-index: 999;
+	padding: 80px 100px 100px 100px;
+	margin-left: 30px;
+	height: 400px;
+	width: 700px;
+}
+
+/*----- Play Buttons -----*/
+.btn.play {
+	background: url("//images.newspring.cc/site/buttons/btn.play.white.png") no-repeat;
+	display: block;
+	height: 72px;
+	width: 72px;
+	text-indent: -9999px;	
+	margin: -36px 0 0 -36px;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+
+}
+.btn.play.green {
+	background: url("//images.newspring.cc/site/buttons/btn.play.green.png") no-repeat;
+}
+.btn.play.small {
+	background: url("//images.newspring.cc/site/buttons/btn.play.small.white.png") no-repeat;
+	display: block;
+	height: 50px;
+	width: 50px;
+	text-indent: -9999px;	
+	margin: -25px 0 0 -25px;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	transition: all .2s linear;
+
+}
+a:hover .btn.play.small, .btn.play.small.green {
+	background-image: url("//images.newspring.cc/site/buttons/btn.play.small.green.png");
+}
+a:hover .btn.play.small.green {
+	background-image: url("//images.newspring.cc/site/buttons/btn.play.small.white.png");
+}
+
+.play_button_new {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	-webkit-transition: all .4s ease;
+	-moz-transition: all .4s ease;
+	transition: all .4s ease;
+}
+
+.play_button_new:hover {
+	background: rgba(0,0,0,.80);
+}
+
+.play_button_new span.icon {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 90px;
+	height: 90px;
+	margin-top: -70px;
+	margin-left: -55px;
+	max-width: 180px;
+	max-height: 180px;
+	background: #fff url("//images.newspring.cc/site/buttons/play_button_new.png");
+	background-size: cover;
+	border-radius: 120px;
+	border: 10px solid #fff;
+	opacity: .8;
+}
+
+.play_button_new:hover span.icon {
+	opacity: 1;
+	box-shadow: 0 0 45px rgba(0,0,0,.5), 0 0 10px #000;
+}
+
+.play_button_new span.text {
+	position: absolute;
+	bottom: 20%;
+	left: 0px;
+	width: 100%;
+	text-align: center;
+	font: normal 34px/34px "StandardCT-Bold", sans-serif;
+	color: #fff;
+	opacity: 0;
+	-webkit-transition: all .4s ease;
+	-moz-transition: all .4s ease;
+	transition: all .4s ease;
+	text-shadow: 0 0 45px #000, 0 0 25px #000, 0 0 10px #000;
+}
+
+.play_button_new:hover span.text {
+	opacity: 1;
+}

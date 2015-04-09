@@ -1,0 +1,73 @@
+@if $use-maps == true {
+
+	.map-canvas {
+		cursor: pointer;
+		height: 600px;
+
+		@include media-query(handheld) {
+			height: 400px;
+		}
+	}
+
+	.map-wrapper {
+		position: relative;
+
+		.directions {
+			position: absolute;
+			top: $base-spacing-unit;
+			left: $base-spacing-unit;
+			z-index: 10;
+			background: $brand-color;
+			color: $light-color;
+			text-decoration: none;
+			padding: $base-spacing-unit/6+1px $base-spacing-unit/3 $base-spacing-unit/6-1px;
+			font-family: colfax-web, sans-serif;
+			font-weight: 500;
+
+			@include media-query(handheld) {
+				top: $base-spacing-unit/2;
+				left: $base-spacing-unit/2;
+				padding: $base-spacing-unit/6 $base-spacing-unit/4 $base-spacing-unit/6;
+				font-size: $base-font-size*.8;
+			}
+		}
+
+		.zoom-controls {
+			position: absolute;
+			top: $base-spacing-unit;
+			right: $base-spacing-unit;
+			z-index: 10;
+			border: 3px solid $brand-color;
+
+			li {
+				border-bottom: 3px solid $brand-color;
+				margin-bottom: 0px;
+				line-height: 0px;
+				background: $brand-color;
+				color: $light-color;
+				padding: $base-spacing-unit/6;
+				cursor: pointer;
+
+				span {
+					position: relative;
+					top: 1px;
+				}
+
+				&:last-child {
+					border-bottom: 0px;
+				}
+			}
+
+			@include media-query(handheld) {
+				top: $base-spacing-unit/2;
+				right: $base-spacing-unit/2;
+
+				li {
+					padding: $base-spacing-unit/5;
+					font-size: $base-font-size*.8;
+
+				}
+			}
+		}
+	}
+}

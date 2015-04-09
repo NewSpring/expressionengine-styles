@@ -1,0 +1,271 @@
+@if $use-overlays == true {
+
+$overlay-spacing-unit: 48px;
+
+/* ============================================================
+
+    $OVERLAY
+
+    The .overlay class is a complex object class that classfies an
+    element as an overlay on all NewSpring Sites
+
+    @extendable:
+        .overlay--light
+        .overlay--dark
+        .overlay--opaque
+
+    Used in markup:
+
+    <div class="overlay"></div>
+
+    Things the overlay class does:
+
+        Lorem ipsum Laborum qui magna proident.
+
+
+============================================================ */
+
+
+	// .overlay {
+	// 	display: inline-block;
+	// 	background-size: cover;
+	// 	background-position: center center;
+	// 	width: 100%;
+
+	// 	.grid__item {
+	// 		margin-bottom: 0px;
+	// 	}
+	// }
+
+	//Solid Dark Overlay
+
+	.overlay--solid {
+
+		a & {
+
+			&:hover {
+
+				&:after {
+					background: rgba($dark-color,0.6);
+					@include vendor(transition, all $global-duration $global-function);
+				}
+			}
+		}
+
+		&:after {
+			background: rgba($dark-color,0.3);
+			@include vendor(transition, all $global-duration $global-function);
+			content: '';
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 0;
+		}
+	}
+
+	.overlay--solid-light {
+		&:after {
+			background: rgba($dark-color,0.1);
+			@include vendor(transition, all $global-duration $global-function);
+			content: '';
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 0;
+		}
+	}
+
+	.overlay--solid-dark {
+		&:after {
+			background: rgba($dark-color,0.8);
+			@include vendor(transition, all $global-duration $global-function);
+			content: '';
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 0;
+		}
+	}
+
+	.overlay--texture {
+		&:after {
+			background: rgba($texture-color,.5);
+		}
+	}
+
+	.overlay--light {
+		h1,h2,h3,h4,h5,h6 {
+			color: $light-color;
+		}
+
+		p, p b, a {
+			color: $light-color;
+		}
+
+		.btn:not(.btn--share) {
+			color: $light-color;
+			border-color: $light-color;
+
+			&.btn--filled {
+				background-color: $light-color;
+				color: $dark-color;
+
+				&:hover {
+					background-color: $primary-color;
+					border-color: $primary-color;
+					color: $light-color;
+				}
+			}
+
+			&:hover {
+				background-color: $light-color;
+				color: $dark-color;
+			}
+		}
+
+		a {
+			&.link--arrow {
+				&:after {
+					border-color: $light-color;
+				}
+
+				&.reverse:after {
+					border-color: $light-color;
+				}
+			}
+		}
+	}
+
+
+
+	.overlay--dark {
+		h1,h2,h3,h4,h5,h6 {
+			color: $dark-color!important;
+		}
+
+		p, p b, a {
+			color: $dark-color!important;
+		}
+
+		.btn:not(.btn--share) {
+			color: $dark-color!important;
+			border-color: $dark-color!important;
+
+			&:hover {
+				background: $dark-color!important;
+				color: $light-color!important;
+			}
+		}
+	}
+
+	.overlay {
+
+		.overlay__item {
+			position: relative;
+			z-index: 2;
+		}
+
+		&.overlay--gradient {
+			&:after {
+				content: '';
+				position: absolute;
+				top: auto;
+				bottom: 0px;
+				left: 0px;
+				width: 100%;
+				height: 70%;
+				background: -moz-linear-gradient(top,  rgba(0,0,0, 0) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0, 0)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top,  rgba(0,0,0, 0) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top,  rgba(0,0,0, 0) 0%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+				background: -ms-linear-gradient(top,  rgba(0,0,0, 0) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
+				background: linear-gradient(to bottom,  rgba(0,0,0, 0) 0%,rgba(0,0,0,1) 100%); /* W3C */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+			}
+
+			&-left {
+
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: 0px;
+					left: 0px;
+					width: 80%;
+					height: 100%;
+					background: -moz-linear-gradient(left,  rgba(0,0,0,.9) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+					background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,.9)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+					background: -webkit-linear-gradient(left,  rgba(0,0,0,.9) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+					background: -o-linear-gradient(left,  rgba(0,0,0,.9) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+					background: -ms-linear-gradient(left,  rgba(0,0,0,.9) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+					background: linear-gradient(to right,  rgba(0,0,0,.9) 0%,rgba(0,0,0,0) 100%); /* W3C */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00feffff',GradientType=1 ); /* IE6-9 */
+				}
+			}
+
+			&-right {
+
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: 0px;
+					right: 0px;
+					width: 90%;
+					height: 100%;
+					background: -moz-linear-gradient(right,  rgba(0,0,0,.8) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+					background: -webkit-gradient(linear, right top, right top, color-stop(0%,rgba(0,0,0,.8)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+					background: -webkit-linear-gradient(right,  rgba(0,0,0,.8) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+					background: -o-linear-gradient(right,  rgba(0,0,0,.8) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+					background: -ms-linear-gradient(right,  rgba(0,0,0,.8) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+					background: linear-gradient(to left,  rgba(0,0,0,.8) 0%,rgba(0,0,0,0) 100%); /* W3C */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00feffff',GradientType=1 ); /* IE6-9 */
+				}
+			}
+
+			&-round {
+
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: 0px;
+					right: 0px;
+					width: 100%;
+					height: 100%;
+					box-shadow: inset 0 0 250px rgba(0,0,0,1);
+				}
+			}
+		}
+	}
+
+	.number-overlay {
+		position: absolute;
+		display: table;
+
+		.number {
+			display: table-cell;
+			width: 60px;
+			height: 60px;
+			text-align: center;
+			vertical-align: middle;
+			font-family: $base-heading-font;
+			font-size: $h2-size*.6;
+			color: $light-color;
+			text-decoration: none;
+			background: rgba(0,0,0,.7);
+		}
+	}
+}

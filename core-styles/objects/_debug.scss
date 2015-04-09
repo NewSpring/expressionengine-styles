@@ -1,0 +1,70 @@
+
+$debug : debug(env);
+
+@if $debug == true {
+
+    .grid-lines {
+        &:before, &:after {
+            content: '';
+
+            background-repeat: repeat;
+            background-position: top left;
+
+            @include absolute( top 0 left 0 bottom 0 right 0);
+        }
+        &:before {
+            //create single stripe
+            background-image: -webkit-linear-gradient(rgba(black, .1) 2px, transparent 0%, transparent);
+            background-image: -o-linear-gradient(rgba(black, .1) 2px, transparent 0%, transparent);
+            background-image: linear-gradient(rgba(black, .1) 2px, transparent 0%, transparent);
+
+            //set stripe size
+            @include vendor(background-size, 1px $half-spacing-unit);
+        }
+        &:after {
+            //create single stripe
+            background-image: -webkit-linear-gradient(left, rgba(black, .1) 2px, transparent 0%, transparent);
+            background-image: -o-linear-gradient(left, rgba(black, .1) 2px, transparent 0%, transparent);
+            background-image: linear-gradient(to right, rgba(black, .1) 2px, transparent 0%, transparent);
+
+            //set stripe size
+            @include vendor(background-size, $half-spacing-unit 1px);
+        }
+    }
+
+    @if $responsive{
+        @if $responsive-extended{
+            @each $state in palm, palm-wide, palm-wide-and-up, lap, lap-and-up, lap-wide, lap-wide-and-up, desk, desk-wide{
+                @include media-query(#{$state}) {
+                    html {
+                        &:after {
+                            content: "#{$state}";
+                            @include fixed(bottom 0 right 0);
+                            padding: $half-spacing-unit;
+                            background-color: $brand-color;
+                            color: white;
+                            @include radius($brand-round 0 0 0);
+                        }
+                    }
+                }
+            }
+        }
+        @else{
+            @each $state in palm, lap, lap-and-up desk, desk-wide{
+                @include media-query(#{$state}) {
+                    html {
+                        &:after {
+                            content: "#{$state}";
+                            @include fixed(bottom 0 right 0);
+                            padding: $half-spacing-unit;
+                            background-color: $brand-color;
+                            color: white;
+                            @include radius($brand-round 0 0 0);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

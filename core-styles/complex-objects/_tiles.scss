@@ -1,0 +1,164 @@
+@if $use-tiles == true {
+
+/* ============================================================
+
+    $TILES
+
+    The .tiles class is a complex object class that classfies a
+    container and children as a formated list of tiles
+    all NewSpring Sites
+
+    Used in markup:
+
+    <div class="tiles"><!--
+     --><div class="tile__item"></div><!--
+     --><div class="tile__item"></div><!--
+     --><div class="tile__item"></div><!--
+     --><div class="tile__item"></div><!--
+     --><div class="tile__item"></div><!--
+     --><div class="tile__item"></div><!--
+ --></div>
+
+
+    Things the tile class does:
+
+
+
+============================================================ */
+
+.tiles {
+    margin: 0;
+    list-style: none;
+    vertical-align: middle;
+    overflow: hidden;
+    display: inline-block;
+    a, .tile__item {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+        text-align: center;
+    }
+    a {
+        line-height: $base-spacing-unit * 2;
+    }
+}
+
+.tiles--horizontal {
+    display: inline-block;
+    a {
+        padding: 0 $half-spacing-unit;
+    }
+    &.outlined {
+        // .tile__item:last-child {
+        //     width: ($base-spacing-unit * 2);
+        //
+        // }
+        .tile__item:not(:last-child) {
+            border-right: $border-size solid $brand-color;
+
+        }
+    }
+
+}
+
+.tiles--vertical {
+    a, .tile__item {
+        display: block;
+    }
+    &.outlined {
+        .tile__item:not(:last-child) {
+            border-bottom: $border-size solid $brand-color;
+        }
+
+    }
+}
+
+.tiles--light, .tiles--filled {
+    border-color: $light-color !important;
+    color: $light-color;
+    *, *:before, *:after {
+        color: $light-color;
+        border-color: $light-color !important;
+    }
+}
+
+.tiles--filled {
+    background-color: $primary-color;
+}
+
+.pagination {
+    display: table;
+    list-style: none;
+    vertical-align: middle;
+    overflow: hidden;
+    margin: 0 auto;
+
+    .pagination__item {
+        position: relative;
+        font-family: $base-heading-font;
+        font-weight: 500;
+        font-size: $base-font-size;
+        line-height: 51px;
+        display: table-cell;
+        padding: 3px 0 0;
+        width: $base-spacing-unit;
+        height: $base-spacing-unit;
+        vertical-align: middle;
+        text-align: center;
+        margin: 0;
+        text-decoration: none;
+        border: 3px solid $dark-color;
+        border-left: 0px;
+        background: $light-color;
+        color: $dark-color;
+
+        &:first-child {
+            border-left: 3px solid $dark-color;
+        }
+
+        &:hover {
+            background: darken($light-color, 20);
+            color: $dark-color;
+        }
+
+        &.page-previous {
+            border-left: 3px solid $dark-color;
+            background: $dark-color;
+            &:after {
+                @include arrow(left, $icon-size/3, $light-color);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -8px;
+                margin-left: -4px;
+                @include vendor(transition, all $global-duration $global-function);
+            }
+        }
+
+        &.page-next {
+            background: $dark-color;
+            &:after {
+                @include arrow(right, $icon-size/3, $light-color);
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                margin-top: -8px;
+                margin-right: -4px;
+                @include vendor(transition, all $global-duration $global-function);
+            }
+        }
+
+        &.page-previous:hover, &.page-next:hover {            
+            &:after {
+                border-color: $brand-color;
+            }
+        }
+
+        &.active {
+            background: $brand-color;
+            color: $light-color;
+        }
+    }
+}
+
+}//endif for $use-tiles
