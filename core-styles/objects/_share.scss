@@ -1,0 +1,42 @@
+.rounded{@include triangle(0px, 5px, down, #000000); }
+
+
+.share-link {
+	color: #ffffff;
+}
+.share-link-email {
+	padding: 0 0 10px 10px;
+}
+.share-link-twitter {
+	padding: 0 7px 10px 0;
+}
+.share-menu:after {
+	content: '';
+	display: block;
+	@include absolute(bottom -8px left 50%);
+	margin-left: -10px;
+	width: 20px;
+	height: 20px;
+
+	@include rotate(45deg);
+	background: $dark-color;
+}
+.share-menu {
+
+	display: none;
+	z-index: map-get($zindex, share);
+	@include vendor(transition, none);
+	@include absolute(top 0 left 0);
+}
+.share-menu-active {
+	display: inline-block;
+	background-color: $dark-color;
+
+	@include radius(5px);
+}
+::selection{
+	background-color: rgba($brand-color, .5)
+}
+::-moz-selection {
+	background-color: rgba($brand-color, .5)
+}
