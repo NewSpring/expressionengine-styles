@@ -15,6 +15,7 @@ defines the base spacing of sections
 		width: 100%;
 		background-color: $light-color;
 		overflow: hidden;
+		position: relative;
 
 		.shell {
 			background-color: inherit;
@@ -271,6 +272,7 @@ defines the base spacing of sections
 
 				&:hover {
 					background: $light-color;
+					color: $secondary-color;
 				}
 			}
 		}
@@ -289,6 +291,17 @@ defines the base spacing of sections
 
 				&:hover {
 					background: $light-color;
+					color: $tertiary-color;
+				}
+			}
+		}
+
+		&.section--medium {
+			.shell {
+				background-color: $gray-primary;
+
+				h1, h2, h3, h4, h5 {
+					color: $dark-color;
 				}
 			}
 		}

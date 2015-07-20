@@ -29,6 +29,7 @@ $youtube:          #b31217!default;
 $pinterest:        #be0a21!default;
 
 $alert-color:      #C64F55!default;
+$info-color:       #1698DA!default;
 
 $kidspring-color:   #369DD5!default;
 
@@ -48,18 +49,18 @@ $handheld-font-size:      20px!default;
 $handheld-line-height:    26px!default;
 
 $h1:      ($font-size * 2.8)!default;
-$h2:      ($font-size * 2.6)!default;
-$h3:      ($font-size * 1.4)!default;
+$h2:      ($font-size * 2.4)!default;
+$h3:      ($font-size * 1.5)!default;
 $h4:      ($font-size * 1.3)!default;
 $h5:      ($font-size * 1.2)!default;
 $h6:      ($font-size * .9)!default;
 
-$handheld-h1:            ($font-size * 2.5)!default;
+$handheld-h1:            ($font-size * 2)!default;
 $handheld-h2:            ($font-size * 1.6)!default;
-$handheld-h3:            ($font-size * 1.2)!default;
-$handheld-h4:            ($font-size * 1.25)!default;
-$handheld-h5:            ($font-size * 1.1)!default;
-$handheld-h6:            ($font-size * .9)!default;
+$handheld-h3:            ($font-size * 1.4)!default;
+$handheld-h4:            ($font-size * 1.3)!default;
+$handheld-h5:            ($font-size * 1.2)!default;
+$handheld-h6:            ($font-size * 1.1)!default;
 
 
 
@@ -120,10 +121,10 @@ $use-modals:         true!default;
 $use-overlays:       true!default;
 $use-ratios:         true!default;
 $use-share-links:    true!default;
-$use-slider:    	   true!default;
+$use-slider:    	 true!default;
 $use-tiles:          true!default;
 $use-iframes:        true!default;
-
+$use-audio-player:   false!default;
 
 
 /* ------------------------------------------------------------------------------

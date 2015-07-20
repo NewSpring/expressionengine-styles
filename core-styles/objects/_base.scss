@@ -159,6 +159,10 @@ body {
     text-transform: uppercase;
 }
 
+.remove-decoration {
+    text-decoration: none;
+}
+
 .dark {
     color: $dark-color;
     border-color: $dark-color;
@@ -200,7 +204,27 @@ body {
 }
 
 .color--primary {
-    color: $brand-color;
+    color: $brand-color !important;
+}
+
+.color--secondary {
+    color: $secondary-color !important;
+}
+
+.color--tertiary {
+    color: $tertiary-color !important;
+}
+
+.background--primary {
+    background-color: $brand-color !important;
+}
+
+.background--secondary {
+    background-color: $secondary-color !important;
+}
+
+.background--tertiary {
+    background-color: $tertiary-color !important;
 }
 
 .light {
@@ -232,111 +256,230 @@ body {
 
 // Social Colors
 
-.color--facebook { 
-    color: $facebook; 
+.color--facebook {
+    color: $facebook;
 
     &.btn--share {
         border-color: $facebook;
         background-color: $facebook;
         color: $light-color;
-        
+
         &:hover {
             background-color: darken($facebook, 10);
             border-color: darken($facebook, 10);
         }
     }
+
+    &.link--arrow {
+        color: $facebook;
+
+        &:after {
+            border-color: $facebook;
+        }
+
+        &:hover {
+            color:  darken($facebook, 20);
+
+            &:after {
+                border-color: darken($facebook, 20);
+            }
+        }
+    }
 }
 
-.color--twitter { 
-    color: $twitter; 
+.color--twitter {
+    color: $twitter;
 
     &.btn--share {
         border-color: $twitter;
         background-color: $twitter;
         color: $light-color;
-        
+
         &:hover {
             background-color: darken($twitter, 10);
             border-color: darken($twitter, 10);
         }
     }
+
+    &.link--arrow {
+        color: $twitter;
+
+        &:after {
+            border-color: $twitter;
+        }
+
+        &:hover {
+            color:  darken($twitter, 20);
+
+            &:after {
+                border-color: darken($twitter, 20);
+            }
+        }
+    }
 }
 
-.color--google { 
-    color: $google; 
+.color--google {
+    color: $google;
 
     &.btn--share {
         border-color: $google;
         background-color: $google;
         color: $light-color;
-        
+
         &:hover {
             background-color: darken($google, 10);
             border-color: darken($google, 10);
         }
     }
+
+    &.link--arrow {
+        color: $google;
+
+        &:after {
+            border-color: $google;
+        }
+
+        &:hover {
+            color:  darken($google, 20);
+
+            &:after {
+                border-color: darken($google, 20);
+            }
+        }
+    }
 }
 
-.color--pinterest { 
-    color: $pinterest; 
+.color--pinterest {
+    color: $pinterest;
 
     &.btn--share {
         border-color: $pinterest;
         background-color: $pinterest;
         color: $light-color;
-        
+
         &:hover {
             background-color: darken($pinterest, 10);
             border-color: darken($pinterest, 10);
         }
     }
+
+    &.link--arrow {
+        color: $pinterest;
+
+        &:after {
+            border-color: $pinterest;
+        }
+
+        &:hover {
+            color:  darken($pinterest, 20);
+
+            &:after {
+                border-color: darken($pinterest, 20);
+            }
+        }
+    }
 }
 
-.color--instagram { 
-    color: $instagram; 
+.color--instagram {
+    color: $instagram;
 
     &.btn--share {
         border-color: $instagram;
         background-color: $instagram;
         color: $light-color;
-        
+
         &:hover {
             background-color: darken($instagram, 10);
             border-color: darken($instagram, 10);
         }
     }
+
+    &.link--arrow {
+        color: $instagram;
+
+        &:after {
+            border-color: $instagram;
+        }
+
+        &:hover {
+            color:  darken($instagram, 20);
+
+            &:after {
+                border-color: darken($instagram, 20);
+            }
+        }
+    }
 }
 
-.color--youtube { 
-    color: $youtube; 
+.color--youtube {
+    color: $youtube;
 
     &.btn--share {
         border-color: $youtube;
         background-color: $youtube;
         color: $light-color;
-        
+
         &:hover {
             background-color: darken($youtube, 10);
             border-color: darken($youtube, 10);
         }
     }
+
+    &.link--arrow {
+        color: $youtube;
+
+        &:after {
+            border-color: $youtube;
+        }
+
+        &:hover {
+            color:  darken($youtube, 20);
+
+            &:after {
+                border-color: darken($youtube, 20);
+            }
+        }
+    }
 }
 
-.color--linkedin { 
-    color: $linkedin; 
+.color--linkedin {
+    color: $linkedin;
 
     &.btn--share {
         border-color: $linkedin;
         background-color: $linkedin;
         color: $light-color;
-        
+
         &:hover {
             background-color: darken($linkedin, 10);
             border-color: darken($linkedin, 10);
         }
     }
+
+    &.link--arrow {
+        color: $linkedin;
+
+        &:after {
+            border-color: $linkedin;
+        }
+
+        &:hover {
+            color:  darken($linkedin, 20);
+
+            &:after {
+                border-color: darken($linkedin, 20);
+            }
+        }
+    }
 }
 
+.color--info {
+    color: $info-color;
+}
+
+.background--info {
+    background-color: $info-color;
+}
 
 
 

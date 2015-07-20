@@ -100,6 +100,7 @@
 			text-align: left;
 			margin: 0px;
 			padding-top: 5px;
+			text-transform: uppercase;
 		}
 
 		@include media-query(lap-wide-and-down) {

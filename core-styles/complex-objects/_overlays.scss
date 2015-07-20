@@ -102,6 +102,28 @@ $overlay-spacing-unit: 48px;
 		}
 	}
 
+  .overlay.overlay--gradient-left,
+  .overlay.overlay--gradient-right {
+    &.handheld-overlay--solid-dark {
+      @include media-query(handheld) {
+        &:after {
+    			background: rgba($dark-color,0.5);
+    			@include vendor(transition, all $global-duration $global-function);
+    			content: '';
+    			position: absolute;
+    			display: block;
+    			width: 100%;
+    			height: 100%;
+    			top: 0;
+    			right: 0;
+    			bottom: 0;
+    			left: 0;
+    			z-index: 0;
+    		}
+      }
+    }
+  }
+
 	.overlay--texture {
 		&:after {
 			background: rgba($texture-color,.5);

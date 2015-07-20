@@ -1,6 +1,10 @@
 // THIS IS A FILE FOR INUIT OVERRIDES
 // OR ADDITIONS TO BE MOVED WHEN CORE GETS COMBINED
 
+@include namespace(hidden) {
+	display: none;
+}
+
 .handheld-hard {
 
 	@include media-query(handheld) {
@@ -58,31 +62,41 @@
 	}
 }
 
-.palm-soft-quarter           { padding:       $base-spacing-unit * .25!important; }
-.palm-soft-quarter--top      { padding-top:   $base-spacing-unit * .25!important; }
-.palm-soft-quarter--right    { padding-right: $base-spacing-unit * .25!important; }
-.palm-soft-quarter--bottom   { padding-bottom:$base-spacing-unit * .25!important; }
-.palm-soft-quarter--left     { padding-left:  $base-spacing-unit * .25!important; }
-.palm-soft-quarter--ends     { padding-top:   $base-spacing-unit * .25!important; padding-bottom:$base-spacing-unit * .25!important; }
-.palm-soft-quarter--sides    { padding-right: $base-spacing-unit * .25!important; padding-left:  $base-spacing-unit * .25!important; }
+.palm-soft-quarter           { padding:       $base-spacing-unit/4!important; }
+.palm-soft-quarter--top      { padding-top:   $base-spacing-unit/4!important; }
+.palm-soft-quarter--right    { padding-right: $base-spacing-unit/4!important; }
+.palm-soft-quarter--bottom   { padding-bottom:$base-spacing-unit/4!important; }
+.palm-soft-quarter--left     { padding-left:  $base-spacing-unit/4!important; }
+.palm-soft-quarter--ends     { padding-top:   $base-spacing-unit/4!important; padding-bottom:$base-spacing-unit/4!important; }
+.palm-soft-quarter--sides    { padding-right: $base-spacing-unit/4!important; padding-left:  $base-spacing-unit/4!important; }
 
-.soft-quarter           { padding:       $base-spacing-unit * .25!important; }
-.soft-quarter--top      { padding-top:   $base-spacing-unit * .25!important; }
-.soft-quarter--right    { padding-right: $base-spacing-unit * .25!important; }
-.soft-quarter--bottom   { padding-bottom:$base-spacing-unit * .25!important; }
-.soft-quarter--left     { padding-left:  $base-spacing-unit * .25!important; }
-.soft-quarter--ends     { padding-top:   $base-spacing-unit * .25!important; padding-bottom:$base-spacing-unit * .25!important; }
-.soft-quarter--sides    { padding-right: $base-spacing-unit * .25!important; padding-left:  $base-spacing-unit * .25!important; }
+.soft-quarter           { padding:       $base-spacing-unit/4!important; }
+.soft-quarter--top      { padding-top:   $base-spacing-unit/4!important; }
+.soft-quarter--right    { padding-right: $base-spacing-unit/4!important; }
+.soft-quarter--bottom   { padding-bottom:$base-spacing-unit/4!important; }
+.soft-quarter--left     { padding-left:  $base-spacing-unit/4!important; }
+.soft-quarter--ends     { padding-top:   $base-spacing-unit/4!important; padding-bottom:$base-spacing-unit/4!important; }
+.soft-quarter--sides    { padding-right: $base-spacing-unit/4!important; padding-left:  $base-spacing-unit/4!important; }
 
+.push-half           { margin:       $base-spacing-unit/2!important; }
+.push-half--top      { margin-top:   $base-spacing-unit/2!important; }
+.push-half--right    { margin-right: $base-spacing-unit/2!important; }
+.push-half--bottom   { margin-bottom:$base-spacing-unit/2!important; }
+.push-half--left     { margin-left:  $base-spacing-unit/2!important; }
+.push-half--ends     { margin-top:   $base-spacing-unit/2!important; margin-bottom:$base-spacing-unit/2!important; }
+.push-half--sides    { margin-right: $base-spacing-unit/2!important; margin-left:  $base-spacing-unit/2!important; }
 
-.push-quarter           { margin:       $base-spacing-unit * .25!important; }
-.push-quarter--top      { margin-top:   $base-spacing-unit * .25!important; }
-.push-quarter--right    { margin-right: $base-spacing-unit * .25!important; }
-.push-quarter--bottom   { margin-bottom:$base-spacing-unit * .25!important; }
-.push-quarter--left     { margin-left:  $base-spacing-unit * .25!important; }
-.push-quarter--ends     { margin-top:   $base-spacing-unit * .25!important; margin-bottom:$base-spacing-unit * .25!important; }
-.push-quarter--sides    { margin-right: $base-spacing-unit * .25!important; margin-left:  $base-spacing-unit * .25!important; }
+.push-quarter           { margin:       $base-spacing-unit/4!important; }
+.push-quarter--top      { margin-top:   $base-spacing-unit/4!important; }
+.push-quarter--right    { margin-right: $base-spacing-unit/4!important; }
+.push-quarter--bottom   { margin-bottom:$base-spacing-unit/4!important; }
+.push-quarter--left     { margin-left:  $base-spacing-unit/4!important; }
+.push-quarter--ends     { margin-top:   $base-spacing-unit/4!important; margin-bottom:$base-spacing-unit/4!important; }
+.push-quarter--sides    { margin-right: $base-spacing-unit/4!important; margin-left:  $base-spacing-unit/4!important; }
 
+@include namespace(flush--bottom) {
+	margin-bottom: 0px !important;
+}
 
 /**
 * Reversed grids

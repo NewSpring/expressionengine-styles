@@ -45,7 +45,7 @@ $button-size: $icon-size * .5;
 	font-family: $base-heading-font;
 	color: $brand-color;
 	border: $border-size solid $brand-color;
-	padding: ($button-size/2)+1 ($button-size * 2) ($button-size/2)-1;
+	padding: ($button-size/2) ($button-size * 2);
 	font-weight: 700;
 	font-size: $button-size * .85;
 	line-height: $button-size * 1.33333333;
@@ -81,13 +81,21 @@ $button-size: $icon-size * .5;
 		font-size: $handheld-font-size;
 		// line-height: $handheld-line-height*.9;
 	}
+
+	+ .btn {
+		margin-left: $base-spacing-unit/3;
+
+		@include media-query(handheld) {
+			margin-left: 0px;
+		}
+	}
 }
 
 .btn--share {
 	text-transform: none;
 	letter-spacing: normal;
 	margin-bottom: 0px;
-	min-width: 240px;
+	min-width: 220px;
 	text-align: center !important;
 	@include radius($base-spacing-unit/8);
 	padding: ($button-size/3)+1 ($button-size) ($button-size/3)-1;
@@ -292,11 +300,23 @@ $button-size: $icon-size * .5;
 }
 
 .btn--light {
-		color: $light-color ;
-		border-color: $light-color ;
+		color: $light-color;
+		border-color: $light-color;
+
 		&:hover {
 			background-color: $light-color;
 			color: $base-font-color;
+		}
+}
+
+.btn--dark {
+		color: $dark-color;
+		border-color: $dark-color;
+
+		&:hover {
+			background-color: $primary-color;
+			border-color: $primary-color;
+			color: $light-color;
 		}
 }
 
@@ -310,7 +330,7 @@ $button-size: $icon-size * .5;
 .btn--social {
 	position: relative;
 	text-transform: none;
-	
+
 	padding: $button-size;
 	margin-right: $button-size;
 	border: none;
