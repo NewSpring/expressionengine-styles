@@ -17,10 +17,10 @@
         }
 
         &:hover {
-            color: $secondary-color;
+            color: darken($primary-color, 15);
 
             &:after {
-                border-color: darken($secondary-color,5);
+                border-color: darken($primary-color, 15);
             }
         }
 
@@ -78,9 +78,7 @@
             }
 
             .overlay {
-
               &.overlay--light {
-
                 .overlay__item {
                   color: $light-color;
                 }
@@ -90,6 +88,7 @@
     }
 
     .link--arrow {
+        position: relative;
         font-family: $base-heading-font;
         font-weight: 500;
         font-size: $base-font-size;
@@ -99,6 +98,7 @@
         text-decoration: none;
         margin-bottom: $base-spacing-unit/2;
         color: $brand-color;
+        cursor: pointer;
         //Because we're treating .link--arow as a block-level item, it should be used on it's own, outside of a block level element
 
         &:after {
@@ -114,7 +114,7 @@
         &:hover {
             &:after {
                 right: -8px;
-                border-color: $tertiary-color;
+                border-color: darken($brand-color, 15);
             }
         }
 
@@ -131,7 +131,7 @@
             &:hover {
                 &:after {
                     left: -8px;
-                    border-color: $tertiary-color;
+                    border-color: darken($brand-color, 15);
                 }
             }
         }

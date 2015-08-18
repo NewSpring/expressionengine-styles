@@ -1,0 +1,32 @@
+@if $use-tables == true {
+	table {
+		width: 100% !important;
+	    border-collapse: collapse;
+	    border-spacing: 0;
+	    border: 1px solid lighten($dark-color, 70);
+	}
+
+	td,th {
+	    padding: $base-spacing-unit/4;
+		border-bottom: 1px solid lighten($dark-color, 70);
+		border-right: 1px solid lighten($dark-color, 70);
+
+		&:last-child {
+			border-right: 0px;
+		}
+	}
+
+	tbody tr:last-child {
+		td {
+			border-bottom: 0px;
+		}
+	}
+
+	@include media-query(handheld) {
+		table {
+			overflow-x: auto;
+			display: block;
+			-webkit-overflow-scrolling: touch;
+		}
+	}
+}

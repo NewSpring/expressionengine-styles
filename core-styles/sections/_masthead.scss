@@ -388,8 +388,10 @@
 			> a {
 				color: $light-color;
 				border-left: 2px solid $dark-color;
+			}
 
-				&:hover {
+			&:hover {
+				& > a {
 					color: $brand-color;
 				}
 			}

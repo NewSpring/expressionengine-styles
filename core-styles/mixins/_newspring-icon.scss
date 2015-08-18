@@ -14,7 +14,7 @@
 
 ============================================================ */
 
-@mixin newspring--icon-color ( $color: $brand-color, $add-on: 'n', $add-on-color: white) {
+@mixin newspring--icon-color ( $color: $newspring-primary, $add-on: 'n', $add-on-color: white) {
 
     // If you wan the NewSpring n
     @if $add-on == "n" {
@@ -96,7 +96,7 @@
 
 ============================================================ */
 
-@mixin newspring--icon ($size, $color: $brand-color, $add-on: 'n', $add-on-color: white){
+@mixin newspring--icon ($size, $color: $newspring-primary, $add-on: 'n', $add-on-color: white){
 
     @include newspring--icon-color($color, $add-on, $add-on-color);
 

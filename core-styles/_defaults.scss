@@ -1,9 +1,13 @@
 /* ------------------------------------------------------------------------------
      $COLORS
  ------------------------------------------------------------------------------ */
-$primary-color:    #6BAC43!default;
-$secondary-color:  #1c683e!default;
-$tertiary-color:   #2a4930!default;
+$newspring-primary:    #6BAC43!default;
+$newspring-secondary:  #1c683e!default;
+$newspring-tertiary:   #2a4930!default;
+
+$primary-color:    $newspring-primary!default;
+$secondary-color:  $newspring-secondary!default;
+$tertiary-color:   $newspring-tertiary!default;
 
 $dark-color:       #303030!default;
 $medium-color:     #858585!default;
@@ -146,6 +150,7 @@ $use-lists:          true!default;
 $use-newspring-icon: true!default;
 $use-sections:       true!default;
 $use-social:       	 true!default;
+$use-tables:         true!default;
 $use-tags:           true!default;
 $use-maps:           true!default;
 
