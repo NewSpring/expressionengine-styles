@@ -1,8 +1,23 @@
 @if $use-heroes == true {
 
+        .hero__image {
+                position: absolute;
+                z-index: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                overflow: hidden;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-size: cover;
+                background-position: center;
+        }
+
         .non-hero {
-                padding-top: 120px;
-                padding-bottom: 100px;
+                padding-top: 100px;
+                padding-bottom: 60px;
                 @include media-query(handheld) {
                         padding-top: 80px;
                         padding-bottom: 60px;
@@ -30,9 +45,18 @@
                         z-index: 1;
                 } */
 
-                &.floating--left {
+                .floating--left {
                         .text--constrained {
                                 text-align: left;
+                                margin: 0px;
+                                max-width: 960px;
+                        }
+                }
+    
+    .floating--right {
+                        .text--constrained {
+        display: inline-block;
+                                text-align: right;
                                 margin: 0px;
                                 max-width: 960px;
                         }
@@ -41,13 +65,13 @@
 
                 h1 {
                         display: inline-block;
-                        font-weight: 300;
-                        font-size: $base-font-size*4;
-                        line-height: $base-font-size*4.25;
-                        letter-spacing: -5px;
-                        margin-bottom: $base-spacing-unit/2;
-                        text-transform: none;
-                        text-shadow: 0 0 85px rgba(0,0,0,.7), 0 0 45px rgba(0,0,0,.7);
+                        // font-weight: 600;
+                        // font-size: $base-font-size*4;
+                        // line-height: $base-font-size*4.25;
+                        // letter-spacing: -5px;
+                        // margin-bottom: $base-spacing-unit/2;
+                        // text-transform: none;
+                        // text-shadow: 0 0 85px rgba(0,0,0,.7), 0 0 45px rgba(0,0,0,.7);
 
                 }
 
@@ -76,15 +100,16 @@
 
                 @include media-query(handheld) {
                         h1 {
-                                font-size: $base-font-size*2;
-                                line-height: $base-font-size*2;
-                                letter-spacing: -4px;
+                                font-size: $handheld-h1;
+                                line-height: $handheld-h1;
+                                // letter-spacing: -4px;
                                 margin-bottom: $base-spacing-unit/4;
+                                text-shadow: 0 0 15px rgba(0,0,0,0.3);
                         }
-                        p, a, li {
-                                font-size: $base-font-size * .75;
-                                line-height: $base-line-height * .75;
-                        }
+                        // p, a, li {
+                        //      font-size: $base-font-size * .75;
+                        //      line-height: $base-line-height * .75;
+                        // }
                         .overlay__item {
                                 padding: 20px;
                                 padding-top: 25px;
@@ -109,7 +134,7 @@
                 .overlay {
 
                         .overlay__item {
-                                padding-bottom: 70px;
+                                padding-bottom: 90px;
                         }
                 }
 
