@@ -639,7 +639,7 @@ hr {
     border-color: $dark-color;
     font-weight: 500;
     text-transform: uppercase;
-    padding: ($base-spacing-unit/10)+1 $base-spacing-unit/4 ($base-spacing-unit/10)-1;
+    padding: ($base-spacing-unit/10) + 1 $base-spacing-unit/4 ($base-spacing-unit/10) - 1;
     @include radius(2px);
 
     .hero & {
