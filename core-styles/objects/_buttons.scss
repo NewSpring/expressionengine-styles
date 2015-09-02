@@ -98,7 +98,7 @@ $button-size: $icon-size * .5;
 	min-width: 220px;
 	text-align: center !important;
 	@include radius($base-spacing-unit/8);
-	padding: ($button-size/3)+1 ($button-size) ($button-size/3)-1;
+	padding: ($button-size/3) + 1 ($button-size) ($button-size/3) - 1;
 
 	.list--inline & {
 		margin: 0 $base-spacing-unit/4 $base-spacing-unit/4 0;
@@ -345,7 +345,7 @@ $button-size: $icon-size * .5;
 		font-size: $base-font-size;
 		background: $primary-color;
 		color: $light-color;
-		padding: ($button-size/3)+1 0 ($button-size/3)-1;
+		padding: ($button-size/3) + 1 0 ($button-size/3) - 1;
 	}
 
 	&:hover {
