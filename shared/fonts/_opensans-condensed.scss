@@ -1,4 +1,16 @@
 /* ----------------------------------------------------------------------------
 	FONT: Open Sans Condensed
 ---------------------------------------------------------------------------- */
-@import url("//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700");
+// @import url("//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700");
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Cond Light'), local('OpenSans-CondensedLight'), url(//fonts.gstatic.com/s/opensanscondensed/v10/gk5FxslNkTTHtojXrkp-xGtXp_56cyzG87rk01y3A5nr7w4p9aSvGirXi6XmeXNA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Condensed Bold'), local('OpenSans-CondensedBold'), url(//fonts.gstatic.com/s/opensanscondensed/v10/gk5FxslNkTTHtojXrkp-xEb5azEPpng8GbF4Y4e4kqzr7w4p9aSvGirXi6XmeXNA.ttf) format('truetype');
+}

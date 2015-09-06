@@ -1,4 +1,22 @@
 /* ----------------------------------------------------------------------------
 	FONT: Bitter
 ---------------------------------------------------------------------------- */
-@import url("//fonts.googleapis.com/css?family=Bitter:400,700,400italic");
+// @import url("//fonts.googleapis.com/css?family=Bitter:400,700,400italic");
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Bitter-Regular'), url(//fonts.gstatic.com/s/bitter/v7/9BepFqYP2pW-mvfNqASDl-vvDin1pK8aKteLpeZ5c0A.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Bitter-Bold'), url(//fonts.gstatic.com/s/bitter/v7/evC1haE-MsorTl_A7_uSGSZ2oysoEQEeKwjgmXLRnTc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Bitter';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Bitter-Italic'), url(//fonts.gstatic.com/s/bitter/v7/E44LYN4bXPiBT-TMwacNsnYhjbSpvc47ee6xR_80Hnw.ttf) format('truetype');
+}
