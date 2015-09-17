@@ -135,7 +135,7 @@ $overlay-spacing-unit: 48px;
 			color: $light-color;
 		}
 
-		p, p b, a {
+		p, p b, a:not(.btn) {
 			color: $light-color;
 		}
 
