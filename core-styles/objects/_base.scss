@@ -490,6 +490,11 @@ body {
 
 // Alignment and Inline-Block
 
+.full-width {
+    width: 100%;
+    max-width: 100%;
+}
+
 .display--inline {
     display: inline-block;
 }
@@ -544,6 +549,10 @@ h3 {
 
     @include media-query(handheld) {
         padding: $base-spacing-unit $base-spacing-unit*.5 $base-spacing-unit;
+    }
+
+    &.full-width {
+        max-width: 100%;
     }
 }
 
