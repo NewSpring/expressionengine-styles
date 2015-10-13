@@ -286,12 +286,28 @@ defines the base spacing of sections
 				color: $light-color;
 			}
 
+			a:not(.btn) {
+				color: $primary-color;
+
+				&:hover {
+					color: darken($primary-color, 10);
+				}
+			}
+
 			.btn {
 				border-color: $light-color;
 
 				&:hover {
 					background: $light-color;
 					color: $tertiary-color;
+				}
+			}
+
+			.btn--filled {
+				border-color: $primary-color;
+
+				&:hover {
+					border-color: $light-color;
 				}
 			}
 		}

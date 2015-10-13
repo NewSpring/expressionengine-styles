@@ -131,11 +131,11 @@ $overlay-spacing-unit: 48px;
 	}
 
 	.overlay--light {
-		h1,h2,h3,h4,h5,h6 {
+		h1, h2, h3, h4, h5, h6 {
 			color: $light-color;
 		}
 
-		p, p b, a:not(.btn) {
+		p, p b, a:not(.btn), li {
 			color: $light-color;
 		}
 
@@ -171,6 +171,49 @@ $overlay-spacing-unit: 48px;
 				}
 			}
 		}
+
+		.card {
+
+			h1, h2, h3, h4, h5, h6 {
+				color: inherit;
+			}
+
+			p, p b, a:not(.btn), li {
+				color: inherit;
+			}
+
+			.btn:not(.btn--share) {
+				color: $primary-color;
+				border-color: $primary-color;
+
+				&.btn--filled {
+					background-color: $primary-color;
+					color: $light-color;
+
+					&:hover {
+						background-color: darken($primary-color, 10);
+						border-color: darken($primary-color, 10);
+						color: $light-color;
+					}
+				}
+
+				&:hover {
+					border-color: $primary-color;
+					background-color: $primary-color;
+					color: $light-color;
+				}
+			}
+
+			a.link--arrow {
+				&:after {
+					border-color: inherit;
+				}
+
+				&.reverse:after {
+					border-color: inherit;
+				}
+			}
+		}
 	}
 
 
@@ -180,7 +223,7 @@ $overlay-spacing-unit: 48px;
 			color: $dark-color!important;
 		}
 
-		p, p b, a {
+		p, p b, a:not(.btn), li {
 			color: $dark-color!important;
 		}
 
