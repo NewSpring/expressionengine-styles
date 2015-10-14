@@ -220,20 +220,24 @@ $overlay-spacing-unit: 48px;
 
 	.overlay--dark {
 		h1,h2,h3,h4,h5,h6 {
-			color: $dark-color!important;
+			color: $dark-color;
 		}
 
 		p, p b, a:not(.btn), li {
-			color: $dark-color!important;
+			color: $dark-color;
+		}
+
+		a.link--arrow:after {
+			border-color: $dark-color;
 		}
 
 		.btn:not(.btn--share) {
-			color: $dark-color!important;
-			border-color: $dark-color!important;
+			color: $dark-color;
+			border-color: $dark-color;
 
 			&:hover {
-				background: $dark-color!important;
-				color: $light-color!important;
+				background: $dark-color;
+				color: $light-color;
 			}
 		}
 	}
