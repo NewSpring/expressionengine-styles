@@ -98,6 +98,11 @@
 	margin-bottom: 0px !important;
 }
 
+@include namespace(push--sides) {
+	margin-left: $base-spacing-unit;
+	margin-right: $base-spacing-unit;
+}
+
 /**
 * Reversed grids
 */
@@ -110,4 +115,15 @@
 .grid--rev > .grid__item{
 	direction:ltr;
 	text-align:left;
+}
+
+@include namespace(grid--rev) {
+	@extend .grid;
+	direction:rtl;
+	text-align:right;
+
+	& > .grid__item {
+		direction:ltr;
+		text-align:left;
+	}
 }
