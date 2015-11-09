@@ -1,13 +1,19 @@
 @if $use-search == true {
 	@include media-query(lap-wide-and-up) {
-		.search-modal {
+		.search-modal, .search-modal--locked {
 			background: rgba(white, .5);
 		}
 	}
 
-	.search-modal {
+	.search-modal, .search-modal--locked {
 		section {
 			background: transparent;
+		}
+	}
+	
+	.search-modal--locked {
+		.masthead-wrapper {
+			padding: 0;
 		}
 	}
 

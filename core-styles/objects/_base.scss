@@ -237,7 +237,7 @@ body {
 
     &.link--arrow {
         &:before, &:after {
-            border-color: $light-color;
+            border-color: $light-color !important;
         }
     }
 

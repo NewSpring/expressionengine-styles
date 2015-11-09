@@ -447,6 +447,14 @@ $button-size: $icon-size * .5;
 		border-color: darken($primary-color, 10);
 		@include vendor(transition, all $global-duration $global-function);
 	}
+
+	section.section--secondary &.btn {
+		border-color: $primary-color;
+
+		&:hover {
+			border-color: $light-color;
+		}
+	}
 }
 
 
