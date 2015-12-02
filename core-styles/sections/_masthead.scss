@@ -29,8 +29,24 @@
 //	position:relative;
 //	}
 
+	.masthead--locked + section {
+		margin-top: 80px;
+
+		@include media-query(portable) {
+			margin-top: 0px;
+		}
+
+		@include media-query(handheld) {
+			margin-top: 0px;
+		}
+	}
+
 	.masthead-wrapper {
 		padding: 20px;
+
+		.masthead--locked & {
+			padding: 0px;
+		}
 
 		.masthead-bar {
 			position: relative;

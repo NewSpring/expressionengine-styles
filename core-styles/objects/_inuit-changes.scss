@@ -62,13 +62,95 @@
 	}
 }
 
-.palm-soft-quarter           { padding:       $base-spacing-unit/4!important; }
-.palm-soft-quarter--top      { padding-top:   $base-spacing-unit/4!important; }
-.palm-soft-quarter--right    { padding-right: $base-spacing-unit/4!important; }
-.palm-soft-quarter--bottom   { padding-bottom:$base-spacing-unit/4!important; }
-.palm-soft-quarter--left     { padding-left:  $base-spacing-unit/4!important; }
-.palm-soft-quarter--ends     { padding-top:   $base-spacing-unit/4!important; padding-bottom:$base-spacing-unit/4!important; }
-.palm-soft-quarter--sides    { padding-right: $base-spacing-unit/4!important; padding-left:  $base-spacing-unit/4!important; }
+.palm-soft-quarter {
+		@include media-query(palm) {
+		padding:       $base-spacing-unit/4!important; 
+	}
+}
+
+.palm-soft-quarter--top {
+	@include media-query(palm) { 
+		padding-top:   $base-spacing-unit/4!important; 
+	}
+}
+
+.palm-soft-quarter--right {
+	@include media-query(palm) { 
+		padding-right: $base-spacing-unit/4!important; 
+	}
+}
+
+.palm-soft-quarter--bottom {
+	@include media-query(palm) { 
+		padding-bottom:$base-spacing-unit/4!important; 
+	}
+}
+
+.palm-soft-quarter--left {
+	@include media-query(palm) { 
+		padding-left:  $base-spacing-unit/4!important; 
+	}
+}
+
+.palm-soft-quarter--ends {
+	@include media-query(palm) { 
+		padding-top:   $base-spacing-unit/4!important; 
+		padding-bottom:$base-spacing-unit/4!important; 
+	}
+}
+
+.palm-soft-quarter--sides {
+	@include media-query(palm) { 
+		padding-right: $base-spacing-unit/4!important; 
+		padding-left:  $base-spacing-unit/4!important; 
+	}
+}
+
+
+.handheld-soft-half {
+	@include media-query(handheld) {
+		padding: $base-spacing-unit/2!important; 
+	}
+}
+
+.handheld-soft-half--top {
+	@include media-query(handheld) { 
+		padding-top: $base-spacing-unit/2!important; 
+	}
+}
+
+.handheld-soft-half--right {
+	@include media-query(handheld) { 
+		padding-right: $base-spacing-unit/2!important; 
+	}
+}
+
+.handheld-soft-half--bottom {
+	@include media-query(handheld) { 
+		padding-bottom: $base-spacing-unit/2!important; 
+	}
+}
+
+.handheld-soft-half--left {
+	@include media-query(handheld) { 
+		padding-left: $base-spacing-unit/2!important; 
+	}
+}
+
+.handheld-soft-half--ends {
+	@include media-query(handheld) { 
+		padding-top: $base-spacing-unit/2!important; 
+		padding-bottom:$base-spacing-unit/2!important; 
+	}
+}
+
+.handheld-soft-half--sides {
+	@include media-query(handheld) { 
+		padding-right: $base-spacing-unit/2!important; 
+		padding-left: $base-spacing-unit/2!important; 
+	}
+}
+
 
 .soft-quarter           { padding:       $base-spacing-unit/4!important; }
 .soft-quarter--top      { padding-top:   $base-spacing-unit/4!important; }
