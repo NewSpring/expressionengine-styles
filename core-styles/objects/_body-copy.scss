@@ -149,6 +149,8 @@
   img {
     @include media-query(handheld) {
       width: 100% !important;
+      margin: 0px !important;
+      margin-bottom: $base-spacing-unit/2 !important;
     }
   }
 }
