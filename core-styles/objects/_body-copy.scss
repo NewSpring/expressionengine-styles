@@ -147,21 +147,8 @@
   }
 
   img {
-    // width: 100%;
-    margin: 15px;
-    max-width: 100%;
-
-    &.float--left {
-      margin-left: 0px;
-    }
-
-    &.float--right {
-      margin-right: 0px;
-    }
-
     @include media-query(handheld) {
       width: 100% !important;
-      margin: 0px !important;
     }
   }
 }
