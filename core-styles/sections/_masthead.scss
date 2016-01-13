@@ -19,6 +19,15 @@
 		a {
 			text-decoration: none;
 		}
+
+		&.masthead--locked {
+			position: relative;
+			background-color: $light-color;
+
+			.shell {
+				box-shadow: 0 0 25px rgba(0,0,0,.1);
+			}
+		}
 	}
 
 	.masthead--floating {
@@ -29,17 +38,17 @@
 //	position:relative;
 //	}
 
-	.masthead--locked + section {
-		margin-top: 80px;
+	// .masthead--locked + section {
+	// 	margin-top: 80px;
 
-		@include media-query(portable) {
-			margin-top: 0px;
-		}
+	// 	@include media-query(portable) {
+	// 		margin-top: 0px;
+	// 	}
 
-		@include media-query(handheld) {
-			margin-top: 0px;
-		}
-	}
+	// 	@include media-query(handheld) {
+	// 		margin-top: 0px;
+	// 	}
+	// }
 
 	.masthead-wrapper {
 		padding: 20px;
