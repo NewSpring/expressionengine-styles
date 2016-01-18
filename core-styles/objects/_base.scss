@@ -80,6 +80,10 @@ body {
     }
 }
 
+.overflow-visible {
+    overflow: visible !important;
+}
+
 .handheld-soft-half--top {
     @include media-query(handheld) {
         padding-top: ($base-spacing-unit/2) !important;
