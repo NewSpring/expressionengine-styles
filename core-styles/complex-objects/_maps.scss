@@ -9,6 +9,18 @@
 		}
 	}
 
+	.gm-style-iw {
+		width: 380px !important;
+	}
+
+	.gm-style-iw > div {
+		width: 100%;
+	}
+
+	.map-tooltip-wrapper {
+		max-width: none !important;
+	}
+
 	.map-wrapper {
 		position: relative;
 
