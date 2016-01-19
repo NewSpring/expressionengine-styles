@@ -132,11 +132,11 @@ $overlay-spacing-unit: 48px;
 
 	.overlay--light {
 		h1, h2, h3, h4, h5, h6 {
-			color: $light-color;
+			color: $light-color !important;
 		}
 
 		p, p b, a:not(.btn), li {
-			color: $light-color;
+			color: $light-color !important;
 		}
 
 		.btn:not(.btn--share) {
