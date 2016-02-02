@@ -89,6 +89,25 @@ $button-size: $icon-size * .5;
 			margin-left: 0px;
 		}
 	}
+
+	&.disabled {
+		opacity: .3;
+
+		&:hover {
+			background-color: transparent !important;
+			color: $primary-color;
+			cursor: default;
+		}
+
+		.section--primary &,
+		.section--secondary &,
+		.section--tertiary & {
+			&:hover {
+				color: $light-color !important;
+				
+			}
+		}
+	}
 }
 
 .btn--share {
