@@ -278,38 +278,63 @@ defines the base spacing of sections
 		}
 
 		&.section--tertiary {
-			.shell {
-				background: $tertiary-color;
+    .shell {
+				background-color: $tertiary-color;
 			}
 
-			* {
+			h1, h2 {
+					color: $light-color;
+			}
+
+			h3, h4, h5, h6 {
+					color: $light-color;
+			}
+
+			p, li {
 				color: $light-color;
 			}
 
-			a:not(.btn) {
-				color: $primary-color;
+			p b {
+				color: $light-color;
+			}
 
-				&:hover {
-					color: darken($primary-color, 10);
-				}
+			a {
+				color: $light-color;
 			}
 
 			.btn {
 				border-color: $light-color;
 
 				&:hover {
-					background: $light-color;
+					background-color: $light-color;
 					color: $tertiary-color;
 				}
 			}
 
-			.btn--filled {
-				border-color: $primary-color;
+			// a:not(.btn) {
+			// 	color: $primary-color;
 
-				&:hover {
-					border-color: $light-color;
-				}
-			}
+			// 	&:hover {
+			// 		color: darken($primary-color, 10);
+			// 	}
+			// }
+
+			// .btn {
+			// 	border-color: $light-color;
+
+			// 	&:hover {
+			// 		background: $light-color;
+			// 		color: $tertiary-color;
+			// 	}
+			// }
+
+			// .btn--filled {
+			// 	border-color: $primary-color;
+
+			// 	&:hover {
+			// 		border-color: $light-color;
+			// 	}
+			// }
 		}
 
 		&.section--medium {
