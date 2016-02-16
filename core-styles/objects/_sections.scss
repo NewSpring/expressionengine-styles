@@ -1,4 +1,3 @@
-
 @if $use-sections == true {
 
 /* ============================================================
@@ -69,9 +68,6 @@ defines the base spacing of sections
 		}
 
 		&.section--kidspring {
-			.shell {
-				// background-color: $kidspring-color;
-			}
 
 			h1, h2 {
 					color: $light-color;
@@ -102,39 +98,11 @@ defines the base spacing of sections
 				}
 			}
 		}
+
 		&.section--texture {
 			.shell {
 				background-color: $texture-color;
 			}
-
-			/* h1, h2 {
-					color: \$light-color;
-			}
-
-			h3, h4, h5, h6 {
-					color: \$primary-color;
-			}
-
-			p, li {
-				color: \$dark-color;
-			}
-
-			p b {
-				color: \$dark-color;
-			}
-
-			a {
-				color: \$primary-color;
-			}
-
-			.btn {
-				border-color: \$light-color;
-
-				&:hover {
-					background-color: \$light-color;
-					color: \$primary-color;
-				}
-			} */
 		}
 
 		&.section--pattern {
@@ -203,6 +171,7 @@ defines the base spacing of sections
 				}
 			}
 		}
+
 		&.section--dark, &.section--black {
 
 			h1, h2 {
