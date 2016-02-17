@@ -5,6 +5,8 @@
 		border-top: none;
 		background-color: $light-color;
 		margin-bottom: $base-spacing-unit/2;
+		box-shadow: 0 0 2px rgba(0,0,0,.15);
+		border-radius: 0 0 3px 3px;
 
 		@include media-query(handheld){
 	      margin-bottom: $base-spacing-unit/2;

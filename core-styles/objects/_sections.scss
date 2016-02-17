@@ -1,14 +1,14 @@
 @if $use-sections == true {
 
-/* ============================================================
+	/* ============================================================
 
-$SECTION
+	$SECTION
 
-defines the base spacing of sections
+	defines the base spacing of sections
 
 
-============================================================ */
-
+	============================================================ */
+	
 	section {
 		margin: 0 auto;
 		width: 100%;
@@ -19,301 +19,158 @@ defines the base spacing of sections
 		.shell {
 			background-color: inherit;
 		}
+	}
 
-		&.section--grey {
-			.shell {
-				background-color: #f7f7f7;
-			}
+	.section--grey,
+	.section--gray,
+	.section--medium {
+		background-color: lighten($medium-color, 35);
+	}
+
+	.section--dark {
+		background-color: $dark-color;
+	}
+
+	.section--black {
+		background-color: black;
+	}
+
+	.section--primary {
+		background-color: $primary-color;
+	}
+
+	.section--secondary {
+		background-color: $secondary-color;
+	}
+
+	.section--tertiary {
+		background-color: $tertiary-color;
+	}
+
+	.section--dark,
+	.section--black {
+		*:not(a):not(.link--arrow):not(button):not(small):not(b) {
+			color: $light-color;
 		}
 
-		&.section--transparent {
-			.shell {
-				background-color: transparent;
+		.card, form {
+			*:not(a):not(.link--arrow):not(button):not(small):not(b) {
+				color: $dark-color;
 			}
 		}
+	}
 
-		&.section--primary {
-			.shell {
-				background-color: $primary-color;
+	.section--pattern {
+		.shell {
+			position: relative;
+
+			&:before, &:after {
+				content: "";
+				@include absolute(bottom 0);
+				background-size: cover;
+				width: 300px;
+				height: 300px;
+				z-index: 1;
+
+				@include media-query(handheld) {
+					width: 100px;
+					height: 100px;
+				}
 			}
 
-			h1, h2 {
-					color: $light-color;
+
+			&:before {
+				left: 0;
+				background-image: url('//s3.amazonaws.com/ns.images/newspring/_fpo/pattern.left.02.png');
 			}
 
-			h3, h4, h5, h6 {
-					color: $light-color;
+			&:after {
+				right: 0;
+				background-image: url('//s3.amazonaws.com/ns.images/newspring/_fpo/pattern.right.02.png');
 			}
+		}
+	}
 
-			p, li {
-				color: $light-color;
-			}
+	.section--primary,
+	.section--secondary,
+	.section--tertiary {
 
-			p b {
-				color: $light-color;
-			}
+		h1, h2, h3, h4, h5, h6, p, li, small {
+			color: $light-color;
+		}
 
-			a {
-				color: $light-color;
-			}
+		a {
+			color: $primary-color;
+		}
 
-			.btn {
+		a.btn {
+			color: $light-color;
+			border-color: $light-color;
+
+			&:hover {
+				color: $secondary-color;
 				border-color: $light-color;
-
-				&:hover {
-					background-color: $light-color;
-					color: $primary-color;
-				}
+				background-color: $light-color;
 			}
 		}
 
-		&.section--kidspring {
+		a.btn.btn--filled {
+			background-color: $primary-color;
+			border-color: $primary-color;
+			color: $light-color;
 
-			h1, h2 {
-					color: $light-color;
-			}
-
-			h3, h4, h5, h6 {
-					color: $light-color;
-			}
-
-			p, li {
-				color: $light-color;
-			}
-
-			p b {
-				color: $light-color;
-			}
-
-			a {
-				color: $light-color;
-			}
-
-			.btn {
-				border-color: $light-color;
-
-				&:hover {
-					background-color: $light-color;
-					color: $kidspring-color;
-				}
+			&:hover {
+				border-color: $primary-color;
 			}
 		}
 
-		&.section--texture {
-			.shell {
-				background-color: $texture-color;
-			}
-		}
+		.card {
+			h1, h2, h3, h4, h5, h6 {
+				color: $dark-color;
 
-		&.section--pattern {
-
-			.shell {
-				position: relative;
-
-				&:before, &:after {
-					content: "";
-					@include absolute(bottom 0);
-					background-size: cover;
-					width: 300px;
-					height: 300px;
-					z-index: 1;
-
-					@include media-query(handheld) {
-						width: 100px;
-						height: 100px;
-					}
-				}
-
-
-				&:before {
-					left: 0;
-					background-image: url('//s3.amazonaws.com/ns.images/newspring/_fpo/pattern.left.02.png');
-				}
-
-				&:after {
-					right: 0;
-					background-image: url('//s3.amazonaws.com/ns.images/newspring/_fpo/pattern.right.02.png');
-				}
-			}
-		}
-
-		&.section--patterndown {
-
-			.shell {
-				position: relative;
-
-				&:before, &:after {
-					content: "";
-					@include absolute(top 0);
-					background-size: cover;
-					width: 300px;
-					height: 300px;
-					z-index: 1;
-					transform:rotate(180deg);
-					-ms-transform:rotate(180deg);
-					-webkit-transform:rotate(180deg);
-
-					@include media-query(handheld) {
-						width: 100px;
-						height: 100px;
-					}
-				}
-
-
-				&:before {
-					left: 0;
-					background-image: url('//s3.amazonaws.com/ns.images/newspring/_fpo/pattern.right.02.png');
-				}
-
-				&:after {
-					right: 0;
-					background-image: url('//s3.amazonaws.com/ns.images/newspring/_fpo/pattern.left.02.png');
-				}
-			}
-		}
-
-		&.section--dark, &.section--black {
-
-			h1, h2 {
-			    color: $brand-color;
-			}
-
-			h3, h4, h5, h6 {
-			    color: $light-color;
-			}
-
-			p, li {
-				color: darken($light-color, 20);
-			}
-
-			p b {
-				color: $light-color;
-			}
-
-			.card {
-				h1,h2,h3,h4,h5,h6,p,li {
+				a {
 					color: $dark-color;
 				}
-
-				b {
-					color: #000;
-				}
-			}
-		}
-
-		&.section--dark {
-			.shell {
-				background-color: $dark-color;
-			}
-		}
-
-		&.section--black {
-			.shell {
-				background-color: #000;
-			}
-		}
-
-		&.section--collection {
-			* {
-				color: $light-color;
-			}
-
-			.btn {
-				border-color: $light-color;
-
-				&:hover {
-					background: $light-color;
-				}
-			}
-		}
-
-		&.section--secondary {
-			.shell {
-				background: $secondary-color;
-			}
-
-			* {
-				color: $light-color;
-			}
-
-			.btn {
-				border-color: $light-color;
-
-				&:hover {
-					background: $light-color;
-					color: $secondary-color;
-				}
-			}
-		}
-
-		&.section--tertiary {
-    .shell {
-				background-color: $tertiary-color;
-			}
-
-			h1, h2 {
-					color: $light-color;
-			}
-
-			h3, h4, h5, h6 {
-					color: $light-color;
 			}
 
 			p, li {
-				color: $light-color;
+				color: $dark-color;
 			}
 
-			p b {
-				color: $light-color;
+			small {
+				color: $medium-color;
 			}
+		}
+	}
 
-			a {
-				color: $light-color;
-			}
-
-			.btn {
-				border-color: $light-color;
-
-				&:hover {
-					background-color: $light-color;
-					color: $tertiary-color;
-				}
-			}
-
-			// a:not(.btn) {
-			// 	color: $primary-color;
-
-			// 	&:hover {
-			// 		color: darken($primary-color, 10);
-			// 	}
-			// }
-
-			// .btn {
-			// 	border-color: $light-color;
-
-			// 	&:hover {
-			// 		background: $light-color;
-			// 		color: $tertiary-color;
-			// 	}
-			// }
-
-			// .btn--filled {
-			// 	border-color: $primary-color;
-
-			// 	&:hover {
-			// 		border-color: $light-color;
-			// 	}
-			// }
+	.section--primary {
+		a {
+			color: $tertiary-color;
 		}
 
-		&.section--medium {
-			.shell {
-				background-color: $gray-primary;
+		a.btn {
 
-				h1, h2, h3, h4, h5 {
-					color: $dark-color;
+		}
+
+
+		a.btn.btn--filled {
+			background-color: $tertiary-color;
+			border-color: $tertiary-color;
+
+			&:hover {
+				border-color: $tertiary-color;
+			}
+		}
+
+		.card {
+			a {
+				color: $primary-color;
+
+				&:hover {
+					color: darken($primary-color, 15);
 				}
 			}
 		}
 	}
+
 }
