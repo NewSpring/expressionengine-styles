@@ -87,26 +87,11 @@
                 text-transform: uppercase;
         }
 
-        // .overlay__item {
-        //         padding: 90px;
-
-        //         *:last-child {
-        //                 margin-bottom: 0px;
-        //         }
-        // }
-
         @include media-query(handheld) {
-                h1 {
-                        font-size: $handheld-h1;
-                        line-height: $handheld-h1;
-                        // margin-bottom: $base-spacing-unit/4;
-                        text-shadow: 0 0 15px rgba(0,0,0,0.3);
-                }
-
-                // .overlay__item {
-                //         padding: 20px;
-                //         padding-top: 25px;
-                // }
+            h1 {
+                font-size: $handheld-h1;
+                line-height: $handheld-h1;
+            }
         }
 
     }

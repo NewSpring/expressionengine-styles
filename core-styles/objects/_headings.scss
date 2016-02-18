@@ -9,6 +9,26 @@
     font-weight: 600;
     letter-spacing: -.5px;
     color: $dark-color;
+
+    a {
+      color: $dark-color;
+    }
+
+    &:hover {
+      a {
+        color: lighten($dark-color, 10);
+      }
+    }
+
+    .overlay--light &,
+    .section--dark &,
+    .section--black & {
+      &:hover {
+        a {
+          color: $light-color;
+        }
+      }
+    }
   }
 
   h1 {

@@ -53,9 +53,21 @@
 			color: $light-color;
 		}
 
+		h1, h2, h3, h4, h5, h6 {
+			a {
+				color: $light-color;
+			}
+		}
+
 		.card, form {
 			*:not(a):not(.link--arrow):not(button):not(small):not(b) {
 				color: $dark-color;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				a {
+					color: $dark-color;
+				}
 			}
 		}
 	}
@@ -95,12 +107,26 @@
 	.section--secondary,
 	.section--tertiary {
 
-		h1, h2, h3, h4, h5, h6, p, li, small {
-			color: $light-color;
-		}
-
 		a {
 			color: $primary-color;
+
+			&:hover {
+				color: darken($primary-color, 15);
+			}
+		}
+
+		h1, h2, h3, h4, h5, h6, p, li, small {
+			color: $light-color;
+
+			a {
+				color: $light-color;
+			}
+
+			&:hover {
+				a {
+					color: $light-color;
+				}
+			}
 		}
 
 		a.btn {
@@ -148,6 +174,20 @@
 			color: $tertiary-color;
 		}
 
+		.link--arrow {
+			&:after {
+				border-color: $tertiary-color;
+			}
+
+			&:hover {
+				color: $tertiary-color;
+
+				&:after {
+					border-color: $tertiary-color;
+				}
+			}
+		}
+
 		a.btn {
 
 		}
@@ -168,6 +208,18 @@
 
 				&:hover {
 					color: darken($primary-color, 15);
+				}
+			}
+
+			.link--arrow {
+				&:after {
+					border-color: $primary-color;
+				}
+
+				&:hover {
+					&:after {
+						border-color: darken($primary-color, 15);
+					}
 				}
 			}
 		}
