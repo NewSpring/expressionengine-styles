@@ -132,27 +132,25 @@ $overlay-spacing-unit: 48px;
 
 	.overlay--light {
 		h1, h2, h3, h4, h5, h6 {
-			color: $light-color !important;
-		}
-
-		p, p b, a:not(.btn), li {
-			color: $light-color !important;
-		}
-
-		.btn:not(.btn--share) {
 			color: $light-color;
-			border-color: $light-color;
+		}
 
-			&.btn--filled {
-				background-color: $light-color;
-				color: $dark-color;
+		p, p b, li {
+			color: $light-color;
+		}
 
-				&:hover {
-					background-color: $primary-color;
-					border-color: $primary-color;
-					color: $light-color;
+		a {
+			color: $light-color;
+
+			&.link--arrow {
+				&:after {
+					border-color: $light-color;
 				}
 			}
+		}
+
+		a.btn {
+			border-color: $light-color;
 
 			&:hover {
 				background-color: $light-color;
@@ -160,59 +158,43 @@ $overlay-spacing-unit: 48px;
 			}
 		}
 
-		a {
-			&.link--arrow {
-				&:after {
-					border-color: $light-color;
-				}
-
-				&.reverse:after {
-					border-color: $light-color;
-				}
-			}
+		a.btn--filled {
+			background-color: $light-color;
+			color: $dark-color;
 		}
 
 		.card {
 
 			h1, h2, h3, h4, h5, h6 {
 				color: inherit;
+
+				a {
+					color: $dark-color;
+				}
 			}
 
-			p, p b, a:not(.btn), li {
-				color: inherit;
+			p, p b, li {
+				color: $dark-color;
 			}
 
-			.btn:not(.btn--share) {
+			a {
 				color: $primary-color;
-				border-color: $primary-color;
 
-				&.btn--filled {
-					background-color: $primary-color;
-					color: $light-color;
+				&.link--arrow {
+					&:after {
+						border-color: $primary-color;
+					}
 
 					&:hover {
-						background-color: darken($primary-color, 10);
-						border-color: darken($primary-color, 10);
-						color: $light-color;
+						color: darken($primary-color, 15);
+
+						&:after {
+							border-color: darken($primary-color, 15);
+						}
 					}
 				}
-
-				&:hover {
-					border-color: $primary-color;
-					background-color: $primary-color;
-					color: $light-color;
-				}
 			}
 
-			a.link--arrow {
-				&:after {
-					border-color: inherit;
-				}
-
-				&.reverse:after {
-					border-color: inherit;
-				}
-			}
 		}
 	}
 
