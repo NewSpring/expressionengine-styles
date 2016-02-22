@@ -76,17 +76,6 @@
             display: inline-block;
         }
 
-        p, a:not(.btn), li {
-                font-family: $base-heading-font;
-                font-size: $base-font-size;
-                line-height: $base-line-height;
-        }
-
-        b {
-                font-family: $base-heading-font;
-                text-transform: uppercase;
-        }
-
         @include media-query(handheld) {
             h1 {
                 font-size: $handheld-h1;
