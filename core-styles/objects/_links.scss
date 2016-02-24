@@ -85,6 +85,19 @@
               }
             }
         }
+
+        .background--fill h1 &,
+        .background--fill h2 &,
+        .background--fill h3 &,
+        .background--fill h4 &,
+        .background--fill h5 &,
+        .background--fill h6 & {
+            color: $primary-color;
+
+            &:hover {
+                color: darken($primary-color, 15);
+            }
+        }
     }
 
     .link--arrow {

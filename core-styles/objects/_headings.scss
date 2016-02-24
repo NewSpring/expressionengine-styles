@@ -12,10 +12,8 @@
 
     a {
       color: $dark-color;
-    }
 
-    &:hover {
-      a {
+      &:hover {
         color: lighten($dark-color, 10);
       }
     }
