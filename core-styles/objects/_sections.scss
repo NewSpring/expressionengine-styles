@@ -12,9 +12,9 @@
 	section {
 		margin: 0 auto;
 		width: 100%;
-		background-color: $light-color;
 		overflow: hidden;
 		position: relative;
+    background-color: $light-color;
 
 		.shell {
 			background-color: inherit;
@@ -24,27 +24,46 @@
 	.section--grey,
 	.section--gray,
 	.section--medium {
-		background-color: lighten($medium-color, 35);
+    
+		.shell {
+      background-color: lighten($medium-color, 35);
+    }
 	}
 
 	.section--dark {
-		background-color: $dark-color;
+    
+		.shell {
+      background-color: $dark-color;
+    }
 	}
 
 	.section--black {
-		background-color: black;
+    
+    .shell {
+      background-color: black;
+    }
+		
 	}
 
 	.section--primary {
-		background-color: $primary-color;
+    
+		.shell {
+      background-color: $primary-color;
+    }
 	}
 
 	.section--secondary {
-		background-color: $secondary-color;
+    
+		.shell {
+      background-color: $secondary-color;
+    }  
 	}
 
 	.section--tertiary {
-		background-color: $tertiary-color;
+    
+		.shell {
+      background-color: $tertiary-color;
+    }
 	}
 
 	.section--dark,
