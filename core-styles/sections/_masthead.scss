@@ -394,6 +394,18 @@
 			background-color: $alert-color;
 			color: $light-color;
 		}
+   .logo {
+     text-align: left;
+     
+     h1 {
+       color: $light-color;
+     }
+     
+     img {
+       display: inline-block;
+       max-width: 100px;
+     }
+   }
 	}
 }
 
