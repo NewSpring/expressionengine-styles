@@ -80,8 +80,18 @@ body {
     }
 }
 
+.desk-locked {
+    @include media-query(anchored) {
+        overflow: hidden;
+    }
+}
+
 .overflow-visible {
     overflow: visible !important;
+}
+
+.underlined {
+    text-decoration: underline;
 }
 
 .handheld-soft-half--top {

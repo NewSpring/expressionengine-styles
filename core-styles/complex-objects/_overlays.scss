@@ -133,9 +133,13 @@ $overlay-spacing-unit: 48px;
 	.overlay--light {
 		h1, h2, h3, h4, h5, h6 {
 			color: $light-color;
+
+			a:hover {
+				color: darken($light-color, 20);
+			}
 		}
 
-		p, p b, li {
+		p, li {
 			color: $light-color;
 		}
 
