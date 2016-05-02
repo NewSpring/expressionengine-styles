@@ -74,11 +74,11 @@
 	}
 
 	// Removes bottom margin from last element within a grid item
-	// .grid__item {
-	// 	*:last-child:not(:first-child) {
-	// 		margin-bottom: 0px;
-	// 	}
-	// }
+	.grid__item {
+		*:last-child {
+			margin-bottom: 0px;
+		}
+	}
 
 	.grid--half-gutter {
 		margin-left: -$base-spacing-unit/2;
