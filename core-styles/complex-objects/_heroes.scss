@@ -76,6 +76,10 @@
             display: inline-block;
         }
 
+        h1, h2, h3, h4, h5, h6 {
+            position: relative;
+        }
+
         @include media-query(handheld) {
             h1 {
                 font-size: $handheld-h1;

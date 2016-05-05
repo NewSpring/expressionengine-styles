@@ -2,14 +2,15 @@
 
 	.card {
 		padding: $base-spacing-unit*.6 $base-spacing-unit*.5;
+		padding-bottom: 0;
 		border-top: none;
 		background-color: $light-color;
-		margin-bottom: $base-spacing-unit/2;
 		box-shadow: 0 0 1px rgba(0,0,0,.25);
 		border-radius: 0 0 3px 3px;
+		overflow: hidden;
 
-		@include media-query(handheld){
-	      margin-bottom: $base-spacing-unit/2;
-	    }
+		&.top--rounded {
+			border-radius: 3px;
+		}
 	}
 }

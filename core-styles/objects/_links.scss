@@ -12,10 +12,6 @@
         @include vendor(transition, all $global-duration $global-function);
         word-wrap: break-word;
 
-        b & {
-            font-weight: 500;
-        }
-
         &:hover {
             color: darken($primary-color, 15);
 
@@ -86,18 +82,18 @@
             }
         }
 
-        .background--fill h1 &,
-        .background--fill h2 &,
-        .background--fill h3 &,
-        .background--fill h4 &,
-        .background--fill h5 &,
-        .background--fill h6 & {
-            color: $primary-color;
+        // .background--fill h1 &,
+        // .background--fill h2 &,
+        // .background--fill h3 &,
+        // .background--fill h4 &,
+        // .background--fill h5 &,
+        // .background--fill h6 & {
+        //     color: $primary-color;
 
-            &:hover {
-                color: darken($primary-color, 15);
-            }
-        }
+        //     &:hover {
+        //         color: darken($primary-color, 15);
+        //     }
+        // }
     }
 
     .link--arrow {
@@ -109,7 +105,7 @@
         display: inline-block;
         padding-right: $base-spacing-unit*.3;
         text-decoration: none;
-        margin-bottom: $base-spacing-unit/2;
+        // margin-bottom: $base-spacing-unit/2;
         color: $brand-color;
         cursor: pointer;
         //Because we're treating .link--arow as a block-level item, it should be used on it's own, outside of a block level element

@@ -17,9 +17,9 @@
 		.grid {
 			.grid__item:first-child {
 				// Adds top margin to the first element within the first grid item within a condensed section that isn't a grid element
-				*:first-child:not([class*="grid"]) {
-					margin-top: $base-spacing-unit/2;
-				}
+				// *:first-child:not([class*="grid"]) {
+				// 	margin-top: $base-spacing-unit/2;
+				// }
 
 				.card {
 					&:first-child {
@@ -70,13 +70,6 @@
 					margin-bottom: $enclosed-spacing-unit/2;
 				}
 			}
-		}
-	}
-
-	// Removes bottom margin from last element within a grid item
-	.grid__item {
-		*:last-child:not(:first-child) {
-			margin-bottom: 0px;
 		}
 	}
 
