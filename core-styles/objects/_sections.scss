@@ -126,14 +126,6 @@
 	.section--secondary,
 	.section--tertiary {
 
-		a {
-			color: $primary-color;
-
-			&:hover {
-				color: darken($primary-color, 15);
-			}
-		}
-
 		h1, h2, h3, h4, h5, h6, p, li, small {
 			color: $light-color;
 
@@ -145,6 +137,14 @@
 				a {
 					color: $light-color;
 				}
+			}
+		}
+
+		a, .card a {
+			color: $primary-color;
+
+			&:hover {
+				color: darken($primary-color, 15);
 			}
 		}
 
