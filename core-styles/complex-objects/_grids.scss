@@ -33,7 +33,9 @@
 		}
 
 		.shell {
-			padding: $base-spacing-unit $base-spacing-unit $base-spacing-unit/2;
+			// padding: $base-spacing-unit $base-spacing-unit $base-spacing-unit/2;
+			padding-left: $base-spacing-unit;
+			padding-right: $base-spacing-unit;
 
 			@include media-query(portable) {
 				padding-left: $base-spacing-unit/2;
