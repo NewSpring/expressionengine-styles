@@ -16,10 +16,6 @@
 		
 		.grid {
 			.grid__item:first-child {
-				// Adds top margin to the first element within the first grid item within a condensed section that isn't a grid element
-				// *:first-child:not([class*="grid"]) {
-				// 	margin-top: $base-spacing-unit/2;
-				// }
 
 				.card {
 					&:first-child {
@@ -37,14 +33,18 @@
 		}
 
 		.shell {
-			padding: $base-spacing-unit $base-spacing-unit $base-spacing-unit/2;
+			// padding: $base-spacing-unit $base-spacing-unit $base-spacing-unit/2;
+			padding-left: $base-spacing-unit;
+			padding-right: $base-spacing-unit;
 
 			@include media-query(portable) {
-				padding: $base-spacing-unit/2 $base-spacing-unit/2 0;
+				padding-left: $base-spacing-unit/2;
+				padding-right: $base-spacing-unit/2;
 			}
 
 			@include media-query(handheld) {
-				padding: $base-spacing-unit/4 $base-spacing-unit/4 0;
+				padding-left: $base-spacing-unit/4;
+				padding-right: $base-spacing-unit/4;
 			}
 		}
 

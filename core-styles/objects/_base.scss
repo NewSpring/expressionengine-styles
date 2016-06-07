@@ -558,11 +558,12 @@ h3 {
     }
 
     @include media-query(portable) {
-        padding: $base-spacing-unit*1.5 $base-spacing-unit $base-spacing-unit;
+        padding: $base-spacing-unit*1.5 $base-spacing-unit 0;
     }
 
     @include media-query(handheld) {
-        padding: $base-spacing-unit $base-spacing-unit*.5 $base-spacing-unit;
+        // padding: $base-spacing-unit $base-spacing-unit*.5 $base-spacing-unit;
+        padding: $base-spacing-unit*1.5 $base-spacing-unit/2 0;
     }
 
     &.full-width {
