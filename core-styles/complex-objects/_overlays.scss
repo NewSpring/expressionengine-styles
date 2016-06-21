@@ -166,6 +166,10 @@ $overlay-spacing-unit: 48px;
 			background-color: $light-color;
 			color: $dark-color;
 		}
+		
+		.outlined--tag {
+			border-color: $light-color;
+		}
 
 		.card {
 
