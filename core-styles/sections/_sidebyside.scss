@@ -5,10 +5,10 @@
 	*/
 
 	.cover-half {
-		position: absolute; 
-		top: 0px; 
-		left: 0px; 
-		width: 50%; 
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 50%;
 		height: 100%;
 
 		& > div, & > a, & > a > div {
@@ -56,6 +56,12 @@
 			right: 0px;
 			margin-right: -$base-spacing-unit*.75;
 
+			@include media-query(portable) {
+				top: 0;
+				left: 50%;
+				margin-top: -$base-spacing-unit*.75;
+				margin-left: -$base-spacing-unit*.75;
+			}
 			@include media-query(handheld) {
 				top: 0;
 				right: 50%;
@@ -68,6 +74,12 @@
 			left: 0px;
 			margin-left: -$base-spacing-unit*.75;
 
+			@include media-query(portable) {
+				top: 0;
+				left: 50%;
+				margin-top: -$base-spacing-unit*.75;
+				margin-left: -$base-spacing-unit*.75;
+			}
 			@include media-query(handheld) {
 				top: 0;
 				left: 50%;
