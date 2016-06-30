@@ -94,10 +94,8 @@ body {
     text-decoration: underline;
 }
 
-.handheld-soft-half--top {
-    @include media-query(handheld) {
-        padding-top: ($base-spacing-unit/2) !important;
-    }
+@include namespace(soft-half--top) {
+    padding-top: ($base-spacing-unit/2) !important;
 }
 
 .handheld-hard--left {
