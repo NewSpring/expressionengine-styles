@@ -169,6 +169,12 @@
 			}
 		}
 
+		a.link--arrow {
+			&:after {
+				border-color: $light-color;
+			}
+		}
+
 		.card {
 			h1, h2, h3, h4, h5, h6 {
 				color: $dark-color;
@@ -193,19 +199,19 @@
 			color: $tertiary-color;
 		}
 
-		.link--arrow {
-			&:after {
-				border-color: $tertiary-color;
-			}
+		// .link--arrow {
+		// 	&:after {
+		// 		border-color: $tertiary-color;
+		// 	}
 
-			&:hover {
-				color: $tertiary-color;
+		// 	&:hover {
+		// 		color: $tertiary-color;
 
-				&:after {
-					border-color: $tertiary-color;
-				}
-			}
-		}
+		// 		&:after {
+		// 			border-color: $tertiary-color;
+		// 		}
+		// 	}
+		// }
 
 		a.btn {
 
