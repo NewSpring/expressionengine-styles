@@ -82,7 +82,7 @@ html.modal--opened{
     height: 100%;
     padding: 0;
     margin: 0;
-    position: absolute;
+    @include absolute(left 0 right 0);
   }
 }
 
