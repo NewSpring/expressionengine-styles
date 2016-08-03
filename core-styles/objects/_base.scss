@@ -102,39 +102,50 @@ body {
     padding-top: ($base-spacing-unit/2) !important;
 }
 
-.handheld-hard--left {
-    @include media-query(handheld) {
-        padding-left: 0 !important;
-    }
+@include namespace(hard) {
+    padding: 0 !important;
 }
 
-.handheld-hard {
-    @include media-query(handheld) {
-        padding: 0 !important;
-    }
+@include namespace(hard--left) {
+    padding-left: 0 !important;
 }
 
-.handheld-hard--right {
-    @include media-query(handheld) {
-        padding-right: 0 !important;
-    }
+@include namespace(hard--right) {
+    padding-right: 0 !important;
 }
 
-.handheld-hard--sides {
-    @include media-query(handheld) {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
+@include namespace(hard--sides) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
-.handheld-flush {
-    @include media-query(handheld) {
-        margin: 0 !important;
-    }
+@include namespace(flush) {
+    margin: 0 !important;
+}
+
+@include namespace(flush--left) {
+    margin-left: 0 !important;
+}
+
+@include namespace(flush--right) {
+    margin-right: 0 !important;
+}
+
+@include namespace(flush--sides) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+@include namespace(flush--ends) {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+@include namespace(push-quarter--bottom) {
+    margin-bottom: $base-spacing-unit/4 !important;
 }
 
 .hover--dark {
-
     a:hover {
         color: $dark-color;
     }

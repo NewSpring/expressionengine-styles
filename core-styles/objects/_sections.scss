@@ -68,7 +68,7 @@
 
 	.section--dark,
 	.section--black {
-		*:not(a):not(.link--arrow):not(button):not(small):not(b) {
+		*:not(a):not(.link--arrow):not(button):not(small):not(b):not(input) {
 			color: $light-color;
 		}
 
