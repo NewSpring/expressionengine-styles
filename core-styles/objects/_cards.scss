@@ -6,11 +6,22 @@
 		border-top: none;
 		background-color: $light-color;
 		box-shadow: 0 0 1px rgba(0,0,0,.25);
-		border-radius: 0 0 3px 3px;
+		border-radius: 0 0 5px 5px;
 		overflow: hidden;
 
 		&.top--rounded {
-			border-radius: 3px;
+			border-radius: 5px;
+		}
+
+		&.card--selected {
+			border: 3px solid $primary-color;
+			border-top: 0px;
+			box-shadow: none;
+
+			&.top--rounded {
+				border-top: 3px solid $primary-color;
+			}
+
 		}
 	}
 }
