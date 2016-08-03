@@ -86,6 +86,10 @@ body {
     }
 }
 
+.scroll-x {
+    overflow-x: scroll;
+}
+
 .overflow-visible {
     overflow: visible !important;
 }
@@ -237,6 +241,10 @@ body {
 
 .background--tertiary {
     background-color: $tertiary-color !important;
+}
+
+.background--dark {
+    background-color: $dark-color !important;
 }
 
 .light {

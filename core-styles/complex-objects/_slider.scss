@@ -1,5 +1,15 @@
 @if $use-slider == true {
 
+// .slider {
+// 	margin-left: 32.5px;
+// }
+
+.slider__item-new {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+}
+
 /* Slider Container */
 
 .slider {
