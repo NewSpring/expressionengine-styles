@@ -104,7 +104,7 @@ $button-size: $icon-size * .5;
 		.section--tertiary & {
 			&:hover {
 				color: $light-color !important;
-				
+
 			}
 		}
 	}
@@ -145,6 +145,16 @@ $button-size: $icon-size * .5;
 			border-color: $gray-secondary;
 			background: $gray-secondary;
 		}
+	}
+}
+
+.btn--input {
+	border-color: $light-color;
+	color: $dark-color;
+
+	&:hover {
+		background-color: $light-color;
+		color: $dark-color;
 	}
 }
 
