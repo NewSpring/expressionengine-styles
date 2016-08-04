@@ -87,7 +87,12 @@ body {
 }
 
 .scroll-x {
-    overflow-x: scroll;
+    overflow-x: auto;
+
+    // &::-webkit-scrollbar {
+    //     display: none;
+    // }
+
 }
 
 .overflow-visible {
