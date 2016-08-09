@@ -104,7 +104,7 @@ $button-size: $icon-size * .5;
 		.section--tertiary & {
 			&:hover {
 				color: $light-color !important;
-				
+
 			}
 		}
 	}
@@ -148,8 +148,18 @@ $button-size: $icon-size * .5;
 	}
 }
 
+.btn--input {
+	border-color: $light-color;
+	color: $dark-color;
+
+	&:hover {
+		background-color: $light-color;
+		color: $dark-color;
+	}
+}
+
 .btn--corners {
-	@include radius(0);
+	@include radius(3px);
 }
 
 /* ============================================================

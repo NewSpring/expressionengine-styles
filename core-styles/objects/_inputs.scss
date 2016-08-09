@@ -5,7 +5,23 @@
         outline: none;
         border: 3px solid transparent;
         cursor: text;
+        color: $dark-color;
         @include radius(1000px);
+
+        &.btn {
+            border: 3px solid transparent;
+            color: $dark-color;
+            text-transform: none;
+            letter-spacing: 0;
+            padding-left: $base-spacing-unit/3;
+            padding-right: $base-spacing-unit/3;
+            cursor: text;
+
+            &:hover {
+                background-color: $light-color;
+                color: $dark-color;
+            }
+        }
     }
 
     ::-webkit-input-placeholder {

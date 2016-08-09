@@ -8,7 +8,7 @@
 
 
 	============================================================ */
-	
+
 	section {
 		margin: 0 auto;
 		width: 100%;
@@ -24,43 +24,43 @@
 	.section--grey,
 	.section--gray,
 	.section--medium {
-    
+
 		.shell {
       background-color: lighten($medium-color, 35);
     }
 	}
 
 	.section--dark {
-    
+
 		.shell {
       background-color: $dark-color;
     }
 	}
 
 	.section--black {
-    
+
     .shell {
       background-color: black;
     }
-		
+
 	}
 
 	.section--primary {
-    
+
 		.shell {
       background-color: $primary-color;
     }
 	}
 
 	.section--secondary {
-    
+
 		.shell {
       background-color: $secondary-color;
-    }  
+    }
 	}
 
 	.section--tertiary {
-    
+
 		.shell {
       background-color: $tertiary-color;
     }
@@ -68,7 +68,7 @@
 
 	.section--dark,
 	.section--black {
-		*:not(a):not(.link--arrow):not(button):not(small):not(b) {
+		*:not(a):not(.link--arrow):not(button):not(small):not(b):not(input) {
 			color: $light-color;
 		}
 
