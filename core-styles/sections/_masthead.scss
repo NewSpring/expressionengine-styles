@@ -181,17 +181,17 @@
 				color: lighten($dark-color, 5%);
 				@include vendor(transition, all 0s);
 				border-left: 2px solid #eee;
-				font-weight: 700;
-				font-size: $base-font-size*.725;
-				letter-spacing: 1px;
+				font-weight: 500;
+				font-size: $base-font-size*.8;
+				letter-spacing: 0;
 				padding: 27px 25px 23px 23px;
-				text-transform: uppercase;
+				text-transform: none;
 
 				// Kills left borders and padding on main nav
 				@media all and (max-width: 1131px) {
 					border-left: 0 none;
-					padding-right: 17px;
-					padding-left: 17px;
+					padding-right: 18px;
+					padding-left: 18px;
 				}
 
 				.fa {
