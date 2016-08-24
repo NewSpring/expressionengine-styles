@@ -2,17 +2,7 @@
 
 	.masthead--transparent + section {
 		.hero.background--fill {
-			.ratio, .floating {
-				padding-top: 60px;
-
-				@include media-query(lap-wide-and-down) {
-					padding-top: 80px !important;
-				}
-			}
-
-			.ratio__item, .floating__item {
-				padding-top: 20px;
-			}
+			padding-top: 80px !important;
 		}
 	}
 
