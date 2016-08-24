@@ -16,6 +16,10 @@
 		position: relative;
     background-color: $light-color;
 
+		&[data-outdated-browser] {
+			z-index: 100;
+		}
+
 		.shell {
 			background-color: inherit;
 		}
@@ -40,6 +44,7 @@
 	}
 
 	.section--live {
+		z-index: 100;
 
 		.animate--bg {
 			animation-duration: 10s;
