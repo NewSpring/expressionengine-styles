@@ -2,7 +2,9 @@
 
 	.masthead--transparent + section {
 		.hero.background--fill {
-			padding-top: 80px !important;
+			.floating {
+				padding-top: 80px !important;
+			}
 		}
 	}
 
@@ -34,19 +36,6 @@
 
 			.masthead-bar {
 				background-color: transparent;
-			}
-
-			&:after {
-				content: '';
-				z-index: 0;
-				@include absolute(top -5px right 0 left 0);
-				height: 120px;
-				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&1+0,0+100 */
-				// background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-				// background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-				// background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-				// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
-				opacity: .7;
 			}
 
 			@include media-query(lap-wide-and-down) {
@@ -127,10 +116,23 @@
 		}
 
 		.shell {
-			background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-			background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-			background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+			&:after {
+				content: '';
+				z-index: 0;
+				@include absolute(top -5px right 0 left 0);
+				height: 120px;
+				background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+				opacity: .7;
+			}
+
+			.masthead-wrapper {
+				position: relative;
+				top: 5px;
+				z-index: 1;
+			}
 		}
 	}
 
