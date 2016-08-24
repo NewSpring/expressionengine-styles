@@ -1,13 +1,5 @@
 @if $use-masthead == true {
 
-	// .masthead--transparent + section {
-	// 	.hero.background--fill {
-	// 		h1 {
-	// 			padding-top: 80px !important;
-	// 		}
-	// 	}
-	// }
-
 	.masthead {
 		position: relative;
 		background-color: $light-color;
@@ -36,6 +28,39 @@
 
 			.masthead-bar {
 				background-color: transparent;
+			}
+
+			// This accounts for transparent nav and keeps proper spacing.
+			& + section .hero.background--fill {
+
+				&:not(.lap-wide-and-up-ratio--hero) {
+
+					.floating {
+
+						@include media-query(lap-wide-and-up) {
+							padding-top: 80px;
+						}
+					}
+				}
+
+				.lap-wide-and-up-ratio--hero {
+
+					&:before {
+						padding-top: calc(44.44444% + 85px);
+					}
+				}
+
+				.floating {
+
+					@include media-query(handheld) {
+						padding-top: 65px;
+					}
+
+					@include media-query(portable) {
+						padding-top: 65px;
+					}
+				}
+
 			}
 
 			@include media-query(lap-wide-and-down) {
@@ -262,6 +287,7 @@
 
 					.masthead--transparent & {
 						border-left: 0;
+						background-color: rgba($dark-color, 0.96);
 					}
 				}
 
@@ -310,6 +336,10 @@
 			list-style: none;
 			background: $dark-color;
 
+			.masthead--transparent & {
+				background-color: rgba($dark-color, 0.98);
+			}
+
 			&:after {
 				content: '';
 				position: absolute;
@@ -353,6 +383,10 @@
 						font-weight: 500;
 						font-size: $base-font-size*.8;
 						border-left: 0px;
+
+						.masthead--transparent & {
+							background-color: transparent;
+						}
 					}
 				}
 
