@@ -1,12 +1,12 @@
 @if $use-masthead == true {
 
-	.masthead--transparent + section {
-		.hero.background--fill {
-			.floating {
-				padding-top: 80px !important;
-			}
-		}
-	}
+	// .masthead--transparent + section {
+	// 	.hero.background--fill {
+	// 		h1 {
+	// 			padding-top: 80px !important;
+	// 		}
+	// 	}
+	// }
 
 	.masthead {
 		position: relative;
