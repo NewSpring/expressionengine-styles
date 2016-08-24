@@ -522,7 +522,7 @@ body {
 
 // Alignment and Inline-Block
 
-.full-width {
+@include namespace(full-width) {
     width: 100%;
     max-width: 100%;
 }

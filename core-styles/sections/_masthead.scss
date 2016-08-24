@@ -1,10 +1,24 @@
 @if $use-masthead == true {
 
-	.masthead {
-		@include media-query(anchored) {
-			@include absolute(top 0);
-			background: transparent;
+	.masthead--transparent + section {
+		.hero.background--fill {
+			.ratio, .floating {
+				padding-top: 60px;
+
+				@include media-query(lap-wide-and-down) {
+					padding-top: 80px !important;
+				}
+			}
+
+			.ratio__item, .floating__item {
+				padding-top: 20px;
+			}
 		}
+	}
+
+	.masthead {
+		position: relative;
+		background-color: $light-color;
 
 		z-index: map-get($zindex, masthead);
 
@@ -12,20 +26,41 @@
 		overflow: visible;
 
 		.shell {
-			box-shadow: none;
-			background-color: transparent;
+			box-shadow: 0 0 25px rgba(0,0,0,.1);
 		}
 
 		a {
 			text-decoration: none;
 		}
 
-		&.masthead--locked {
-			position: relative;
-			background-color: $light-color;
+		&.masthead--transparent {
+			@include absolute(top 5px right 0 left 0);
+			background-color: transparent;
 
 			.shell {
-				box-shadow: 0 0 25px rgba(0,0,0,.1);
+				z-index: 1;
+				box-shadow: none;
+			}
+
+			.masthead-bar {
+				background-color: transparent;
+			}
+
+			&:after {
+				content: '';
+				z-index: 0;
+				@include absolute(top -5px right 0 left 0);
+				height: 120px;
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&1+0,0+100 */
+				background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+				opacity: .7;
+			}
+
+			@include media-query(lap-wide-and-down) {
+				top: 0px;
 			}
 		}
 	}
@@ -34,29 +69,7 @@
 		position:fixed;
 	}
 
-//	.masthead--locked {
-//	position:relative;
-//	}
-
-	// .masthead--locked + section {
-	// 	margin-top: 80px;
-
-	// 	@include media-query(portable) {
-	// 		margin-top: 0px;
-	// 	}
-
-	// 	@include media-query(handheld) {
-	// 		margin-top: 0px;
-	// 	}
-	// }
-
 	.masthead-wrapper {
-		padding: 20px;
-
-		.masthead--locked & {
-			padding: 0px;
-		}
-
 		.masthead-bar {
 			position: relative;
 			text-align: right;
@@ -88,6 +101,10 @@
 		background-color: $brand-color;
 		color: $light-color;
 		z-index: map-get($zindex, masthead) + 1;
+
+		.masthead--transparent & {
+			background-color: transparent;
+		}
 	}
 
 	.icon.fa-search {
@@ -96,6 +113,27 @@
 		z-index: map-get($zindex, masthead) + 1;
 		@include media-query(lap-wide-and-down) {
 			border-left: 2px solid $base-ui-color;
+		}
+	}
+
+	.masthead--transparent {
+		.icon {
+			font-size: $icon-size*.5;
+			width: 48px;
+			
+			@include media-query(lap-wide-and-down) {
+				margin-top: 6px;
+			}
+		}
+
+		.icon.fa-search {
+			color: $light-color;
+			border-left: 0px;
+		}
+
+		.icon.fa-bars {
+			background-color: transparent;
+			margin-right: 10px;
 		}
 	}
 
@@ -127,13 +165,16 @@
 			text-align: left;
 			margin: 0px;
 			text-transform: uppercase;
+
+			.masthead--transparent & {
+				color: $light-color;
+			}
 		}
 
 		@include media-query(lap-wide-and-down) {
 			float: none;
-
-			@include absolute(left 7px top 6px);
 			z-index: map-get($zindex, masthead) + 1;
+			@include absolute(left 7px top 6px);
 
 			.newspring--icon {
 				top: auto;
@@ -153,8 +194,12 @@
 					display: inline-block;
 					@include media-query(lap-wide-and-down) {
 						display:none;
+					}
 				}
 			}
+
+			.masthead--transparent & {
+				@include absolute(left 8px top 10px);
 			}
 		}
 	}
@@ -198,6 +243,11 @@
 					font-family: FontAwesome;
 					padding: 0px;
 				}
+
+				.masthead--transparent & {
+					border-left: 0px;
+					color: $light-color;
+				}
 			}
 
 			&:hover {
@@ -209,6 +259,10 @@
 					// Kills left borders on dropdowns
 					@media all and (max-width: 1131px) {
 						border-left: 0 none;
+					}
+
+					.masthead--transparent & {
+						border-left: 0;
 					}
 				}
 
@@ -237,6 +291,12 @@
 				// margin-left: 30px;
 				width: 80px;
 				height: 80px;
+
+				.masthead--transparent & {
+					background-color: transparent;
+					width: 60px;
+					margin-right: 20px;
+				}
 			}
 		}
 
@@ -282,6 +342,10 @@
 					border-left: 0 none;
 					font-weight: 500 !important;
 					text-transform: none;
+
+					.masthead--transparent & {
+						color: darken($light-color, 60);
+					}
 				}
 
 				&:hover {
