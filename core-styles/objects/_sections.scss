@@ -16,8 +16,61 @@
 		position: relative;
     background-color: $light-color;
 
+		&[data-outdated-browser] {
+			z-index: 100;
+		}
+
 		.shell {
 			background-color: inherit;
+		}
+	}
+
+	@keyframes liveBannerBG {
+		0% {
+			background-color: $liveBanner-primary;
+		}
+		50% {
+			background-color: $liveBanner-secondary;
+		}
+		100% {
+			background-color: $liveBanner-primary;
+		}
+	}
+
+	@keyframes phaders {
+		from {
+			opacity: 0;
+		}
+	}
+
+	.section--live {
+		z-index: 100;
+
+		.animate--bg {
+			animation-duration: 10s;
+			animation-iteration-count: infinite;
+			animation-name: liveBannerBG;
+			animation-timing-function: cubic-bezier(0.66, 0.21, 0.49, 0.88);
+		}
+
+		.shell {
+			@include media-query(handheld) {
+				padding: $base-spacing-unit / 4 $base-spacing-unit / 6 $base-spacing-unit / 6 !important;
+			}
+		}
+
+		h6 {
+
+			@include media-query(handheld) {
+				font-size: 16px;
+			}
+		}
+
+		.animate--text {
+			animation-duration: 1.5s;
+			animation-iteration-count: infinite;
+			animation-name: phaders;
+			animation-direction: alternate;
 		}
 	}
 
@@ -66,6 +119,7 @@
     }
 	}
 
+	.section--live,
 	.section--dark,
 	.section--black {
 		*:not(a):not(.link--arrow):not(button):not(small):not(b):not(input) {

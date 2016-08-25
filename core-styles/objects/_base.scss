@@ -31,10 +31,10 @@ body {
   overflow-x: hidden;
   // There's a small bug in webkit that requires a CSS3 property to be set on an element.
   // Read more about it at http://bit.ly/NEdoDq
+}
 
-
-
-
+.container {
+    position: relative;
 }
 
 
@@ -140,6 +140,14 @@ body {
 @include namespace(flush--ends) {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+}
+
+@include namespace(push--bottom) {
+    margin-bottom: $base-spacing-unit !important;
+}
+
+@include namespace(push-half--bottom) {
+    margin-bottom: $base-spacing-unit/2 !important;
 }
 
 @include namespace(push-quarter--bottom) {
@@ -522,7 +530,7 @@ body {
 
 // Alignment and Inline-Block
 
-.full-width {
+@include namespace(full-width) {
     width: 100%;
     max-width: 100%;
 }

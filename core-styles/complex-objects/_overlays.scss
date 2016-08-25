@@ -163,8 +163,15 @@ $overlay-spacing-unit: 48px;
 		}
 
 		a.btn--filled {
-			background-color: $light-color;
-			color: $dark-color;
+			background-color: $primary-color;
+			color: $light-color;
+			border-color: $primary-color !important;
+
+			&:hover {
+				background-color: $primary-color !important;
+				color: $light-color !important;
+				border-color: $primary-color !important;
+			}
 		}
 		
 		.outlined--tag {
