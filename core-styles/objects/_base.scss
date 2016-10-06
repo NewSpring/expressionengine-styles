@@ -99,6 +99,10 @@ body {
     text-decoration: underline;
 }
 
+.top--rounded {
+    border-radius: 5px 5px 0 0;
+}
+
 @include namespace(soft-half--top) {
     padding-top: ($base-spacing-unit/2) !important;
 }
