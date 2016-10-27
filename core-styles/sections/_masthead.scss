@@ -167,7 +167,7 @@
 
 	.logo {
 		float: left;
-		@include relative(top 10px left 20px);
+		@include relative(top 9px left 16px);
 		margin: 0px;
 		margin-right: 10px;
 		text-decoration:none;
@@ -206,7 +206,7 @@
 		@include media-query(lap-wide-and-down) {
 			float: none;
 			z-index: map-get($zindex, masthead) + 1;
-			@include absolute(left 7px top 6px);
+			@include absolute(left 10px top 6px);
 
 			// .newspring--icon {
 			// 	top: auto;
