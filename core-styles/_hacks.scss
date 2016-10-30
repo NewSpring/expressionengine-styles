@@ -3,6 +3,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0)
   and (min-resolution:.001dpcm) and (max-width: 480px) {
     .background--fill {
-			background-position: initial;
-		}
+      background-position-x: center;
+      background-position-y: initial;
+  }
 }
