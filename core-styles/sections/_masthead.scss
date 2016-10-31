@@ -161,17 +161,25 @@
 		}
 	}
 
+	a.logo {
+		color: $primary-color !important;
+	}
+
 	.logo {
 		float: left;
-		@include relative(top 17px left 20px);
+		@include relative(top 9px left 16px);
 		margin: 0px;
 		margin-right: 10px;
 		text-decoration:none;
 
-		.newspring--icon {
-			max-width: 45px;
-			max-height: 45px;
-			margin-right: 15px;
+		.newspring-mark {
+			font-family: 'newspring-icofont';
+			font-size: $base-font-size*2;
+			margin-right: $base-spacing-unit/5;
+
+			.masthead--transparent & {
+				color: $light-color;
+			}
 		}
 
 		h1 {
@@ -198,16 +206,16 @@
 		@include media-query(lap-wide-and-down) {
 			float: none;
 			z-index: map-get($zindex, masthead) + 1;
-			@include absolute(left 7px top 6px);
+			@include absolute(left 10px top 6px);
 
-			.newspring--icon {
-				top: auto;
-				margin-top: 3px;
-				margin-left: 3px;
-				margin-right: 6px;
-				max-height:($icon-size - ($border-size*4));
-				max-width:($icon-size - ($border-size*4));
-			}
+			// .newspring--icon {
+			// 	top: auto;
+			// 	margin-top: 3px;
+			// 	margin-left: 3px;
+			// 	margin-right: 6px;
+			// 	max-height:($icon-size - ($border-size*4));
+			// 	max-width:($icon-size - ($border-size*4));
+			// }
 
 			h1 {
 				font-size: 18px;
@@ -222,8 +230,14 @@
 				}
 			}
 
+			.newspring-mark {
+				font-size: $base-font-size*1.45;
+				margin-right: $base-spacing-unit/8;
+				margin-bottom: -5px;
+			}
+
 			.masthead--transparent & {
-				@include absolute(left 8px top 10px);
+				@include absolute(left 15px top 10px);
 			}
 		}
 	}
