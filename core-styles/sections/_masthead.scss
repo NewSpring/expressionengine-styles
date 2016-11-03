@@ -206,16 +206,7 @@
 		@include media-query(lap-wide-and-down) {
 			float: none;
 			z-index: map-get($zindex, masthead) + 1;
-			@include absolute(left 10px top 6px);
-
-			// .newspring--icon {
-			// 	top: auto;
-			// 	margin-top: 3px;
-			// 	margin-left: 3px;
-			// 	margin-right: 6px;
-			// 	max-height:($icon-size - ($border-size*4));
-			// 	max-width:($icon-size - ($border-size*4));
-			// }
+			@include absolute(left 15px top 15px);
 
 			h1 {
 				font-size: 18px;
@@ -505,18 +496,26 @@
 			background-color: $alert-color;
 			color: $light-color;
 		}
-   .logo {
-     text-align: left;
 
-     h1 {
-       color: $light-color;
-     }
+	   .logo {
+	   		// position: absolute;
+	   		// top: 5px;
+	   		// left: 10px;
+	     	text-align: left;
 
-     img {
-       display: inline-block;
-       max-width: 100px;
-     }
-   }
+	     	h1 {
+	       		color: $light-color;
+	     	}
+
+	     	img {
+	       		display: inline-block;
+	       		max-width: 100px;
+	     	}
+
+	     	.newspring-mark {
+				color: $light-color;
+	     	}
+	   	}
 	}
 }
 
