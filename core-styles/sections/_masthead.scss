@@ -205,8 +205,8 @@
 
 		@include media-query(lap-wide-and-down) {
 			// float: none;
-			// z-index: map-get($zindex, masthead) + 1;
-			@include absolute(left 15px top 10px);
+			// z-index: map-get($zindex, masthead) + 1
+			@include absolute(left 15px top 5px);
 
 			h1 {
 				font-size: 18px;
