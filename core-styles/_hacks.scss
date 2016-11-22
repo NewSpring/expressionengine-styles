@@ -1,3 +1,8 @@
+// These are brought over from Junction CSS.
+// Right now they are hacks to enable the ooyala v4 html player
+@import "hacks/video";
+@import "hacks/icon";
+
 // This style is a hack to fix the background images
 // on android devices, running chrome
 @media screen and (-webkit-min-device-pixel-ratio:0)
