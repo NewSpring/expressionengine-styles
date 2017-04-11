@@ -68,7 +68,9 @@ $button-size: $icon-size * .5;
 
 	&.btn--small {
 			border: $border-size * .75 solid $brand-color;
-			padding: ($button-size/2 * .5) $button-size/2;
+			padding: ($button-size/2 * .5) $button-size/1.25;
+			font-size: $button-size * .65;
+			line-height: $button-size * 1;
 	}
 
 	&.btn--large {
