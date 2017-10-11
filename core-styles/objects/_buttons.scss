@@ -161,7 +161,7 @@ $button-size: $icon-size * .5;
 }
 
 .btn--corners {
-	@include radius(3px);
+	@include radius(0px);
 }
 
 /* ============================================================
