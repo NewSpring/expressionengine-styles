@@ -18,8 +18,9 @@
             cursor: text;
 
             &:hover {
-                background-color: $light-color;
-                color: $dark-color;
+                background-color: $secondary-color;
+                border-color: $secondary-color;
+                cursor: pointer;
             }
         }
     }
