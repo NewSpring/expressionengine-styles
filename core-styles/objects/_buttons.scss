@@ -150,13 +150,14 @@ $button-size: $icon-size * .5;
 	}
 }
 
-.btn--input {
+.btn--input, input.btn--input {
 	border-color: $light-color;
 	color: $dark-color;
 
 	&:hover {
 		background-color: $light-color;
 		color: $dark-color;
+		border-color: $light-color;
 	}
 }
 
